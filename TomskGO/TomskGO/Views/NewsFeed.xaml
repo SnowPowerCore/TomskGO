@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:image="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:transformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:converters="clr-namespace:TomskGO.Converters"
+             xmlns:managers="clr-namespace:TomskGO.Managers"
+             xmlns:xe="clr-namespace:XamEffects;assembly=XamEffects"
+             xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material.Forms"
+             BackgroundColor="WhiteSmoke"
+             x:Class="TomskGO.Views.NewsFeed">
+    <ContentPage.Resources>
+        <converters:DetagifyConverter x:Key="detagify"/>
+        <converters:InverseBoolConverter x:Key="inverseBool"/>
+    </ContentPage.Resources>
+    <ListView Grid.Row="1" ItemsSource="{x:Binding Posts}" SelectionMode="None" CachingStrategy="RecycleElement" HasUnevenRows="True">
+        <ListView.Header>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <ActivityIndicator Margin="0,10" HorizontalOptions="Center" VerticalOptions="Start" Color="Accent" IsVisible="{x:Binding IsBusy, Mode=OneWay, Converter={x:StaticResource inverseBool}}" IsRunning="{x:Binding IsBusy, Mode=OneWay, Converter={x:StaticResource inverseBool}}"/>
+                <ui:MaterialLabel IsVisible="{x:Binding IsBusy, Mode=OneWay}" Margin="8" FontSize="42" FontAttributes="Bold" TextColor="Black" Text="Добро пожаловать!"/>
+            </Grid>
+        </ListView.Header>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ui:MaterialCard Elevation="10" CornerRadius="10" Margin="10,5" Padding="0">
+                        <Grid RowSpacing="15" ColumnSpacing="0"
+                                     xe:TouchEffect.Color="White"
+                                     xe:Commands.Tap="{x:Binding NavigatePostCommand, Source={x:Static managers:CacheManager.NewsFeed}}"
+                                     xe:Commands.TapParameter="{x:Binding .}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <image:CachedImage HeightRequest="133" BitmapOptimizations="True" Aspect="AspectFill" Source="{x:Binding PreviewSource}">
+                                <image:CachedImage.Transformations>
+                                    <transformations:BlurredTransformation Radius="12"/>
+                                </image:CachedImage.Transformations>
+                            </image:CachedImage>
+                            <BoxView Grid.Row="1" Grid.RowSpan="3" Color="White"/>
+                            <FlexLayout Margin="3,5" Grid.Row="1" BindableLayout.ItemsSource="{x:Binding Tags}"
+                                    Wrap="Wrap"
+                                    Direction="Row"
+                                    JustifyContent="Start"
+                                    AlignItems="Start"
+                                    AlignContent="Start">
+                                <BindableLayout.ItemTemplate>
+                                    <DataTemplate>
+                                        <ui:MaterialButton xe:TouchEffect.Color="White"
+                                            BackgroundColor="Accent" CornerRadius="16" Text="{x:Binding .}" FontSize="13"/>
+                                    </DataTemplate>
+                                </BindableLayout.ItemTemplate>
+                            </FlexLayout>
+                            <ui:MaterialLabel Grid.Row="2" Margin="10,0" Text="{x:Binding ShortDescription, Converter={x:StaticResource detagify}}" LineBreakMode="WordWrap" FontSize="Small"/>
+                            <ui:MaterialButton Grid.Row="3" VerticalOptions="End" HorizontalOptions="End" Margin="0,0,10,15" BackgroundColor="White" 
+                                    Text="Подробнее"
+                                    ButtonType="Text" xe:TouchEffect.Color="White"
+                                    xe:Commands.Tap="{x:Binding NavigatePostCommand, Source={x:Static managers:CacheManager.NewsFeed}}"
+                                    xe:Commands.TapParameter="{x:Binding .}" TextColor="#029E00"/>
+                        </Grid>
+                    </ui:MaterialCard>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+    <!--<r:HorizontalListView ListLayout="Grid" ColumnCount="1">
+        <r:HorizontalListView.ItemsSource>
+            <x:Array Type="{x:Type x:String}">
+                <x:String>Hi</x:String>
+                <x:String>Hi</x:String>
+                <x:String>Hi</x:String>
+                <x:String>Hi</x:String>
+                <x:String>Hi</x:String>
+            </x:Array>
+        </r:HorizontalListView.ItemsSource>
+        <r:HorizontalListView.ItemTemplate>
+            <DataTemplate>
+                <r:DraggableViewCell>
+                    <controls:Card Elevation="12" HeightRequest="200" WidthRequest="100"/>
+                </r:DraggableViewCell>
+            </DataTemplate>
+        </r:HorizontalListView.ItemTemplate>
+    </r:HorizontalListView>-->
+</ContentPage>

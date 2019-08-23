@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:helpers="clr-namespace:TomskGO.Helpers"
+    xmlns:pages="clr-namespace:TomskGO.Views"
+    x:Class="TomskGO.Views.MainPage"
+    Shell.BackgroundColor="{x:StaticResource primaryDark}">
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid BackgroundColor="Transparent" Padding="0,8" Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.01*"/>
+                    <ColumnDefinition Width="0.2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="1"/>
+                </Grid.RowDefinitions>
+                <Image Grid.Column="1" Source="{Binding Icon}" HeightRequest="20"/>
+                <Label Grid.Column="2" TextColor="Black" Text="{Binding Title}"/>
+                <BoxView Grid.Row="1" Grid.Column="2" Margin="0" BackgroundColor="{x:DynamicResource flyoutSeparatorColor}"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <Grid BackgroundColor="Transparent" Padding="0,8" Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.01*"/>
+                    <ColumnDefinition Width="0.2*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="1"/>
+                </Grid.RowDefinitions>
+                <Image Grid.Column="1" Source="{Binding Icon}"/>
+                <Label Grid.Column="2" TextColor="Black" Text="{Binding Text}"/>
+                <BoxView Grid.Row="1" Grid.Column="2" Margin="0" BackgroundColor="{x:DynamicResource flyoutSeparatorColor}"/>
+            </Grid>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+
+    <ShellContent Title="{helpers:Translate allNews}" Icon="news.png" Route="news" ContentTemplate="{x:DataTemplate pages:NewsFeed}"/>
+    <MenuItem Text="{helpers:Translate info}" IconImageSource="info.png"/>
+    <MenuItem Text="{helpers:Translate settings}" IconImageSource="settings.png"/>
+</Shell>

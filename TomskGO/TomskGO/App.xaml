@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TomskGO.App">
+    <Application.Resources>
+        <Color x:Key="primaryDark">#028E00</Color>
+        <Color x:Key="textColor">#029E00</Color>
+        <Style x:Key="sideMenuGroupStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="Large"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <Style x:Key="sideMenuItemStyle" TargetType="Label">
+            <Setter Property="FontSize" Value="Medium"/>
+        </Style>
+    </Application.Resources>
+</Application>

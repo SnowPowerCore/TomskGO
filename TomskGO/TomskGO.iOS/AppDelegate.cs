@@ -1,6 +1,5 @@
 ﻿using FFImageLoading.Forms.Platform;
 using Foundation;
-using Sharpnado.Presentation.Forms.iOS;
 using UIKit;
 
 namespace TomskGO.iOS
@@ -20,11 +19,13 @@ namespace TomskGO.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             Xamarin.Forms.Forms.Init();
+            FFImageLoading.FormsHandler.Init();
             XamEffects.iOS.Effects.Init();
+            PanCardView.iOS.CardsViewRenderer.Preserve();
             XF.Material.iOS.Material.Init();
             CachedImageRenderer.Init();
-            SharpnadoInitializer.Initialize();
             _ = typeof(FFImageLoading.Svg.Forms.SvgCachedImage);
             LoadApplication(new App());
 

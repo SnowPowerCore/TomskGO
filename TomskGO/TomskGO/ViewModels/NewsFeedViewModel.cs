@@ -77,7 +77,7 @@ namespace TomskGO.ViewModels
 
         private async void NavigatePost(FeedModel item)
         {
-            await Application.Current.MainPage?.Navigation?.PushModalAsync(new Xamarin.Forms.NavigationPage(new Post(item)), true);
+            await Shell.Current.Navigation.PushModalAsync(new Post(item));
             //await Shell.Current.GoToAsync("//news/post?feedData="+JsonConvert.SerializeObject(item));
         }
 

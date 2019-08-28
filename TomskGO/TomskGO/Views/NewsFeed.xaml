@@ -46,8 +46,8 @@
                                             Margin="3,5" BindableLayout.ItemsSource="{Binding Tags}">
                                     <BindableLayout.ItemTemplate>
                                         <DataTemplate>
-                                            <ui:MaterialButton xe:TouchEffect.Color="White" ButtonType="Outlined" 
-                                                Padding="12,3" BorderColor="Accent" TextColor="Accent" CornerRadius="16" Text="{Binding .}" FontSize="12"/>
+                                            <ui:MaterialButton xe:TouchEffect.Color="White" ButtonType="Elevated" 
+                                                Padding="12,3"  BackgroundColor="Accent" TextColor="White" CornerRadius="16" Text="{Binding .}" FontSize="12"/>
                                         </DataTemplate>
                                     </BindableLayout.ItemTemplate>
                                 </FlexLayout>

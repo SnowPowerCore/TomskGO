@@ -28,7 +28,7 @@ namespace TomskGO.iOS
             CachedImageRenderer.Init();
             _ = typeof(FFImageLoading.Svg.Forms.SvgCachedImage);
             LoadApplication(new App());
-
+            Stormlion.PhotoBrowser.iOS.Platform.Init();
             return base.FinishedLaunching(app, options);
         }
     }

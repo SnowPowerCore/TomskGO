@@ -7,6 +7,7 @@
              xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material.Forms"
              xmlns:xe="clr-namespace:XamEffects;assembly=XamEffects"
              xmlns:carousel="clr-namespace:PanCardView;assembly=PanCardView"
+             x:Name="post"
              NavigationPage.HasNavigationBar="False"
              x:Class="TomskGO.Views.Post">
     <ContentPage.Resources>
@@ -34,7 +35,9 @@
                                    IsCyclical="False" HeightRequest="155">
                 <carousel:CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <Image Aspect="AspectFill" Source="{Binding ImageSource}"/>
+                        <Image Aspect="AspectFill" Source="{Binding ImageSource}"
+                               xe:Commands.Tap="{Binding Source={x:Reference post}, Path=BindingContext.OpenPhotoCommand}"
+                               xe:Commands.TapParameter="{Binding .}"/>
                     </DataTemplate>
                 </carousel:CarouselView.ItemTemplate>
             </carousel:CarouselView>
@@ -48,8 +51,8 @@
                     Margin="20,0" BindableLayout.ItemsSource="{Binding SelectedItem.Tags}" HeightRequest="50">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
-                            <ui:MaterialButton xe:TouchEffect.Color="White" ButtonType="Outlined" 
-                                                Padding="12,3" BorderColor="Accent" TextColor="Accent" CornerRadius="16" Text="{Binding .}" FontSize="12"/>
+                            <ui:MaterialButton xe:TouchEffect.Color="White" ButtonType="Elevated" 
+                                                Padding="12,3" BackgroundColor="Accent" TextColor="White" CornerRadius="16" Text="{Binding .}" FontSize="12"/>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </FlexLayout>

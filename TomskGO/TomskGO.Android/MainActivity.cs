@@ -22,6 +22,7 @@ namespace TomskGO.Droid
             XamEffects.Droid.Effects.Init();
             PanCardView.Droid.CardsViewRenderer.Preserve();
             XF.Material.Droid.Material.Init(this, savedInstanceState);
+            Stormlion.PhotoBrowser.Droid.Platform.Init(this);
             CachedImageRenderer.Init(true);
             SharpnadoInitializer.Initialize();
             _ = typeof(FFImageLoading.Svg.Forms.SvgCachedImage);

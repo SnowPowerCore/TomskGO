@@ -48,7 +48,7 @@
                     JustifyContent="SpaceAround"
                     AlignItems="Start"
                     AlignContent="Start"
-                    Margin="20,0" BindableLayout.ItemsSource="{Binding SelectedItem.Tags}" HeightRequest="50">
+                    Margin="25,15" BindableLayout.ItemsSource="{Binding SelectedItem.Tags}" HeightRequest="50">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <ui:MaterialButton xe:TouchEffect.Color="White" ButtonType="Elevated" 

@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using TomskGO.Managers;
+using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace TomskGO.Views

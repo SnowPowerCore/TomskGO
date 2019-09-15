@@ -1,4 +1,4 @@
-﻿using System;
+﻿using TomskGO.Managers;
 using TomskGO.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,12 +12,13 @@ namespace TomskGO
         {
             InitializeComponent();
             XF.Material.Forms.Material.Init(this);
-            MainPage = new Views.MainPage();
+            MainPage = new MainPage();
         }
 
         protected override void OnStart()
         {
             RegisterRoutes();
+            CacheManager.LoadThemeCommand?.Execute(null);
         }
 
         private void RegisterRoutes()

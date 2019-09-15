@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.421
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TomskGO.Android", "TomskGO\TomskGO.Android\TomskGO.Android.csproj", "{8CD878F2-EC6C-472B-9962-89A7AC3A52E5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TomskGO.iOS", "TomskGO\TomskGO.iOS\TomskGO.iOS.csproj", "{6BA61FFC-4240-4B6A-BFA1-35033F81243E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TomskGO", "TomskGO\TomskGO\TomskGO.csproj", "{25A1FA5C-5A9D-4A8E-9803-9A981A8424DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomskGO", "TomskGO\TomskGO\TomskGO.csproj", "{25A1FA5C-5A9D-4A8E-9803-9A981A8424DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

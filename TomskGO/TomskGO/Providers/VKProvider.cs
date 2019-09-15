@@ -44,6 +44,7 @@ namespace TomskGO.Providers
                     ShortDescription = dataList[i].Text.Length >= 165 ? dataList[i].Text.Substring(0, 130) + "..." : dataList[i].Text,
                     SourceLabel = ProviderData.Name,
                     FullText = dataList[i].Text,
+                    Date = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc).AddSeconds(dataList[i].Date).ToLocalTime(),
                     PreviewSource = dataList[i].Attachments?.FirstOrDefault(x => x.Photo != null)?.Photo.Sizes.FirstOrDefault(x => x.Type == "p").Url,
                     Tags = CreateTags(dataList[i]),
                     Attachments = new FeedModel.Attachment

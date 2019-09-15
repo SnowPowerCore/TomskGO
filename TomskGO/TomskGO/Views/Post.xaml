@@ -7,48 +7,45 @@
              xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material.Forms"
              xmlns:xe="clr-namespace:XamEffects;assembly=XamEffects"
              xmlns:carousel="clr-namespace:PanCardView;assembly=PanCardView"
+             xmlns:parent="clr-namespace:PanCardView.Controls;assembly=PanCardView"
              x:Name="post"
              NavigationPage.HasNavigationBar="False"
+             Style="{x:StaticResource themeBackground}"
              x:Class="TomskGO.Views.Post">
     <ContentPage.Resources>
         <converters:DetagifyConverter x:Key="detagify"/>
     </ContentPage.Resources>
-    <ScrollView Orientation="Vertical">
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <svg:SvgCachedImage Margin="25,15" Source="resource://TomskGO.Assets.Icons.back.svg" HorizontalOptions="Start" BitmapOptimizations="True" HeightRequest="32">
+    <parent:ParentScrollView Orientation="Vertical">
+        <StackLayout Spacing="10" Margin="0,10">
+            <svg:SvgCachedImage Margin="25,0" Source="resource://TomskGO.Assets.Icons.back.svg" HorizontalOptions="Start" BitmapOptimizations="True" HeightRequest="32">
                 <svg:SvgCachedImage.GestureRecognizers>
                     <TapGestureRecognizer Command="{Binding NavigateBackCommand}"/>
                 </svg:SvgCachedImage.GestureRecognizers>
             </svg:SvgCachedImage>
-            <ui:MaterialLabel Grid.Row="1" Margin="25,0,0,15" FontSize="16" Text="{Binding SelectedItem.FullText, Converter={x:StaticResource detagify}}"/>
-            <ui:MaterialLabel Grid.Row="2" Margin="25,0,0,0" IsVisible="{Binding SelectedItem.Attachments.PhotosVisible}" Text="{helpers:Translate browsePhotos}" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
+            <ui:MaterialLabel Margin="25,0" FontSize="16" 
+                              Text="{Binding SelectedItem.FullText, Converter={x:StaticResource detagify}}" Style="{x:StaticResource themeText}"/>
+            <ui:MaterialLabel Margin="25,0" IsVisible="{Binding SelectedItem.Attachments.PhotosVisible}" 
+                              Text="{helpers:Translate browsePhotos}" FontAttributes="Bold" FontSize="18" Style="{x:StaticResource themeTextCaption}"/>
             <carousel:CarouselView Grid.Row="3" IsVisible="{Binding SelectedItem.Attachments.PhotosVisible}"
                                    ItemsSource="{Binding SelectedItem.Attachments.Photos}" IsClippedToBounds="True"
-                                   IsCyclical="False" HeightRequest="155">
+                                   IsCyclical="False" HeightRequest="230" VerticalSwipeThresholdDistance="2700">
                 <carousel:CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <Image Aspect="AspectFill" Source="{Binding ImageSource}"
+                        <ui:MaterialCard Margin="15,20" CornerRadius="10" Elevation="10" IsClippedToBounds="True" Padding="0">
+                            <Image Aspect="AspectFill" Source="{Binding ImageSource}"
                                xe:Commands.Tap="{Binding Source={x:Reference post}, Path=BindingContext.OpenPhotoCommand}"
                                xe:Commands.TapParameter="{Binding .}"/>
+                        </ui:MaterialCard>
                     </DataTemplate>
                 </carousel:CarouselView.ItemTemplate>
             </carousel:CarouselView>
-            <ui:MaterialLabel Margin="25,0,0,0" Grid.Row="4" Text="{helpers:Translate tags}" FontAttributes="Bold" FontSize="18" TextColor="Black"/>
-            <ScrollView Grid.Row="5" Orientation="Horizontal" HorizontalScrollBarVisibility="Never" VerticalOptions="CenterAndExpand">
+            <ui:MaterialLabel Margin="25,0" Text="{helpers:Translate tags}" FontAttributes="Bold" FontSize="18" Style="{x:StaticResource themeTextCaption}"/>
+            <ScrollView Padding="10,0,0,0" Orientation="Horizontal" HorizontalScrollBarVisibility="Never" VerticalOptions="CenterAndExpand">
                 <FlexLayout Wrap="Wrap"
                     Direction="Column"
                     JustifyContent="SpaceAround"
                     AlignItems="Start"
-                    AlignContent="Start"
-                    Margin="25,15" BindableLayout.ItemsSource="{Binding SelectedItem.Tags}" HeightRequest="50">
+                    AlignContent="Start" BindableLayout.ItemsSource="{Binding SelectedItem.Tags}" HeightRequest="50">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
                             <ui:MaterialButton xe:TouchEffect.Color="White" ButtonType="Elevated" 
@@ -57,6 +54,6 @@
                     </BindableLayout.ItemTemplate>
                 </FlexLayout>
             </ScrollView>
-        </Grid>
-    </ScrollView>
+        </StackLayout>
+    </parent:ParentScrollView>
 </ContentPage>

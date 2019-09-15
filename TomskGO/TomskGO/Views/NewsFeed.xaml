@@ -5,40 +5,45 @@
              xmlns:managers="clr-namespace:TomskGO.Managers"
              xmlns:xe="clr-namespace:XamEffects;assembly=XamEffects"
              xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material.Forms"
-             BackgroundColor="WhiteSmoke"
+             Style="{x:StaticResource themeBackground}"
              Shell.NavBarIsVisible="False"
              x:Class="TomskGO.Views.NewsFeed">
     <ContentPage.Resources>
         <converters:DetagifyConverter x:Key="detagify"/>
         <converters:InverseBoolConverter x:Key="inverseBool"/>
     </ContentPage.Resources>
-    <ListView ItemsSource="{Binding Posts}" SelectionMode="None" CachingStrategy="RecycleElement" HasUnevenRows="True">
+    <ListView ItemsSource="{Binding Posts}" SelectionMode="None" CachingStrategy="RecycleElementAndDataTemplate" HasUnevenRows="True">
         <ListView.Header>
             <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
                 <ActivityIndicator Margin="0,10" HorizontalOptions="Center" VerticalOptions="Start" Color="Accent" IsVisible="{Binding IsBusy, Mode=OneWay, Converter={x:StaticResource inverseBool}}" IsRunning="{Binding IsBusy, Mode=OneWay, Converter={x:StaticResource inverseBool}}"/>
-                <ui:MaterialLabel IsVisible="{Binding IsBusy, Mode=OneWay}" Margin="15,10"
-                    VerticalTextAlignment="End" FontSize="28" FontAttributes="Bold" TextColor="Black" Text="Добро пожаловать!"/>
+                <StackLayout IsVisible="{Binding IsBusy, Mode=OneWay}" Margin="25,10" Orientation="Horizontal">
+                    <ui:MaterialLabel FontSize="26" FontAttributes="Bold" Style="{x:StaticResource themeTextCaption}" Text="Добро пожаловать!"/>
+                    <ui:MaterialIconButton Style="{x:StaticResource themeSelectorButton}" HeightRequest="32" Padding="5"
+                        HorizontalOptions="End" ButtonType="Text" Command="{x:Static managers:CacheManager.SwitchThemeCommand}"/>
+                </StackLayout>
             </Grid>
         </ListView.Header>
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <ui:MaterialCard CornerRadius="10" Elevation="10" Margin="15,10" Padding="0" IsClippedToBounds="True">
+                    <ui:MaterialCard CornerRadius="10" Elevation="10" Margin="25,20" Padding="0" IsClippedToBounds="True">
                         <Grid xe:TouchEffect.Color="White"
-                                     xe:Commands.Tap="{Binding NavigatePostCommand, Source={x:Static managers:CacheManager.NewsFeed}}"
-                                     xe:Commands.TapParameter="{Binding .}">
+                            xe:Commands.Tap="{Binding NavigatePostCommand, Source={x:Static managers:CacheManager.NewsFeed}}"
+                            xe:Commands.TapParameter="{Binding .}"
+                            RowSpacing="10"
+                              Style="{x:StaticResource cardBackground}">
                             <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
                             <Image HeightRequest="170" Aspect="AspectFill" Source="{Binding PreviewSource}"/>
-                            <BoxView Grid.Row="1" Grid.RowSpan="3" Color="White"/>
-                            <ui:MaterialLabel Grid.Row="2" Margin="10,0" Text="{Binding ShortDescription, Converter={x:StaticResource detagify}}" LineBreakMode="WordWrap" FontSize="Small"/>
+                            <BoxView Grid.Row="1" Grid.RowSpan="3" Style="{x:StaticResource themeBoxView}"/>
+                            <ui:MaterialLabel Grid.Row="1" Margin="10,0" Text="{Binding Date, StringFormat=\{0:f\}}" LetterSpacing="2"
+                                              Style="{x:StaticResource themeTextSecondary}" FontSize="Small"/>
+                            <ui:MaterialLabel Grid.Row="2" Margin="10,0" Text="{Binding ShortDescription, Converter={x:StaticResource detagify}}"
+                                              LineBreakMode="WordWrap" FontSize="Small" Style="{x:StaticResource themeText}"/>
                             <ui:MaterialButton Grid.Row="3" VerticalOptions="End" HorizontalOptions="End" Margin="0,0,10,10" BackgroundColor="White" 
                                     Text="Подробнее"
                                     ButtonType="Text" xe:TouchEffect.Color="White"

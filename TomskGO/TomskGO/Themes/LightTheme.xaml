@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TomskGO.Themes.LightTheme">
+    <Color x:Key="shellBackgroundColor">WhiteSmoke</Color>
+    <Color x:Key="cardBackgroundColor">White</Color>
+    <Color x:Key="themeBackgroundColor">WhiteSmoke</Color>
+    <Color x:Key="themeTextColor">DimGray</Color>
+    <Color x:Key="themeTextSecondaryColor">SlateGray</Color>
+    <Color x:Key="themeTextCaptionColor">Black</Color>
+    <Color x:Key="themeBoxViewColor">#White</Color>
+</ResourceDictionary>

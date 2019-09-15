@@ -4,7 +4,7 @@
     xmlns:helpers="clr-namespace:TomskGO.Helpers"
     xmlns:pages="clr-namespace:TomskGO.Views"
     x:Class="TomskGO.Views.MainPage"
-    Shell.BackgroundColor="{x:StaticResource primaryDark}">
+    Style="{x:StaticResource shell}">
     <Shell.ItemTemplate>
         <DataTemplate>
             <Grid BackgroundColor="Transparent" Padding="0,8" Margin="0">
@@ -18,7 +18,7 @@
                     <RowDefinition Height="1"/>
                 </Grid.RowDefinitions>
                 <Image Grid.Column="1" Source="{Binding Icon}" HeightRequest="20"/>
-                <Label Grid.Column="2" TextColor="Black" Text="{Binding Title}"/>
+                <Label Grid.Column="2" TextColor="{x:StaticResource themeTextColor}" Text="{Binding Title}"/>
                 <BoxView Grid.Row="1" Grid.Column="2" Margin="0" BackgroundColor="{x:DynamicResource flyoutSeparatorColor}"/>
             </Grid>
         </DataTemplate>
@@ -37,7 +37,7 @@
                     <RowDefinition Height="1"/>
                 </Grid.RowDefinitions>
                 <Image Grid.Column="1" Source="{Binding Icon}"/>
-                <Label Grid.Column="2" TextColor="Black" Text="{Binding Text}"/>
+                <Label Grid.Column="2" TextColor="{x:StaticResource themeTextColor}" Text="{Binding Text}"/>
                 <BoxView Grid.Row="1" Grid.Column="2" Margin="0" BackgroundColor="{x:DynamicResource flyoutSeparatorColor}"/>
             </Grid>
         </DataTemplate>

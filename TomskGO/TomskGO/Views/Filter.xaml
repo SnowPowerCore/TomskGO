@@ -7,21 +7,31 @@
              xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material.Forms"
              Style="{x:StaticResource themeBackground}"
              Shell.NavBarIsVisible="False"
-             x:Class="TomskGO.Views.NewsFeed">
+             x:Name="filter"
+             x:Class="TomskGO.Views.Filter">
     <ContentPage.Resources>
         <converters:DetagifyConverter x:Key="detagify"/>
         <converters:InverseBoolConverter x:Key="inverseBool"/>
     </ContentPage.Resources>
-    <CollectionView ItemsSource="{Binding Posts}" SelectionMode="None" ItemSizingStrategy="MeasureAllItems">
+    <CollectionView ItemsSource="{Binding FilteredPosts}" SelectionMode="None" ItemSizingStrategy="MeasureAllItems">
         <CollectionView.ItemsLayout>
             <ListItemsLayout ItemSpacing="10" Orientation="Vertical"/>
         </CollectionView.ItemsLayout>
         <CollectionView.Header>
-            <StackLayout Orientation="Horizontal" Padding="25,10,0,0">
-                <ui:MaterialLabel FontSize="26" FontAttributes="Bold" Style="{x:StaticResource themeTextCaption}" Text="Добро пожаловать!"/>
-                <ui:MaterialIconButton Style="{x:StaticResource themeSelectorButton}" HorizontalOptions="End" ButtonType="Text"
-                                        Command="{x:Static managers:CacheManager.SwitchThemeCommand}"/>
-            </StackLayout>
+            <ScrollView Padding="20,15,0,0" Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
+                <FlexLayout Wrap="Wrap"
+                    Direction="Column"
+                    JustifyContent="SpaceAround"
+                    AlignItems="Start"
+                    AlignContent="Start" BindableLayout.ItemsSource="{Binding Source={x:Reference filter}, Path=BindingContext.Tags}" HeightRequest="50">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate>
+                            <ui:MaterialButton ButtonType="Elevated" Padding="12,3" TextColor="White"
+                                               CornerRadius="16" Text="{Binding Name}" FontSize="12"/>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </FlexLayout>
+            </ScrollView>
         </CollectionView.Header>
         <CollectionView.ItemTemplate>
             <DataTemplate>

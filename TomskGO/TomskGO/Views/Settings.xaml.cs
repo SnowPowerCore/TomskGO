@@ -1,8 +1,8 @@
 ﻿namespace TomskGO.Views
 {
-    public partial class MainPage
+    public partial class Settings
     {
-        public MainPage()
+        public Settings()
         {
             InitializeComponent();
         }

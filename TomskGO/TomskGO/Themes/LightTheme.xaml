@@ -8,4 +8,6 @@
     <Color x:Key="themeTextSecondaryColor">SlateGray</Color>
     <Color x:Key="themeTextCaptionColor">Black</Color>
     <Color x:Key="themeBoxViewColor">#White</Color>
+    <x:String x:Key="themeSwitchIcon">moon.png</x:String>
+    <x:String x:Key="backBtn">back.png</x:String>
 </ResourceDictionary>

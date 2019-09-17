@@ -88,6 +88,15 @@ namespace TomskGO.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Filter.
+        /// </summary>
+        internal static string filter {
+            get {
+                return ResourceManager.GetString("filter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на About app.
         /// </summary>
         internal static string info {

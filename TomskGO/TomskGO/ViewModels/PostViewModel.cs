@@ -1,4 +1,5 @@
 ﻿using Stormlion.PhotoBrowser;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -32,6 +33,8 @@ namespace TomskGO.ViewModels
             Managers.TaskManager.Instance.RegisterTask(async () => await NavigateBackAsync(), true, isUIRelated: true));
         public ICommand OpenPhotoCommand => new Command<FeedModel.Attachment.Photo>((p) => 
             Managers.TaskManager.Instance.RegisterTask(() => OpenPhoto(p), true, isUIRelated: true));
+        public ICommand OpenFilterCommand => new Command<string>((t) =>
+            Managers.TaskManager.Instance.RegisterTask(async () => await OpenFilterAsync(t), true, isUIRelated: true));
 
         private void OpenPhoto(FeedModel.Attachment.Photo photo)
         {
@@ -44,9 +47,14 @@ namespace TomskGO.ViewModels
             browser.Show();
         }
 
+        private async Task OpenFilterAsync(string tagName)
+        {
+            await Shell.Current.GoToAsync("//filter?tagName=" + tagName);
+        }
+
         private async Task NavigateBackAsync()
         {
-            await Application.Current.MainPage?.Navigation?.PopModalAsync(true);
+            await Shell.Current.Navigation.PopAsync(true);
         }
 
         #region Auto-implemented

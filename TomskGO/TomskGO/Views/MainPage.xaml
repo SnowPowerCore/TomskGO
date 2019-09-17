@@ -44,6 +44,7 @@
     </Shell.MenuItemTemplate>
 
     <ShellContent Title="{helpers:Translate allNews}" Icon="news.png" Route="news" ContentTemplate="{x:DataTemplate pages:NewsFeed}"/>
+    <ShellContent Title="{helpers:Translate filter}" Route="filter" ContentTemplate="{x:DataTemplate pages:Filter}"/>
     <MenuItem Text="{helpers:Translate info}" IconImageSource="info.png"/>
     <MenuItem Text="{helpers:Translate settings}" IconImageSource="settings.png"/>
 </Shell>

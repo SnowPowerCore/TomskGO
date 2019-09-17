@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Windows.Input;
 using Xamarin.Forms;
 
 namespace TomskGO.Models
 {
-    class NavigationGroup : ObservableCollection<NavigationItem>
+    class NavigationGroup : ObservableRangeCollection<NavigationItem>
     {
         public string GroupName { get; set; }
 

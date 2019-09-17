@@ -2,13 +2,11 @@
 using System;
 using TomskGO.Models;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace TomskGO.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     [QueryProperty(nameof(FeedData), "feedData")]
-    public partial class Post : ContentPage
+    public partial class Post
     {
         private string _feedData;
         public string FeedData
@@ -17,18 +15,17 @@ namespace TomskGO.Views
             set => _feedData = Uri.UnescapeDataString(value);
         }
 
-        private object Item { get; set; }
+        private FeedModel SelectedItem => JsonConvert.DeserializeObject<FeedModel>(FeedData);
 
-        public Post(object item)
+        public Post()
         {
             InitializeComponent();
-            Item = item;
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            BindingContext = new ViewModels.PostViewModel(Item);
+            BindingContext = new ViewModels.PostViewModel(SelectedItem);
         }
     }
 }

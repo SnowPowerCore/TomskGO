@@ -126,6 +126,9 @@
   <data name="categories" xml:space="preserve">
     <value>Categories</value>
   </data>
+  <data name="filter" xml:space="preserve">
+    <value>Filter</value>
+  </data>
   <data name="info" xml:space="preserve">
     <value>About app</value>
   </data>

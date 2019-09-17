@@ -8,4 +8,6 @@
     <Color x:Key="themeTextSecondaryColor">GhostWhite</Color>
     <Color x:Key="themeTextCaptionColor">White</Color>
     <Color x:Key="themeBoxViewColor">#1E1E1E</Color>
+    <x:String x:Key="themeSwitchIcon">sun.png</x:String>
+    <x:String x:Key="backBtn">back_white.png</x:String>
 </ResourceDictionary>

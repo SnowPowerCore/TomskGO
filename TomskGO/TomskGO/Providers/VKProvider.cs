@@ -1,7 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Text.RegularExpressions;
@@ -93,7 +92,7 @@ namespace TomskGO.Providers
             return dataList.Where(x => x.Text.Contains(filterStr)).ToArray();
         }
 
-        public override async Task<ObservableCollection<FeedModel>> ProvideData()
+        public override async Task<ObservableRangeCollection<FeedModel>> ProvideData()
         {
             var formattedUrl = string.Format(ProviderData.ProvisionUrl, RequestData.access_token, RequestData.owner_id, RequestData.filter, RequestData.extended, RequestData.version);
             var response = await SendAsync(formattedUrl, HttpMethod.Get);
@@ -101,7 +100,7 @@ namespace TomskGO.Providers
             var listVKModels = responseObj.SelectToken("response").ToObject<VKFeedModel>().Items;
             var filteredItems = Filter(listVKModels);
             var listOfUniversalModels = ConvertDataToUniversal(filteredItems);
-            return new ObservableCollection<FeedModel>(listOfUniversalModels);
+            return new ObservableRangeCollection<FeedModel>(listOfUniversalModels);
         }
     }
 }

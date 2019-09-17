@@ -126,6 +126,9 @@
   <data name="categories" xml:space="preserve">
     <value>Категории</value>
   </data>
+  <data name="filter" xml:space="preserve">
+    <value>Категории</value>
+  </data>
   <data name="info" xml:space="preserve">
     <value>О приложении</value>
   </data>

@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -33,42 +34,37 @@ namespace TomskGO.Providers
             RequestData = requestData;
         }
 
-        public List<FeedModel> ConvertDataToUniversal(Post[] dataList)
+        public IEnumerable<FeedModel> ConvertDataToUniversal(Post[] dataList)
         {
-            var localList = new List<FeedModel>();
-            for (int i = 0; i < dataList.Length; i++)
-            {
-                localList.Add(new FeedModel
+                return dataList.Select(item => new FeedModel
                 {
-                    ShortDescription = dataList[i].Text.Length >= 165 ? dataList[i].Text.Substring(0, 130) + "..." : dataList[i].Text,
+                    ShortDescription = item.Text.Length >= 165 ? item.Text.Substring(0, 130) + "..." : item.Text,
                     SourceLabel = ProviderData.Name,
-                    FullText = dataList[i].Text,
-                    Date = new DateTime(1970, 1, 1, 0, 0, 0, 0, System.DateTimeKind.Utc).AddSeconds(dataList[i].Date).ToLocalTime(),
-                    PreviewSource = dataList[i].Attachments?.FirstOrDefault(x => x.Photo != null)?.Photo.Sizes.FirstOrDefault(x => x.Type == "p").Url,
-                    Tags = CreateTags(dataList[i]),
+                    FullText = item.Text,
+                    Date = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(item.Date).ToLocalTime(),
+                    PreviewSource = item.Attachments?.FirstOrDefault(x => x.Photo != null)?.Photo.Sizes.FirstOrDefault(x => x.Type == "p").Url,
+                    Tags = CreateTags(item),
                     Attachments = new FeedModel.Attachment
                     {
-                        Audios = dataList[i].Attachments?.Where(x => x.Audio != null)?.Select(x => new FeedModel.Attachment.Audio()
+                        Audios = item.Attachments?.Where(x => x.Audio != null)?.Select(x => new FeedModel.Attachment.Audio()
                         {
                             Artists = x.Audio.MainArtists.Select(a => a.Name).ToList()
                         }).ToList(),
-                        Links = dataList[i].Attachments?.Where(x => x.Link != null)?.Select(x => new FeedModel.Attachment.Link()
+                        Links = item.Attachments?.Where(x => x.Link != null)?.Select(x => new FeedModel.Attachment.Link()
                         {
                             Title = x.Link.Title,
                             Url = x.Link.Url
                         }).ToList(),
-                        Photos = dataList[i].Attachments?.Where(x => x.Photo != null)?.Select(x => new FeedModel.Attachment.Photo()
+                        Photos = item.Attachments?.Where(x => x.Photo != null)?.Select(x => new FeedModel.Attachment.Photo()
                         {
                             ImageSource = x.Photo.Sizes.FirstOrDefault(s => s.Type == "q").Url
                         }).ToList(),
-                        AudiosVisible = dataList[i].Attachments?.Where(x => x.Audio != null).Count() > 0,
-                        PhotosVisible = dataList[i].Attachments?.Where(x => x.Photo != null).Count() > 0,
-                        LinksVisible = dataList[i].Attachments?.Where(x => x.Link != null).Count() > 0
+                        AudiosVisible = item.Attachments?.Where(x => x.Audio != null).Count() > 0,
+                        PhotosVisible = item.Attachments?.Where(x => x.Photo != null).Count() > 0,
+                        LinksVisible = item.Attachments?.Where(x => x.Link != null).Count() > 0
                     },
-                    AttachmentsVisible = dataList[i].Attachments.Any(x => x.Photo != null || x.Link != null || x.Audio != null)
+                    AttachmentsVisible = item.Attachments.Any(x => x.Photo != null || x.Link != null || x.Audio != null)
                 });
-            }
-            return localList;
         }
 
         public List<string> CreateTags(Post post)
@@ -92,15 +88,14 @@ namespace TomskGO.Providers
             return dataList.Where(x => x.Text.Contains(filterStr)).ToArray();
         }
 
-        public override async Task<ObservableRangeCollection<FeedModel>> ProvideData()
+        public override async Task<IEnumerable<FeedModel>> ProvideData()
         {
             var formattedUrl = string.Format(ProviderData.ProvisionUrl, RequestData.access_token, RequestData.owner_id, RequestData.filter, RequestData.extended, RequestData.version);
             var response = await SendAsync(formattedUrl, HttpMethod.Get);
             var responseObj = JObject.Parse(response);
             var listVKModels = responseObj.SelectToken("response").ToObject<VKFeedModel>().Items;
             var filteredItems = Filter(listVKModels);
-            var listOfUniversalModels = ConvertDataToUniversal(filteredItems);
-            return new ObservableRangeCollection<FeedModel>(listOfUniversalModels);
+            return ConvertDataToUniversal(filteredItems);
         }
     }
 }

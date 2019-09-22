@@ -164,7 +164,7 @@
     <PackageReference Include="Xamarin.FFImageLoading.Transformations">
       <Version>2.4.11.982</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Forms" Version="4.2.0.778463" />
+    <PackageReference Include="Xamarin.Forms" Version="4.2.0.815419" />
     <PackageReference Include="XamEffects">
       <Version>1.6.3</Version>
     </PackageReference>

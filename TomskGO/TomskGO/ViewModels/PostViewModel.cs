@@ -49,7 +49,8 @@ namespace TomskGO.ViewModels
 
         private async Task OpenFilterAsync(string tagName)
         {
-            await Shell.Current.GoToAsync("//filter?tagName=" + tagName);
+            var modified = Uri.EscapeDataString(tagName);
+            await Shell.Current.GoToAsync("//filter?tagName=" + modified);
         }
 
         private async Task NavigateBackAsync()

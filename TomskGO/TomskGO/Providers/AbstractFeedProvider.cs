@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using TomskGO.Models;
@@ -11,7 +12,7 @@ namespace TomskGO.Providers
 
         protected override Uri BaseAddress => new Uri(ProviderData?.BaseUrl);
 
-        public abstract Task<ObservableRangeCollection<FeedModel>> ProvideData();
+        public abstract Task<IEnumerable<FeedModel>> ProvideData();
 
         #region Auto-implemented
         public event PropertyChangedEventHandler PropertyChanged;

@@ -18,7 +18,6 @@ namespace TomskGO.ViewModels
         private ObservableRangeCollection<FeedModel> _posts;
         private ObservableRangeCollection<FeedModel> _filteredPosts;
         private ObservableRangeCollection<Tag> _tags;
-        private bool isBusy = false;
 
         public List<AbstractFeedProvider> Providers
         {
@@ -35,7 +34,7 @@ namespace TomskGO.ViewModels
             get => _posts;
             set
             {
-                if(value.Count > 0) IsBusy = true;
+                if(value.Count > 0)
                 _posts = value;
                 OnPropertyChanged();
             }
@@ -61,19 +60,8 @@ namespace TomskGO.ViewModels
             }
         }
 
-        public bool IsBusy
-        {
-            get => isBusy;
-            private set
-            {
-                isBusy = value;
-                OnPropertyChanged();
-            }
-        }
-
         public NewsFeedViewModel()
         {
-            Posts = new ObservableRangeCollection<FeedModel>();
             Providers = new List<AbstractFeedProvider>
             {
                 new VKProvider(new VKRequestModel
@@ -92,12 +80,15 @@ namespace TomskGO.ViewModels
             new Command<FeedModel>(f => TaskManager.Instance.RegisterTask(() => NavigatePost(f), true, isUIRelated: true));
         public ICommand FilterPostsCommand =>
             new Command<string>(t => TaskManager.Instance.RegisterTask(() => FilterPosts(t), true));
+        public ICommand ChangeTagSelectionCommand =>
+            new Command<Tag>(t => TaskManager.Instance.RegisterTask(() => ChangeTagSelection(t), true));
 
         private async Task RefreshFeedAsync()
         {
-            foreach(var provider in Providers)
+            foreach (var provider in Providers)
             {
-                Posts = new ObservableRangeCollection<FeedModel>(Posts.Concat(await provider.ProvideData()));
+                var data = await provider.ProvideData();
+                Posts = new ObservableRangeCollection<FeedModel>(data);
             }
             Tags = new ObservableRangeCollection<Tag>(Posts.SelectMany(x => x.Tags.Select(t => new Tag { Name = t })).Distinct());
             FilteredPosts = Posts;
@@ -106,8 +97,16 @@ namespace TomskGO.ViewModels
         private void FilterPosts(string t)
         {
             if (Posts == null) return;
-            FilteredPosts = new ObservableRangeCollection<FeedModel>(Posts.Where(x => x.Tags.Any(tag => tag == t)));
+            FilteredPosts = new ObservableRangeCollection<FeedModel>(Posts
+                .Where(x => x.Tags.Any(tag => tag == t)));
             Tags.FirstOrDefault(x => x.Name == t).Selected = true;
+        }
+
+        private void ChangeTagSelection(Tag t)
+        {
+            t.Selected = !t.Selected;
+            FilteredPosts = new ObservableRangeCollection<FeedModel>(Posts
+                .TakeWhile(p => p.Tags.Any(tag => Tags.Any(x => x.Selected && x.Name == tag))));
         }
 
         private async void NavigatePost(FeedModel item)

@@ -12,6 +12,7 @@
     <ContentPage.Resources>
         <converters:DetagifyConverter x:Key="detagify"/>
         <converters:InverseBoolConverter x:Key="inverseBool"/>
+        <converters:BoolToColor x:Key="boolToColor"/>
     </ContentPage.Resources>
     <CollectionView ItemsSource="{Binding FilteredPosts}" SelectionMode="None" ItemSizingStrategy="MeasureAllItems">
         <CollectionView.ItemsLayout>
@@ -26,8 +27,11 @@
                     AlignContent="Start" BindableLayout.ItemsSource="{Binding Source={x:Reference filter}, Path=BindingContext.Tags}" HeightRequest="50">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
-                            <ui:MaterialButton ButtonType="Elevated" Padding="12,3" TextColor="White"
-                                               CornerRadius="16" Text="{Binding Name}" FontSize="12"/>
+                            <ui:MaterialButton ButtonType="Elevated" Padding="12,3" CornerRadius="16" TextColor="Black"
+                                               AllCaps="True" BorderWidth="1" BorderColor="Accent" Text="{Binding Name}" FontSize="12"
+                                               BackgroundColor="{Binding Selected, Converter={x:StaticResource boolToColor}}"
+                                               Command="{Binding Source={x:Reference filter}, Path=BindingContext.ChangeTagSelectionCommand, Mode=OneTime}"
+                                               CommandParameter="{Binding .}"/>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </FlexLayout>

@@ -2,7 +2,6 @@
 using Android.Content.PM;
 using Android.OS;
 using FFImageLoading.Forms.Platform;
-using Sharpnado.Presentation.Forms.Droid;
 using AGlide = Android.Glide;
 
 namespace TomskGO.Droid
@@ -24,7 +23,6 @@ namespace TomskGO.Droid
             XF.Material.Droid.Material.Init(this, savedInstanceState);
             Stormlion.PhotoBrowser.Droid.Platform.Init(this);
             CachedImageRenderer.Init(true);
-            SharpnadoInitializer.Initialize();
             _ = typeof(FFImageLoading.Svg.Forms.SvgCachedImage);
             LoadApplication(new App());
         }

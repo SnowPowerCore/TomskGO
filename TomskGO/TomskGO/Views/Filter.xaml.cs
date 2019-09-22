@@ -10,20 +10,19 @@ namespace TomskGO.Views
         public string TagName
         {
             get => _tagName;
-            set => _tagName = Uri.UnescapeDataString(value);
+            set
+            {
+                var data = Uri.UnescapeDataString(value);
+                if (!string.IsNullOrEmpty(data))
+                    Managers.CacheManager.NewsFeed.FilterPostsCommand?.Execute(data);
+                _tagName = data;
+            }
         }
 
         public Filter()
         {
             InitializeComponent();
             BindingContext = Managers.CacheManager.NewsFeed;
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            if (!string.IsNullOrEmpty(TagName))
-                Managers.CacheManager.NewsFeed.FilterPostsCommand?.Execute(TagName);
         }
     }
 }

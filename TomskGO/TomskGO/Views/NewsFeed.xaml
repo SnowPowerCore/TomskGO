@@ -19,8 +19,8 @@
         <CollectionView.Header>
             <StackLayout Orientation="Horizontal" Padding="25,10,0,0">
                 <ui:MaterialLabel FontSize="26" FontAttributes="Bold" Style="{x:StaticResource themeTextCaption}" Text="Добро пожаловать!"/>
-                <ui:MaterialIconButton Style="{x:StaticResource themeSelectorButton}" HorizontalOptions="End" ButtonType="Text"
-                                        Command="{x:Static managers:CacheManager.SwitchThemeCommand}"/>
+                <ImageButton Style="{x:StaticResource themeSelectorButton}" HorizontalOptions="End"
+                             Command="{x:Static managers:CacheManager.SwitchThemeCommand}"/>
             </StackLayout>
         </CollectionView.Header>
         <CollectionView.ItemTemplate>

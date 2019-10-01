@@ -18,6 +18,7 @@ namespace TomskGO.ViewModels
         private ObservableRangeCollection<FeedModel> _posts;
         private ObservableRangeCollection<FeedModel> _filteredPosts;
         private ObservableRangeCollection<Tag> _tags;
+        private ObservableRangeCollection<Tag> _selectedTags;
 
         public List<AbstractFeedProvider> Providers
         {
@@ -60,6 +61,16 @@ namespace TomskGO.ViewModels
             }
         }
 
+        public ObservableRangeCollection<Tag> SelectedTags
+        {
+            get => _selectedTags;
+            set
+            {
+                _selectedTags = value;
+                OnPropertyChanged();
+            }
+        }
+
         public NewsFeedViewModel()
         {
             Providers = new List<AbstractFeedProvider>
@@ -86,11 +97,11 @@ namespace TomskGO.ViewModels
         private async Task RefreshFeedAsync()
         {
             foreach (var provider in Providers)
-            {
-                var data = await provider.ProvideData();
-                Posts = new ObservableRangeCollection<FeedModel>(data);
-            }
-            Tags = new ObservableRangeCollection<Tag>(Posts.SelectMany(x => x.Tags.Select(t => new Tag { Name = t })).Distinct());
+                Posts = new ObservableRangeCollection<FeedModel>(await provider.ProvideData());
+            Tags = new ObservableRangeCollection<Tag>(Posts
+                .SelectMany(t => t.Tags)
+                .Distinct()
+                .Select(x => new Tag { Name = x }));
             FilteredPosts = Posts;
         }
 
@@ -99,14 +110,35 @@ namespace TomskGO.ViewModels
             if (Posts == null) return;
             FilteredPosts = new ObservableRangeCollection<FeedModel>(Posts
                 .Where(x => x.Tags.Any(tag => tag == t)));
-            Tags.FirstOrDefault(x => x.Name == t).Selected = true;
+            var searchedTag = Tags.FirstOrDefault(x => x.Name == t);
+            searchedTag.Selected = true;
+            SelectedTags = new ObservableRangeCollection<Tag> { searchedTag };
         }
 
         private void ChangeTagSelection(Tag t)
         {
-            t.Selected = !t.Selected;
+            if (t.Selected)
+            {
+                if (SelectedTags.Contains(t))
+                {
+                    SelectedTags.Remove(t);
+                    t.Selected = false;
+                }
+            }
+            else
+            {
+                SelectedTags.Add(t);
+                t.Selected = true;
+            }
+
+            if (SelectedTags.Count == 0)
+            {
+                FilteredPosts = Posts;
+                return;
+            }
+
             FilteredPosts = new ObservableRangeCollection<FeedModel>(Posts
-                .TakeWhile(p => p.Tags.Any(tag => Tags.Any(x => x.Selected && x.Name == tag))));
+                .Where(x => x.Tags.Any(tag => SelectedTags.Any(s => s.Name == tag))));
         }
 
         private async void NavigatePost(FeedModel item)

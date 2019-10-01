@@ -9,5 +9,12 @@
     <Color x:Key="themeTextCaptionColor">White</Color>
     <Color x:Key="themeBoxViewColor">#1E1E1E</Color>
     <x:String x:Key="themeSwitchIcon">sun.png</x:String>
-    <x:String x:Key="backBtn">back_white.png</x:String>
+    <FontImageSource x:Key="backBtn" Glyph="&#xe7ea;" Color="White">
+        <FontImageSource.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+                <On Platform="iOS" Value="SegoeMDL2" />
+                <On Platform="Android" Value="SegoeMDL2.ttf#Segoe MDL2 Assets" />
+            </OnPlatform>
+        </FontImageSource.FontFamily>
+    </FontImageSource>
 </ResourceDictionary>

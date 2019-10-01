@@ -7,7 +7,14 @@
     <Color x:Key="themeTextColor">DimGray</Color>
     <Color x:Key="themeTextSecondaryColor">SlateGray</Color>
     <Color x:Key="themeTextCaptionColor">Black</Color>
-    <Color x:Key="themeBoxViewColor">#White</Color>
+    <Color x:Key="themeBoxViewColor">White</Color>
     <x:String x:Key="themeSwitchIcon">moon.png</x:String>
-    <x:String x:Key="backBtn">back.png</x:String>
+    <FontImageSource x:Key="backBtn" Glyph="&#xe7ea;" Color="Black">
+        <FontImageSource.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+                <On Platform="iOS" Value="SegoeMDL2" />
+                <On Platform="Android" Value="SegoeMDL2.ttf#Segoe MDL2 Assets" />
+            </OnPlatform>
+        </FontImageSource.FontFamily>
+    </FontImageSource>
 </ResourceDictionary>

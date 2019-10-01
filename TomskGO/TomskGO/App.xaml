@@ -26,8 +26,8 @@
         <Style x:Key="cardBackground" TargetType="Grid">
             <Setter Property="BackgroundColor" Value="{x:DynamicResource cardBackgroundColor}"/>
         </Style>
-        <Style x:Key="themeSelectorButton" TargetType="ui:MaterialIconButton">
-            <Setter Property="Image" Value="{x:DynamicResource themeSwitchIcon}"/>
+        <Style x:Key="themeSelectorButton" TargetType="ImageButton">
+            <Setter Property="Source" Value="{x:DynamicResource themeSwitchIcon}"/>
         </Style>
         <Style x:Key="backButton" TargetType="Image">
             <Setter Property="Source" Value="{x:DynamicResource backBtn}"/>

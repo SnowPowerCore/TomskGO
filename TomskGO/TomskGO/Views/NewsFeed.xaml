@@ -17,10 +17,9 @@
             <ListItemsLayout ItemSpacing="10" Orientation="Vertical"/>
         </CollectionView.ItemsLayout>
         <CollectionView.Header>
-            <StackLayout Orientation="Horizontal" Padding="25,10,0,0">
-                <ui:MaterialLabel FontSize="26" FontAttributes="Bold" Style="{x:StaticResource themeTextCaption}" Text="Добро пожаловать!"/>
-                <ImageButton Style="{x:StaticResource themeSelectorButton}" HorizontalOptions="End"
-                             Command="{x:Static managers:CacheManager.SwitchThemeCommand}"/>
+            <StackLayout Padding="25,10,25,0">
+                <ui:MaterialLabel FontSize="26" FontAttributes="Bold" 
+                    Style="{x:StaticResource themeText}" Text="Добро пожаловать!"/>
             </StackLayout>
         </CollectionView.Header>
         <CollectionView.ItemTemplate>

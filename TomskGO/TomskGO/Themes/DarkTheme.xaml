@@ -8,13 +8,52 @@
     <Color x:Key="themeTextSecondaryColor">GhostWhite</Color>
     <Color x:Key="themeTextCaptionColor">White</Color>
     <Color x:Key="themeBoxViewColor">#1E1E1E</Color>
-    <x:String x:Key="themeSwitchIcon">sun.png</x:String>
-    <FontImageSource x:Key="backBtn" Glyph="&#xe7ea;" Color="White">
-        <FontImageSource.FontFamily>
+    <FontImage x:Key="themeSwitchIcon" Glyph="&#xe708;" Color="White">
+        <FontImageExtension.FontFamily>
             <OnPlatform x:TypeArguments="x:String">
                 <On Platform="iOS" Value="SegoeMDL2" />
                 <On Platform="Android" Value="SegoeMDL2.ttf#Segoe MDL2 Assets" />
             </OnPlatform>
-        </FontImageSource.FontFamily>
-    </FontImageSource>
+        </FontImageExtension.FontFamily>
+    </FontImage>
+    <FontImage x:Key="backBtn" Glyph="&#xe7ea;" Color="White">
+        <FontImageExtension.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+                <On Platform="iOS" Value="SegoeMDL2" />
+                <On Platform="Android" Value="SegoeMDL2.ttf#Segoe MDL2 Assets" />
+            </OnPlatform>
+        </FontImageExtension.FontFamily>
+    </FontImage>
+    <FontImage x:Key="newsIcon" Glyph="&#xe12a;" Color="White">
+        <FontImageExtension.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+                <On Platform="iOS" Value="SegoeMDL2" />
+                <On Platform="Android" Value="SegoeMDL2.ttf#Segoe MDL2 Assets" />
+            </OnPlatform>
+        </FontImageExtension.FontFamily>
+    </FontImage>
+    <FontImage x:Key="filterIcon" Glyph="&#xe16e;" Color="White">
+        <FontImageExtension.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+                <On Platform="iOS" Value="SegoeMDL2" />
+                <On Platform="Android" Value="SegoeMDL2.ttf#Segoe MDL2 Assets" />
+            </OnPlatform>
+        </FontImageExtension.FontFamily>
+    </FontImage>
+    <FontImage x:Key="infoIcon" Glyph="&#xe783;" Color="White">
+        <FontImageExtension.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+                <On Platform="iOS" Value="SegoeMDL2" />
+                <On Platform="Android" Value="SegoeMDL2.ttf#Segoe MDL2 Assets" />
+            </OnPlatform>
+        </FontImageExtension.FontFamily>
+    </FontImage>
+    <FontImage x:Key="settingsIcon" Glyph="&#xe115;" Color="White">
+        <FontImageExtension.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+                <On Platform="iOS" Value="SegoeMDL2" />
+                <On Platform="Android" Value="SegoeMDL2.ttf#Segoe MDL2 Assets" />
+            </OnPlatform>
+        </FontImageExtension.FontFamily>
+    </FontImage>
 </ResourceDictionary>

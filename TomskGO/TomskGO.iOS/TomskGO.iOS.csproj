@@ -151,7 +151,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CardsView">
-      <Version>2.3.2</Version>
+      <Version>2.3.3</Version>
     </PackageReference>
     <PackageReference Include="FFImageLoading.ImageSourceHandler">
       <Version>1.0.0</Version>

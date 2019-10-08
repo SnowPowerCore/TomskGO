@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+             Shell.NavBarIsVisible="False"
+             Style="{x:StaticResource themeBackground}"
+             x:Class="TomskGO.Views.About">
+    <StackLayout Spacing="5" VerticalOptions="Center" HorizontalOptions="Center">
+        <Image Source="icon.png" HeightRequest="64"/>
+        <ui:MaterialLabel FontSize="Medium" Style="{x:StaticResource themeText}">
+            <ui:MaterialLabel.FormattedText>
+                <FormattedString>
+                    <Span Text="Tomsk GO!"/>
+                    <Span Text=" "/>
+                    <Span Text="ALPHA" TextColor="SlateGray"/>
+                </FormattedString>
+            </ui:MaterialLabel.FormattedText>
+        </ui:MaterialLabel>
+    </StackLayout>
+</ContentPage>

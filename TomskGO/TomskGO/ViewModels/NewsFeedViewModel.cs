@@ -103,6 +103,7 @@ namespace TomskGO.ViewModels
                 .Distinct()
                 .Select(x => new Tag { Name = x }));
             FilteredPosts = Posts;
+            SelectedTags = new ObservableRangeCollection<Tag>();
         }
 
         private void FilterPosts(string t)
@@ -145,7 +146,7 @@ namespace TomskGO.ViewModels
         {
             var serialized = JsonConvert.SerializeObject(item);
             var modified = Uri.EscapeDataString(serialized);
-            await Shell.Current.GoToAsync("//news/post?feedData="+modified);
+            await Shell.Current.GoToAsync("post?feedData="+modified);
         }
 
         #region Auto-implemented

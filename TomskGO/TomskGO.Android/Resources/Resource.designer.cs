@@ -2656,6 +2656,10 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Animation.design_bottom_sheet_slide_out = global::TomskGO.Droid.Resource.Animation.design_bottom_sheet_slide_out;
 			global::PanCardView.Droid.Resource.Animation.design_snackbar_in = global::TomskGO.Droid.Resource.Animation.design_snackbar_in;
 			global::PanCardView.Droid.Resource.Animation.design_snackbar_out = global::TomskGO.Droid.Resource.Animation.design_snackbar_out;
+			global::PanCardView.Droid.Resource.Animation.EnterFromLeft = global::TomskGO.Droid.Resource.Animation.EnterFromLeft;
+			global::PanCardView.Droid.Resource.Animation.EnterFromRight = global::TomskGO.Droid.Resource.Animation.EnterFromRight;
+			global::PanCardView.Droid.Resource.Animation.ExitToLeft = global::TomskGO.Droid.Resource.Animation.ExitToLeft;
+			global::PanCardView.Droid.Resource.Animation.ExitToRight = global::TomskGO.Droid.Resource.Animation.ExitToRight;
 			global::PanCardView.Droid.Resource.Animator.design_appbar_state_list_animator = global::TomskGO.Droid.Resource.Animator.design_appbar_state_list_animator;
 			global::PanCardView.Droid.Resource.Animator.design_fab_hide_motion_spec = global::TomskGO.Droid.Resource.Animator.design_fab_hide_motion_spec;
 			global::PanCardView.Droid.Resource.Animator.design_fab_show_motion_spec = global::TomskGO.Droid.Resource.Animator.design_fab_show_motion_spec;
@@ -2727,8 +2731,8 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Attribute.behavior_overlapTop = global::TomskGO.Droid.Resource.Attribute.behavior_overlapTop;
 			global::PanCardView.Droid.Resource.Attribute.behavior_peekHeight = global::TomskGO.Droid.Resource.Attribute.behavior_peekHeight;
 			global::PanCardView.Droid.Resource.Attribute.behavior_skipCollapsed = global::TomskGO.Droid.Resource.Attribute.behavior_skipCollapsed;
-			global::PanCardView.Droid.Resource.Attribute.borderlessButtonStyle = global::TomskGO.Droid.Resource.Attribute.borderlessButtonStyle;
 			global::PanCardView.Droid.Resource.Attribute.borderWidth = global::TomskGO.Droid.Resource.Attribute.borderWidth;
+			global::PanCardView.Droid.Resource.Attribute.borderlessButtonStyle = global::TomskGO.Droid.Resource.Attribute.borderlessButtonStyle;
 			global::PanCardView.Droid.Resource.Attribute.bottomAppBarStyle = global::TomskGO.Droid.Resource.Attribute.bottomAppBarStyle;
 			global::PanCardView.Droid.Resource.Attribute.bottomNavigationStyle = global::TomskGO.Droid.Resource.Attribute.bottomNavigationStyle;
 			global::PanCardView.Droid.Resource.Attribute.bottomSheetDialogTheme = global::TomskGO.Droid.Resource.Attribute.bottomSheetDialogTheme;
@@ -2794,9 +2798,9 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Attribute.closeIconVisible = global::TomskGO.Droid.Resource.Attribute.closeIconVisible;
 			global::PanCardView.Droid.Resource.Attribute.closeItemLayout = global::TomskGO.Droid.Resource.Attribute.closeItemLayout;
 			global::PanCardView.Droid.Resource.Attribute.collapseContentDescription = global::TomskGO.Droid.Resource.Attribute.collapseContentDescription;
+			global::PanCardView.Droid.Resource.Attribute.collapseIcon = global::TomskGO.Droid.Resource.Attribute.collapseIcon;
 			global::PanCardView.Droid.Resource.Attribute.collapsedTitleGravity = global::TomskGO.Droid.Resource.Attribute.collapsedTitleGravity;
 			global::PanCardView.Droid.Resource.Attribute.collapsedTitleTextAppearance = global::TomskGO.Droid.Resource.Attribute.collapsedTitleTextAppearance;
-			global::PanCardView.Droid.Resource.Attribute.collapseIcon = global::TomskGO.Droid.Resource.Attribute.collapseIcon;
 			global::PanCardView.Droid.Resource.Attribute.color = global::TomskGO.Droid.Resource.Attribute.color;
 			global::PanCardView.Droid.Resource.Attribute.colorAccent = global::TomskGO.Droid.Resource.Attribute.colorAccent;
 			global::PanCardView.Droid.Resource.Attribute.colorBackgroundFloating = global::TomskGO.Droid.Resource.Attribute.colorBackgroundFloating;
@@ -2842,8 +2846,8 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Attribute.dividerVertical = global::TomskGO.Droid.Resource.Attribute.dividerVertical;
 			global::PanCardView.Droid.Resource.Attribute.drawableSize = global::TomskGO.Droid.Resource.Attribute.drawableSize;
 			global::PanCardView.Droid.Resource.Attribute.drawerArrowStyle = global::TomskGO.Droid.Resource.Attribute.drawerArrowStyle;
-			global::PanCardView.Droid.Resource.Attribute.dropdownListPreferredItemHeight = global::TomskGO.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
 			global::PanCardView.Droid.Resource.Attribute.dropDownListViewStyle = global::TomskGO.Droid.Resource.Attribute.dropDownListViewStyle;
+			global::PanCardView.Droid.Resource.Attribute.dropdownListPreferredItemHeight = global::TomskGO.Droid.Resource.Attribute.dropdownListPreferredItemHeight;
 			global::PanCardView.Droid.Resource.Attribute.editTextBackground = global::TomskGO.Droid.Resource.Attribute.editTextBackground;
 			global::PanCardView.Droid.Resource.Attribute.editTextColor = global::TomskGO.Droid.Resource.Attribute.editTextColor;
 			global::PanCardView.Droid.Resource.Attribute.editTextStyle = global::TomskGO.Droid.Resource.Attribute.editTextStyle;
@@ -2906,12 +2910,12 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Attribute.icon = global::TomskGO.Droid.Resource.Attribute.icon;
 			global::PanCardView.Droid.Resource.Attribute.iconEndPadding = global::TomskGO.Droid.Resource.Attribute.iconEndPadding;
 			global::PanCardView.Droid.Resource.Attribute.iconGravity = global::TomskGO.Droid.Resource.Attribute.iconGravity;
-			global::PanCardView.Droid.Resource.Attribute.iconifiedByDefault = global::TomskGO.Droid.Resource.Attribute.iconifiedByDefault;
 			global::PanCardView.Droid.Resource.Attribute.iconPadding = global::TomskGO.Droid.Resource.Attribute.iconPadding;
 			global::PanCardView.Droid.Resource.Attribute.iconSize = global::TomskGO.Droid.Resource.Attribute.iconSize;
 			global::PanCardView.Droid.Resource.Attribute.iconStartPadding = global::TomskGO.Droid.Resource.Attribute.iconStartPadding;
 			global::PanCardView.Droid.Resource.Attribute.iconTint = global::TomskGO.Droid.Resource.Attribute.iconTint;
 			global::PanCardView.Droid.Resource.Attribute.iconTintMode = global::TomskGO.Droid.Resource.Attribute.iconTintMode;
+			global::PanCardView.Droid.Resource.Attribute.iconifiedByDefault = global::TomskGO.Droid.Resource.Attribute.iconifiedByDefault;
 			global::PanCardView.Droid.Resource.Attribute.imageButtonStyle = global::TomskGO.Droid.Resource.Attribute.imageButtonStyle;
 			global::PanCardView.Droid.Resource.Attribute.indeterminateProgressStyle = global::TomskGO.Droid.Resource.Attribute.indeterminateProgressStyle;
 			global::PanCardView.Droid.Resource.Attribute.initialActivityCount = global::TomskGO.Droid.Resource.Attribute.initialActivityCount;
@@ -3128,9 +3132,9 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Attribute.titleMargin = global::TomskGO.Droid.Resource.Attribute.titleMargin;
 			global::PanCardView.Droid.Resource.Attribute.titleMarginBottom = global::TomskGO.Droid.Resource.Attribute.titleMarginBottom;
 			global::PanCardView.Droid.Resource.Attribute.titleMarginEnd = global::TomskGO.Droid.Resource.Attribute.titleMarginEnd;
-			global::PanCardView.Droid.Resource.Attribute.titleMargins = global::TomskGO.Droid.Resource.Attribute.titleMargins;
 			global::PanCardView.Droid.Resource.Attribute.titleMarginStart = global::TomskGO.Droid.Resource.Attribute.titleMarginStart;
 			global::PanCardView.Droid.Resource.Attribute.titleMarginTop = global::TomskGO.Droid.Resource.Attribute.titleMarginTop;
+			global::PanCardView.Droid.Resource.Attribute.titleMargins = global::TomskGO.Droid.Resource.Attribute.titleMargins;
 			global::PanCardView.Droid.Resource.Attribute.titleTextAppearance = global::TomskGO.Droid.Resource.Attribute.titleTextAppearance;
 			global::PanCardView.Droid.Resource.Attribute.titleTextColor = global::TomskGO.Droid.Resource.Attribute.titleTextColor;
 			global::PanCardView.Droid.Resource.Attribute.titleTextStyle = global::TomskGO.Droid.Resource.Attribute.titleTextStyle;
@@ -3197,6 +3201,10 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Color.bright_foreground_inverse_material_light = global::TomskGO.Droid.Resource.Color.bright_foreground_inverse_material_light;
 			global::PanCardView.Droid.Resource.Color.bright_foreground_material_dark = global::TomskGO.Droid.Resource.Color.bright_foreground_material_dark;
 			global::PanCardView.Droid.Resource.Color.bright_foreground_material_light = global::TomskGO.Droid.Resource.Color.bright_foreground_material_light;
+			global::PanCardView.Droid.Resource.Color.browser_actions_bg_grey = global::TomskGO.Droid.Resource.Color.browser_actions_bg_grey;
+			global::PanCardView.Droid.Resource.Color.browser_actions_divider_color = global::TomskGO.Droid.Resource.Color.browser_actions_divider_color;
+			global::PanCardView.Droid.Resource.Color.browser_actions_text_color = global::TomskGO.Droid.Resource.Color.browser_actions_text_color;
+			global::PanCardView.Droid.Resource.Color.browser_actions_title_color = global::TomskGO.Droid.Resource.Color.browser_actions_title_color;
 			global::PanCardView.Droid.Resource.Color.button_material_dark = global::TomskGO.Droid.Resource.Color.button_material_dark;
 			global::PanCardView.Droid.Resource.Color.button_material_light = global::TomskGO.Droid.Resource.Color.button_material_light;
 			global::PanCardView.Droid.Resource.Color.cardview_dark_background = global::TomskGO.Droid.Resource.Color.cardview_dark_background;
@@ -3259,11 +3267,11 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Color.mtrl_tabs_icon_color_selector_colored = global::TomskGO.Droid.Resource.Color.mtrl_tabs_icon_color_selector_colored;
 			global::PanCardView.Droid.Resource.Color.mtrl_tabs_legacy_text_color_selector = global::TomskGO.Droid.Resource.Color.mtrl_tabs_legacy_text_color_selector;
 			global::PanCardView.Droid.Resource.Color.mtrl_tabs_ripple_color = global::TomskGO.Droid.Resource.Color.mtrl_tabs_ripple_color;
+			global::PanCardView.Droid.Resource.Color.mtrl_text_btn_text_color_selector = global::TomskGO.Droid.Resource.Color.mtrl_text_btn_text_color_selector;
 			global::PanCardView.Droid.Resource.Color.mtrl_textinput_default_box_stroke_color = global::TomskGO.Droid.Resource.Color.mtrl_textinput_default_box_stroke_color;
 			global::PanCardView.Droid.Resource.Color.mtrl_textinput_disabled_color = global::TomskGO.Droid.Resource.Color.mtrl_textinput_disabled_color;
 			global::PanCardView.Droid.Resource.Color.mtrl_textinput_filled_box_default_background_color = global::TomskGO.Droid.Resource.Color.mtrl_textinput_filled_box_default_background_color;
 			global::PanCardView.Droid.Resource.Color.mtrl_textinput_hovered_box_stroke_color = global::TomskGO.Droid.Resource.Color.mtrl_textinput_hovered_box_stroke_color;
-			global::PanCardView.Droid.Resource.Color.mtrl_text_btn_text_color_selector = global::TomskGO.Droid.Resource.Color.mtrl_text_btn_text_color_selector;
 			global::PanCardView.Droid.Resource.Color.notification_action_color_filter = global::TomskGO.Droid.Resource.Color.notification_action_color_filter;
 			global::PanCardView.Droid.Resource.Color.notification_icon_bg_color = global::TomskGO.Droid.Resource.Color.notification_icon_bg_color;
 			global::PanCardView.Droid.Resource.Color.notification_material_background_media_default_color = global::TomskGO.Droid.Resource.Color.notification_material_background_media_default_color;
@@ -3364,6 +3372,8 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar = global::TomskGO.Droid.Resource.Dimension.abc_text_size_subtitle_material_toolbar;
 			global::PanCardView.Droid.Resource.Dimension.abc_text_size_title_material = global::TomskGO.Droid.Resource.Dimension.abc_text_size_title_material;
 			global::PanCardView.Droid.Resource.Dimension.abc_text_size_title_material_toolbar = global::TomskGO.Droid.Resource.Dimension.abc_text_size_title_material_toolbar;
+			global::PanCardView.Droid.Resource.Dimension.browser_actions_context_menu_max_width = global::TomskGO.Droid.Resource.Dimension.browser_actions_context_menu_max_width;
+			global::PanCardView.Droid.Resource.Dimension.browser_actions_context_menu_min_padding = global::TomskGO.Droid.Resource.Dimension.browser_actions_context_menu_min_padding;
 			global::PanCardView.Droid.Resource.Dimension.cardview_compat_inset_shadow = global::TomskGO.Droid.Resource.Dimension.cardview_compat_inset_shadow;
 			global::PanCardView.Droid.Resource.Dimension.cardview_default_elevation = global::TomskGO.Droid.Resource.Dimension.cardview_default_elevation;
 			global::PanCardView.Droid.Resource.Dimension.cardview_default_radius = global::TomskGO.Droid.Resource.Dimension.cardview_default_radius;
@@ -3585,11 +3595,6 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha = global::TomskGO.Droid.Resource.Drawable.abc_switch_track_mtrl_alpha;
 			global::PanCardView.Droid.Resource.Drawable.abc_tab_indicator_material = global::TomskGO.Droid.Resource.Drawable.abc_tab_indicator_material;
 			global::PanCardView.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha = global::TomskGO.Droid.Resource.Drawable.abc_tab_indicator_mtrl_alpha;
-			global::PanCardView.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::TomskGO.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
-			global::PanCardView.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::TomskGO.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha;
-			global::PanCardView.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::TomskGO.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
-			global::PanCardView.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::TomskGO.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
-			global::PanCardView.Droid.Resource.Drawable.abc_textfield_search_material = global::TomskGO.Droid.Resource.Drawable.abc_textfield_search_material;
 			global::PanCardView.Droid.Resource.Drawable.abc_text_cursor_material = global::TomskGO.Droid.Resource.Drawable.abc_text_cursor_material;
 			global::PanCardView.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_dark = global::TomskGO.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_dark;
 			global::PanCardView.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_light = global::TomskGO.Droid.Resource.Drawable.abc_text_select_handle_left_mtrl_light;
@@ -3597,9 +3602,20 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_light = global::TomskGO.Droid.Resource.Drawable.abc_text_select_handle_middle_mtrl_light;
 			global::PanCardView.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_dark = global::TomskGO.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_dark;
 			global::PanCardView.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_light = global::TomskGO.Droid.Resource.Drawable.abc_text_select_handle_right_mtrl_light;
+			global::PanCardView.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha = global::TomskGO.Droid.Resource.Drawable.abc_textfield_activated_mtrl_alpha;
+			global::PanCardView.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha = global::TomskGO.Droid.Resource.Drawable.abc_textfield_default_mtrl_alpha;
+			global::PanCardView.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha = global::TomskGO.Droid.Resource.Drawable.abc_textfield_search_activated_mtrl_alpha;
+			global::PanCardView.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha = global::TomskGO.Droid.Resource.Drawable.abc_textfield_search_default_mtrl_alpha;
+			global::PanCardView.Droid.Resource.Drawable.abc_textfield_search_material = global::TomskGO.Droid.Resource.Drawable.abc_textfield_search_material;
 			global::PanCardView.Droid.Resource.Drawable.abc_vector_test = global::TomskGO.Droid.Resource.Drawable.abc_vector_test;
 			global::PanCardView.Droid.Resource.Drawable.avd_hide_password = global::TomskGO.Droid.Resource.Drawable.avd_hide_password;
+			global::PanCardView.Droid.Resource.Drawable.avd_hide_password_1 = global::TomskGO.Droid.Resource.Drawable.avd_hide_password_1;
+			global::PanCardView.Droid.Resource.Drawable.avd_hide_password_2 = global::TomskGO.Droid.Resource.Drawable.avd_hide_password_2;
+			global::PanCardView.Droid.Resource.Drawable.avd_hide_password_3 = global::TomskGO.Droid.Resource.Drawable.avd_hide_password_3;
 			global::PanCardView.Droid.Resource.Drawable.avd_show_password = global::TomskGO.Droid.Resource.Drawable.avd_show_password;
+			global::PanCardView.Droid.Resource.Drawable.avd_show_password_1 = global::TomskGO.Droid.Resource.Drawable.avd_show_password_1;
+			global::PanCardView.Droid.Resource.Drawable.avd_show_password_2 = global::TomskGO.Droid.Resource.Drawable.avd_show_password_2;
+			global::PanCardView.Droid.Resource.Drawable.avd_show_password_3 = global::TomskGO.Droid.Resource.Drawable.avd_show_password_3;
 			global::PanCardView.Droid.Resource.Drawable.design_bottom_navigation_item_background = global::TomskGO.Droid.Resource.Drawable.design_bottom_navigation_item_background;
 			global::PanCardView.Droid.Resource.Drawable.design_fab_background = global::TomskGO.Droid.Resource.Drawable.design_fab_background;
 			global::PanCardView.Droid.Resource.Drawable.design_ic_visibility = global::TomskGO.Droid.Resource.Drawable.design_ic_visibility;
@@ -3823,8 +3839,13 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Drawable.notify_panel_notification_icon_bg = global::TomskGO.Droid.Resource.Drawable.notify_panel_notification_icon_bg;
 			global::PanCardView.Droid.Resource.Drawable.tooltip_frame_dark = global::TomskGO.Droid.Resource.Drawable.tooltip_frame_dark;
 			global::PanCardView.Droid.Resource.Drawable.tooltip_frame_light = global::TomskGO.Droid.Resource.Drawable.tooltip_frame_light;
+			global::PanCardView.Droid.Resource.Id.ALT = global::TomskGO.Droid.Resource.Id.ALT;
+			global::PanCardView.Droid.Resource.Id.CTRL = global::TomskGO.Droid.Resource.Id.CTRL;
+			global::PanCardView.Droid.Resource.Id.FUNCTION = global::TomskGO.Droid.Resource.Id.FUNCTION;
+			global::PanCardView.Droid.Resource.Id.META = global::TomskGO.Droid.Resource.Id.META;
+			global::PanCardView.Droid.Resource.Id.SHIFT = global::TomskGO.Droid.Resource.Id.SHIFT;
+			global::PanCardView.Droid.Resource.Id.SYM = global::TomskGO.Droid.Resource.Id.SYM;
 			global::PanCardView.Droid.Resource.Id.action0 = global::TomskGO.Droid.Resource.Id.action0;
-			global::PanCardView.Droid.Resource.Id.actions = global::TomskGO.Droid.Resource.Id.actions;
 			global::PanCardView.Droid.Resource.Id.action_bar = global::TomskGO.Droid.Resource.Id.action_bar;
 			global::PanCardView.Droid.Resource.Id.action_bar_activity_content = global::TomskGO.Droid.Resource.Id.action_bar_activity_content;
 			global::PanCardView.Droid.Resource.Id.action_bar_container = global::TomskGO.Droid.Resource.Id.action_bar_container;
@@ -3842,17 +3863,24 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Id.action_mode_bar_stub = global::TomskGO.Droid.Resource.Id.action_mode_bar_stub;
 			global::PanCardView.Droid.Resource.Id.action_mode_close_button = global::TomskGO.Droid.Resource.Id.action_mode_close_button;
 			global::PanCardView.Droid.Resource.Id.action_text = global::TomskGO.Droid.Resource.Id.action_text;
+			global::PanCardView.Droid.Resource.Id.actions = global::TomskGO.Droid.Resource.Id.actions;
 			global::PanCardView.Droid.Resource.Id.activity_chooser_view_content = global::TomskGO.Droid.Resource.Id.activity_chooser_view_content;
 			global::PanCardView.Droid.Resource.Id.add = global::TomskGO.Droid.Resource.Id.add;
 			global::PanCardView.Droid.Resource.Id.alertTitle = global::TomskGO.Droid.Resource.Id.alertTitle;
 			global::PanCardView.Droid.Resource.Id.all = global::TomskGO.Droid.Resource.Id.all;
-			global::PanCardView.Droid.Resource.Id.ALT = global::TomskGO.Droid.Resource.Id.ALT;
 			global::PanCardView.Droid.Resource.Id.always = global::TomskGO.Droid.Resource.Id.always;
 			global::PanCardView.Droid.Resource.Id.async = global::TomskGO.Droid.Resource.Id.async;
 			global::PanCardView.Droid.Resource.Id.auto = global::TomskGO.Droid.Resource.Id.auto;
 			global::PanCardView.Droid.Resource.Id.beginning = global::TomskGO.Droid.Resource.Id.beginning;
 			global::PanCardView.Droid.Resource.Id.blocking = global::TomskGO.Droid.Resource.Id.blocking;
 			global::PanCardView.Droid.Resource.Id.bottom = global::TomskGO.Droid.Resource.Id.bottom;
+			global::PanCardView.Droid.Resource.Id.bottomtab_navarea = global::TomskGO.Droid.Resource.Id.bottomtab_navarea;
+			global::PanCardView.Droid.Resource.Id.bottomtab_tabbar = global::TomskGO.Droid.Resource.Id.bottomtab_tabbar;
+			global::PanCardView.Droid.Resource.Id.browser_actions_header_text = global::TomskGO.Droid.Resource.Id.browser_actions_header_text;
+			global::PanCardView.Droid.Resource.Id.browser_actions_menu_item_icon = global::TomskGO.Droid.Resource.Id.browser_actions_menu_item_icon;
+			global::PanCardView.Droid.Resource.Id.browser_actions_menu_item_text = global::TomskGO.Droid.Resource.Id.browser_actions_menu_item_text;
+			global::PanCardView.Droid.Resource.Id.browser_actions_menu_items = global::TomskGO.Droid.Resource.Id.browser_actions_menu_items;
+			global::PanCardView.Droid.Resource.Id.browser_actions_menu_view = global::TomskGO.Droid.Resource.Id.browser_actions_menu_view;
 			global::PanCardView.Droid.Resource.Id.buttonPanel = global::TomskGO.Droid.Resource.Id.buttonPanel;
 			global::PanCardView.Droid.Resource.Id.cancel_action = global::TomskGO.Droid.Resource.Id.cancel_action;
 			global::PanCardView.Droid.Resource.Id.center = global::TomskGO.Droid.Resource.Id.center;
@@ -3867,7 +3895,6 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Id.content = global::TomskGO.Droid.Resource.Id.content;
 			global::PanCardView.Droid.Resource.Id.contentPanel = global::TomskGO.Droid.Resource.Id.contentPanel;
 			global::PanCardView.Droid.Resource.Id.coordinator = global::TomskGO.Droid.Resource.Id.coordinator;
-			global::PanCardView.Droid.Resource.Id.CTRL = global::TomskGO.Droid.Resource.Id.CTRL;
 			global::PanCardView.Droid.Resource.Id.custom = global::TomskGO.Droid.Resource.Id.custom;
 			global::PanCardView.Droid.Resource.Id.customPanel = global::TomskGO.Droid.Resource.Id.customPanel;
 			global::PanCardView.Droid.Resource.Id.decor_content_parent = global::TomskGO.Droid.Resource.Id.decor_content_parent;
@@ -3884,15 +3911,16 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Id.enterAlways = global::TomskGO.Droid.Resource.Id.enterAlways;
 			global::PanCardView.Droid.Resource.Id.enterAlwaysCollapsed = global::TomskGO.Droid.Resource.Id.enterAlwaysCollapsed;
 			global::PanCardView.Droid.Resource.Id.exitUntilCollapsed = global::TomskGO.Droid.Resource.Id.exitUntilCollapsed;
-			global::PanCardView.Droid.Resource.Id.expanded_menu = global::TomskGO.Droid.Resource.Id.expanded_menu;
 			global::PanCardView.Droid.Resource.Id.expand_activities_button = global::TomskGO.Droid.Resource.Id.expand_activities_button;
+			global::PanCardView.Droid.Resource.Id.expanded_menu = global::TomskGO.Droid.Resource.Id.expanded_menu;
 			global::PanCardView.Droid.Resource.Id.fill = global::TomskGO.Droid.Resource.Id.fill;
-			global::PanCardView.Droid.Resource.Id.filled = global::TomskGO.Droid.Resource.Id.filled;
 			global::PanCardView.Droid.Resource.Id.fill_horizontal = global::TomskGO.Droid.Resource.Id.fill_horizontal;
 			global::PanCardView.Droid.Resource.Id.fill_vertical = global::TomskGO.Droid.Resource.Id.fill_vertical;
+			global::PanCardView.Droid.Resource.Id.filled = global::TomskGO.Droid.Resource.Id.filled;
 			global::PanCardView.Droid.Resource.Id.@fixed = global::TomskGO.Droid.Resource.Id.@fixed;
+			global::PanCardView.Droid.Resource.Id.flyoutcontent_appbar = global::TomskGO.Droid.Resource.Id.flyoutcontent_appbar;
+			global::PanCardView.Droid.Resource.Id.flyoutcontent_recycler = global::TomskGO.Droid.Resource.Id.flyoutcontent_recycler;
 			global::PanCardView.Droid.Resource.Id.forever = global::TomskGO.Droid.Resource.Id.forever;
-			global::PanCardView.Droid.Resource.Id.FUNCTION = global::TomskGO.Droid.Resource.Id.FUNCTION;
 			global::PanCardView.Droid.Resource.Id.ghost_view = global::TomskGO.Droid.Resource.Id.ghost_view;
 			global::PanCardView.Droid.Resource.Id.group_divider = global::TomskGO.Droid.Resource.Id.group_divider;
 			global::PanCardView.Droid.Resource.Id.home = global::TomskGO.Droid.Resource.Id.home;
@@ -3911,10 +3939,13 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Id.line3 = global::TomskGO.Droid.Resource.Id.line3;
 			global::PanCardView.Droid.Resource.Id.listMode = global::TomskGO.Droid.Resource.Id.listMode;
 			global::PanCardView.Droid.Resource.Id.list_item = global::TomskGO.Droid.Resource.Id.list_item;
+			global::PanCardView.Droid.Resource.Id.main_appbar = global::TomskGO.Droid.Resource.Id.main_appbar;
+			global::PanCardView.Droid.Resource.Id.main_tablayout = global::TomskGO.Droid.Resource.Id.main_tablayout;
+			global::PanCardView.Droid.Resource.Id.main_toolbar = global::TomskGO.Droid.Resource.Id.main_toolbar;
+			global::PanCardView.Droid.Resource.Id.main_viewpager = global::TomskGO.Droid.Resource.Id.main_viewpager;
 			global::PanCardView.Droid.Resource.Id.masked = global::TomskGO.Droid.Resource.Id.masked;
 			global::PanCardView.Droid.Resource.Id.media_actions = global::TomskGO.Droid.Resource.Id.media_actions;
 			global::PanCardView.Droid.Resource.Id.message = global::TomskGO.Droid.Resource.Id.message;
-			global::PanCardView.Droid.Resource.Id.META = global::TomskGO.Droid.Resource.Id.META;
 			global::PanCardView.Droid.Resource.Id.middle = global::TomskGO.Droid.Resource.Id.middle;
 			global::PanCardView.Droid.Resource.Id.mini = global::TomskGO.Droid.Resource.Id.mini;
 			global::PanCardView.Droid.Resource.Id.mr_art = global::TomskGO.Droid.Resource.Id.mr_art;
@@ -3989,10 +4020,10 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Id.save_scale_type = global::TomskGO.Droid.Resource.Id.save_scale_type;
 			global::PanCardView.Droid.Resource.Id.screen = global::TomskGO.Droid.Resource.Id.screen;
 			global::PanCardView.Droid.Resource.Id.scroll = global::TomskGO.Droid.Resource.Id.scroll;
-			global::PanCardView.Droid.Resource.Id.scrollable = global::TomskGO.Droid.Resource.Id.scrollable;
 			global::PanCardView.Droid.Resource.Id.scrollIndicatorDown = global::TomskGO.Droid.Resource.Id.scrollIndicatorDown;
 			global::PanCardView.Droid.Resource.Id.scrollIndicatorUp = global::TomskGO.Droid.Resource.Id.scrollIndicatorUp;
 			global::PanCardView.Droid.Resource.Id.scrollView = global::TomskGO.Droid.Resource.Id.scrollView;
+			global::PanCardView.Droid.Resource.Id.scrollable = global::TomskGO.Droid.Resource.Id.scrollable;
 			global::PanCardView.Droid.Resource.Id.search_badge = global::TomskGO.Droid.Resource.Id.search_badge;
 			global::PanCardView.Droid.Resource.Id.search_bar = global::TomskGO.Droid.Resource.Id.search_bar;
 			global::PanCardView.Droid.Resource.Id.search_button = global::TomskGO.Droid.Resource.Id.search_button;
@@ -4003,9 +4034,10 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Id.search_plate = global::TomskGO.Droid.Resource.Id.search_plate;
 			global::PanCardView.Droid.Resource.Id.search_src_text = global::TomskGO.Droid.Resource.Id.search_src_text;
 			global::PanCardView.Droid.Resource.Id.search_voice_btn = global::TomskGO.Droid.Resource.Id.search_voice_btn;
-			global::PanCardView.Droid.Resource.Id.selected = global::TomskGO.Droid.Resource.Id.selected;
 			global::PanCardView.Droid.Resource.Id.select_dialog_listview = global::TomskGO.Droid.Resource.Id.select_dialog_listview;
-			global::PanCardView.Droid.Resource.Id.SHIFT = global::TomskGO.Droid.Resource.Id.SHIFT;
+			global::PanCardView.Droid.Resource.Id.selected = global::TomskGO.Droid.Resource.Id.selected;
+			global::PanCardView.Droid.Resource.Id.shellcontent_appbar = global::TomskGO.Droid.Resource.Id.shellcontent_appbar;
+			global::PanCardView.Droid.Resource.Id.shellcontent_toolbar = global::TomskGO.Droid.Resource.Id.shellcontent_toolbar;
 			global::PanCardView.Droid.Resource.Id.shortcut = global::TomskGO.Droid.Resource.Id.shortcut;
 			global::PanCardView.Droid.Resource.Id.showCustom = global::TomskGO.Droid.Resource.Id.showCustom;
 			global::PanCardView.Droid.Resource.Id.showHome = global::TomskGO.Droid.Resource.Id.showHome;
@@ -4025,20 +4057,19 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Id.stretch = global::TomskGO.Droid.Resource.Id.stretch;
 			global::PanCardView.Droid.Resource.Id.submenuarrow = global::TomskGO.Droid.Resource.Id.submenuarrow;
 			global::PanCardView.Droid.Resource.Id.submit_area = global::TomskGO.Droid.Resource.Id.submit_area;
-			global::PanCardView.Droid.Resource.Id.SYM = global::TomskGO.Droid.Resource.Id.SYM;
 			global::PanCardView.Droid.Resource.Id.tabMode = global::TomskGO.Droid.Resource.Id.tabMode;
 			global::PanCardView.Droid.Resource.Id.tag_transition_group = global::TomskGO.Droid.Resource.Id.tag_transition_group;
 			global::PanCardView.Droid.Resource.Id.tag_unhandled_key_event_manager = global::TomskGO.Droid.Resource.Id.tag_unhandled_key_event_manager;
 			global::PanCardView.Droid.Resource.Id.tag_unhandled_key_listeners = global::TomskGO.Droid.Resource.Id.tag_unhandled_key_listeners;
 			global::PanCardView.Droid.Resource.Id.text = global::TomskGO.Droid.Resource.Id.text;
 			global::PanCardView.Droid.Resource.Id.text2 = global::TomskGO.Droid.Resource.Id.text2;
-			global::PanCardView.Droid.Resource.Id.textinput_counter = global::TomskGO.Droid.Resource.Id.textinput_counter;
-			global::PanCardView.Droid.Resource.Id.textinput_error = global::TomskGO.Droid.Resource.Id.textinput_error;
-			global::PanCardView.Droid.Resource.Id.textinput_helper_text = global::TomskGO.Droid.Resource.Id.textinput_helper_text;
 			global::PanCardView.Droid.Resource.Id.textSpacerNoButtons = global::TomskGO.Droid.Resource.Id.textSpacerNoButtons;
 			global::PanCardView.Droid.Resource.Id.textSpacerNoTitle = global::TomskGO.Droid.Resource.Id.textSpacerNoTitle;
 			global::PanCardView.Droid.Resource.Id.textStart = global::TomskGO.Droid.Resource.Id.textStart;
 			global::PanCardView.Droid.Resource.Id.text_input_password_toggle = global::TomskGO.Droid.Resource.Id.text_input_password_toggle;
+			global::PanCardView.Droid.Resource.Id.textinput_counter = global::TomskGO.Droid.Resource.Id.textinput_counter;
+			global::PanCardView.Droid.Resource.Id.textinput_error = global::TomskGO.Droid.Resource.Id.textinput_error;
+			global::PanCardView.Droid.Resource.Id.textinput_helper_text = global::TomskGO.Droid.Resource.Id.textinput_helper_text;
 			global::PanCardView.Droid.Resource.Id.time = global::TomskGO.Droid.Resource.Id.time;
 			global::PanCardView.Droid.Resource.Id.title = global::TomskGO.Droid.Resource.Id.title;
 			global::PanCardView.Droid.Resource.Id.titleDividerNoCustom = global::TomskGO.Droid.Resource.Id.titleDividerNoCustom;
@@ -4113,6 +4144,9 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Layout.abc_search_view = global::TomskGO.Droid.Resource.Layout.abc_search_view;
 			global::PanCardView.Droid.Resource.Layout.abc_select_dialog_material = global::TomskGO.Droid.Resource.Layout.abc_select_dialog_material;
 			global::PanCardView.Droid.Resource.Layout.abc_tooltip = global::TomskGO.Droid.Resource.Layout.abc_tooltip;
+			global::PanCardView.Droid.Resource.Layout.BottomTabLayout = global::TomskGO.Droid.Resource.Layout.BottomTabLayout;
+			global::PanCardView.Droid.Resource.Layout.browser_actions_context_menu_page = global::TomskGO.Droid.Resource.Layout.browser_actions_context_menu_page;
+			global::PanCardView.Droid.Resource.Layout.browser_actions_context_menu_row = global::TomskGO.Droid.Resource.Layout.browser_actions_context_menu_row;
 			global::PanCardView.Droid.Resource.Layout.design_bottom_navigation_item = global::TomskGO.Droid.Resource.Layout.design_bottom_navigation_item;
 			global::PanCardView.Droid.Resource.Layout.design_bottom_sheet_dialog = global::TomskGO.Droid.Resource.Layout.design_bottom_sheet_dialog;
 			global::PanCardView.Droid.Resource.Layout.design_layout_snackbar = global::TomskGO.Droid.Resource.Layout.design_layout_snackbar;
@@ -4127,6 +4161,7 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Layout.design_navigation_menu = global::TomskGO.Droid.Resource.Layout.design_navigation_menu;
 			global::PanCardView.Droid.Resource.Layout.design_navigation_menu_item = global::TomskGO.Droid.Resource.Layout.design_navigation_menu_item;
 			global::PanCardView.Droid.Resource.Layout.design_text_input_password_icon = global::TomskGO.Droid.Resource.Layout.design_text_input_password_icon;
+			global::PanCardView.Droid.Resource.Layout.FlyoutContent = global::TomskGO.Droid.Resource.Layout.FlyoutContent;
 			global::PanCardView.Droid.Resource.Layout.mr_cast_dialog = global::TomskGO.Droid.Resource.Layout.mr_cast_dialog;
 			global::PanCardView.Droid.Resource.Layout.mr_cast_group_item = global::TomskGO.Droid.Resource.Layout.mr_cast_group_item;
 			global::PanCardView.Droid.Resource.Layout.mr_cast_group_volume_item = global::TomskGO.Droid.Resource.Layout.mr_cast_group_volume_item;
@@ -4158,16 +4193,18 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Layout.notification_template_media_custom = global::TomskGO.Droid.Resource.Layout.notification_template_media_custom;
 			global::PanCardView.Droid.Resource.Layout.notification_template_part_chronometer = global::TomskGO.Droid.Resource.Layout.notification_template_part_chronometer;
 			global::PanCardView.Droid.Resource.Layout.notification_template_part_time = global::TomskGO.Droid.Resource.Layout.notification_template_part_time;
+			global::PanCardView.Droid.Resource.Layout.RootLayout = global::TomskGO.Droid.Resource.Layout.RootLayout;
 			global::PanCardView.Droid.Resource.Layout.select_dialog_item_material = global::TomskGO.Droid.Resource.Layout.select_dialog_item_material;
 			global::PanCardView.Droid.Resource.Layout.select_dialog_multichoice_material = global::TomskGO.Droid.Resource.Layout.select_dialog_multichoice_material;
 			global::PanCardView.Droid.Resource.Layout.select_dialog_singlechoice_material = global::TomskGO.Droid.Resource.Layout.select_dialog_singlechoice_material;
+			global::PanCardView.Droid.Resource.Layout.ShellContent = global::TomskGO.Droid.Resource.Layout.ShellContent;
 			global::PanCardView.Droid.Resource.Layout.support_simple_spinner_dropdown_item = global::TomskGO.Droid.Resource.Layout.support_simple_spinner_dropdown_item;
 			global::PanCardView.Droid.Resource.String.abc_action_bar_home_description = global::TomskGO.Droid.Resource.String.abc_action_bar_home_description;
 			global::PanCardView.Droid.Resource.String.abc_action_bar_up_description = global::TomskGO.Droid.Resource.String.abc_action_bar_up_description;
 			global::PanCardView.Droid.Resource.String.abc_action_menu_overflow_description = global::TomskGO.Droid.Resource.String.abc_action_menu_overflow_description;
 			global::PanCardView.Droid.Resource.String.abc_action_mode_done = global::TomskGO.Droid.Resource.String.abc_action_mode_done;
-			global::PanCardView.Droid.Resource.String.abc_activitychooserview_choose_application = global::TomskGO.Droid.Resource.String.abc_activitychooserview_choose_application;
 			global::PanCardView.Droid.Resource.String.abc_activity_chooser_view_see_all = global::TomskGO.Droid.Resource.String.abc_activity_chooser_view_see_all;
+			global::PanCardView.Droid.Resource.String.abc_activitychooserview_choose_application = global::TomskGO.Droid.Resource.String.abc_activitychooserview_choose_application;
 			global::PanCardView.Droid.Resource.String.abc_capital_off = global::TomskGO.Droid.Resource.String.abc_capital_off;
 			global::PanCardView.Droid.Resource.String.abc_capital_on = global::TomskGO.Droid.Resource.String.abc_capital_on;
 			global::PanCardView.Droid.Resource.String.abc_font_family_body_1_material = global::TomskGO.Droid.Resource.String.abc_font_family_body_1_material;
@@ -4192,12 +4229,12 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.String.abc_menu_space_shortcut_label = global::TomskGO.Droid.Resource.String.abc_menu_space_shortcut_label;
 			global::PanCardView.Droid.Resource.String.abc_menu_sym_shortcut_label = global::TomskGO.Droid.Resource.String.abc_menu_sym_shortcut_label;
 			global::PanCardView.Droid.Resource.String.abc_prepend_shortcut_label = global::TomskGO.Droid.Resource.String.abc_prepend_shortcut_label;
+			global::PanCardView.Droid.Resource.String.abc_search_hint = global::TomskGO.Droid.Resource.String.abc_search_hint;
 			global::PanCardView.Droid.Resource.String.abc_searchview_description_clear = global::TomskGO.Droid.Resource.String.abc_searchview_description_clear;
 			global::PanCardView.Droid.Resource.String.abc_searchview_description_query = global::TomskGO.Droid.Resource.String.abc_searchview_description_query;
 			global::PanCardView.Droid.Resource.String.abc_searchview_description_search = global::TomskGO.Droid.Resource.String.abc_searchview_description_search;
 			global::PanCardView.Droid.Resource.String.abc_searchview_description_submit = global::TomskGO.Droid.Resource.String.abc_searchview_description_submit;
 			global::PanCardView.Droid.Resource.String.abc_searchview_description_voice = global::TomskGO.Droid.Resource.String.abc_searchview_description_voice;
-			global::PanCardView.Droid.Resource.String.abc_search_hint = global::TomskGO.Droid.Resource.String.abc_search_hint;
 			global::PanCardView.Droid.Resource.String.abc_shareactionprovider_share_with = global::TomskGO.Droid.Resource.String.abc_shareactionprovider_share_with;
 			global::PanCardView.Droid.Resource.String.abc_shareactionprovider_share_with_application = global::TomskGO.Droid.Resource.String.abc_shareactionprovider_share_with_application;
 			global::PanCardView.Droid.Resource.String.abc_toolbar_collapse_description = global::TomskGO.Droid.Resource.String.abc_toolbar_collapse_description;
@@ -4253,8 +4290,8 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp = global::TomskGO.Droid.Resource.Style.Base_Animation_AppCompat_DropDownUp;
 			global::PanCardView.Droid.Resource.Style.Base_Animation_AppCompat_Tooltip = global::TomskGO.Droid.Resource.Style.Base_Animation_AppCompat_Tooltip;
 			global::PanCardView.Droid.Resource.Style.Base_CardView = global::TomskGO.Droid.Resource.Style.Base_CardView;
-			global::PanCardView.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::TomskGO.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
 			global::PanCardView.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat = global::TomskGO.Droid.Resource.Style.Base_DialogWindowTitle_AppCompat;
+			global::PanCardView.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat = global::TomskGO.Droid.Resource.Style.Base_DialogWindowTitleBackground_AppCompat;
 			global::PanCardView.Droid.Resource.Style.Base_TextAppearance_AppCompat = global::TomskGO.Droid.Resource.Style.Base_TextAppearance_AppCompat;
 			global::PanCardView.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1 = global::TomskGO.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body1;
 			global::PanCardView.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2 = global::TomskGO.Droid.Resource.Style.Base_TextAppearance_AppCompat_Body2;
@@ -4303,6 +4340,37 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::TomskGO.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
 			global::PanCardView.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::TomskGO.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
 			global::PanCardView.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title = global::TomskGO.Droid.Resource.Style.Base_TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Dialog = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Light = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_Light;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Bridge = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Bridge;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_CompactMenu = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_CompactMenu;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Light;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Bridge = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Bridge;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar_Bridge;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth;
+			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge;
 			global::PanCardView.Droid.Resource.Style.Base_ThemeOverlay_AppCompat = global::TomskGO.Droid.Resource.Style.Base_ThemeOverlay_AppCompat;
 			global::PanCardView.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar = global::TomskGO.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_ActionBar;
 			global::PanCardView.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark = global::TomskGO.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Dark;
@@ -4312,39 +4380,6 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light = global::TomskGO.Droid.Resource.Style.Base_ThemeOverlay_AppCompat_Light;
 			global::PanCardView.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog = global::TomskGO.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog;
 			global::PanCardView.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert = global::TomskGO.Droid.Resource.Style.Base_ThemeOverlay_MaterialComponents_Dialog_Alert;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_CompactMenu;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Dialog = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_Dialog;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_DialogWhenLarge;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_Alert;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_FixedSize;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_Dialog_MinWidth;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Light = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_Light;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_Light_DarkActionBar;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_Light_DialogWhenLarge;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_Alert;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_FixedSize;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth = global::TomskGO.Droid.Resource.Style.Base_Theme_AppCompat_Light_Dialog_MinWidth;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Bridge = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Bridge;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_CompactMenu = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_CompactMenu;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_DialogWhenLarge;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_Alert;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_FixedSize;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Dialog_MinWidth;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Light;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Bridge = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Bridge;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DarkActionBar_Bridge;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_DialogWhenLarge;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_Alert;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_FixedSize;
-			global::PanCardView.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth = global::TomskGO.Droid.Resource.Style.Base_Theme_MaterialComponents_Light_Dialog_MinWidth;
-			global::PanCardView.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog = global::TomskGO.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog;
-			global::PanCardView.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert = global::TomskGO.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert;
 			global::PanCardView.Droid.Resource.Style.Base_V14_Theme_MaterialComponents = global::TomskGO.Droid.Resource.Style.Base_V14_Theme_MaterialComponents;
 			global::PanCardView.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge = global::TomskGO.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Bridge;
 			global::PanCardView.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog = global::TomskGO.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Dialog;
@@ -4352,11 +4387,13 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge = global::TomskGO.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Bridge;
 			global::PanCardView.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::TomskGO.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_DarkActionBar_Bridge;
 			global::PanCardView.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog = global::TomskGO.Droid.Resource.Style.Base_V14_Theme_MaterialComponents_Light_Dialog;
-			global::PanCardView.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::TomskGO.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
+			global::PanCardView.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog = global::TomskGO.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog;
+			global::PanCardView.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert = global::TomskGO.Droid.Resource.Style.Base_V14_ThemeOverlay_MaterialComponents_Dialog_Alert;
 			global::PanCardView.Droid.Resource.Style.Base_V21_Theme_AppCompat = global::TomskGO.Droid.Resource.Style.Base_V21_Theme_AppCompat;
 			global::PanCardView.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog = global::TomskGO.Droid.Resource.Style.Base_V21_Theme_AppCompat_Dialog;
 			global::PanCardView.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light = global::TomskGO.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light;
 			global::PanCardView.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog = global::TomskGO.Droid.Resource.Style.Base_V21_Theme_AppCompat_Light_Dialog;
+			global::PanCardView.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog = global::TomskGO.Droid.Resource.Style.Base_V21_ThemeOverlay_AppCompat_Dialog;
 			global::PanCardView.Droid.Resource.Style.Base_V22_Theme_AppCompat = global::TomskGO.Droid.Resource.Style.Base_V22_Theme_AppCompat;
 			global::PanCardView.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light = global::TomskGO.Droid.Resource.Style.Base_V22_Theme_AppCompat_Light;
 			global::PanCardView.Droid.Resource.Style.Base_V23_Theme_AppCompat = global::TomskGO.Droid.Resource.Style.Base_V23_Theme_AppCompat;
@@ -4366,11 +4403,11 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Style.Base_V26_Widget_AppCompat_Toolbar = global::TomskGO.Droid.Resource.Style.Base_V26_Widget_AppCompat_Toolbar;
 			global::PanCardView.Droid.Resource.Style.Base_V28_Theme_AppCompat = global::TomskGO.Droid.Resource.Style.Base_V28_Theme_AppCompat;
 			global::PanCardView.Droid.Resource.Style.Base_V28_Theme_AppCompat_Light = global::TomskGO.Droid.Resource.Style.Base_V28_Theme_AppCompat_Light;
-			global::PanCardView.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog = global::TomskGO.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog;
 			global::PanCardView.Droid.Resource.Style.Base_V7_Theme_AppCompat = global::TomskGO.Droid.Resource.Style.Base_V7_Theme_AppCompat;
 			global::PanCardView.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog = global::TomskGO.Droid.Resource.Style.Base_V7_Theme_AppCompat_Dialog;
 			global::PanCardView.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light = global::TomskGO.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light;
 			global::PanCardView.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog = global::TomskGO.Droid.Resource.Style.Base_V7_Theme_AppCompat_Light_Dialog;
+			global::PanCardView.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog = global::TomskGO.Droid.Resource.Style.Base_V7_ThemeOverlay_AppCompat_Dialog;
 			global::PanCardView.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView = global::TomskGO.Droid.Resource.Style.Base_V7_Widget_AppCompat_AutoCompleteTextView;
 			global::PanCardView.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText = global::TomskGO.Droid.Resource.Style.Base_V7_Widget_AppCompat_EditText;
 			global::PanCardView.Droid.Resource.Style.Base_V7_Widget_AppCompat_Toolbar = global::TomskGO.Droid.Resource.Style.Base_V7_Widget_AppCompat_Toolbar;
@@ -4386,13 +4423,13 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView = global::TomskGO.Droid.Resource.Style.Base_Widget_AppCompat_ActivityChooserView;
 			global::PanCardView.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView = global::TomskGO.Droid.Resource.Style.Base_Widget_AppCompat_AutoCompleteTextView;
 			global::PanCardView.Droid.Resource.Style.Base_Widget_AppCompat_Button = global::TomskGO.Droid.Resource.Style.Base_Widget_AppCompat_Button;
-			global::PanCardView.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::TomskGO.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar;
-			global::PanCardView.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::TomskGO.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
 			global::PanCardView.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless = global::TomskGO.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless;
 			global::PanCardView.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored = global::TomskGO.Droid.Resource.Style.Base_Widget_AppCompat_Button_Borderless_Colored;
 			global::PanCardView.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog = global::TomskGO.Droid.Resource.Style.Base_Widget_AppCompat_Button_ButtonBar_AlertDialog;
 			global::PanCardView.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored = global::TomskGO.Droid.Resource.Style.Base_Widget_AppCompat_Button_Colored;
 			global::PanCardView.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small = global::TomskGO.Droid.Resource.Style.Base_Widget_AppCompat_Button_Small;
+			global::PanCardView.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar = global::TomskGO.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar;
+			global::PanCardView.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog = global::TomskGO.Droid.Resource.Style.Base_Widget_AppCompat_ButtonBar_AlertDialog;
 			global::PanCardView.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox = global::TomskGO.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_CheckBox;
 			global::PanCardView.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton = global::TomskGO.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_RadioButton;
 			global::PanCardView.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch = global::TomskGO.Droid.Resource.Style.Base_Widget_AppCompat_CompoundButton_Switch;
@@ -4461,12 +4498,12 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow = global::TomskGO.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_SubmenuArrow;
 			global::PanCardView.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text = global::TomskGO.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Text;
 			global::PanCardView.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Title = global::TomskGO.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_PopupMenuItem_Title;
-			global::PanCardView.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::TomskGO.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
 			global::PanCardView.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown = global::TomskGO.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown;
 			global::PanCardView.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1 = global::TomskGO.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon1;
 			global::PanCardView.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2 = global::TomskGO.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Icon2;
 			global::PanCardView.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query = global::TomskGO.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Query;
 			global::PanCardView.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text = global::TomskGO.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_Search_DropDown_Text;
+			global::PanCardView.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon = global::TomskGO.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_SearchView_MagIcon;
 			global::PanCardView.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton = global::TomskGO.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton;
 			global::PanCardView.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow = global::TomskGO.Droid.Resource.Style.RtlUnderlay_Widget_AppCompat_ActionButton_Overflow;
 			global::PanCardView.Droid.Resource.Style.TextAppearance_AppCompat = global::TomskGO.Droid.Resource.Style.TextAppearance_AppCompat;
@@ -4556,6 +4593,58 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item = global::TomskGO.Droid.Resource.Style.TextAppearance_Widget_AppCompat_ExpandedMenu_Item;
 			global::PanCardView.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle = global::TomskGO.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Subtitle;
 			global::PanCardView.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title = global::TomskGO.Droid.Resource.Style.TextAppearance_Widget_AppCompat_Toolbar_Title;
+			global::PanCardView.Droid.Resource.Style.Theme_AppCompat = global::TomskGO.Droid.Resource.Style.Theme_AppCompat;
+			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_CompactMenu = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
+			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_DayNight = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_DayNight;
+			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
+			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog;
+			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
+			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
+			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
+			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
+			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Dialog = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_Dialog;
+			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
+			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
+			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Light = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_Light;
+			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
+			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Light_Dialog = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
+			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
+			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
+			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
+			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar;
+			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_NoActionBar = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_NoActionBar;
+			global::PanCardView.Droid.Resource.Style.Theme_Design = global::TomskGO.Droid.Resource.Style.Theme_Design;
+			global::PanCardView.Droid.Resource.Style.Theme_Design_BottomSheetDialog = global::TomskGO.Droid.Resource.Style.Theme_Design_BottomSheetDialog;
+			global::PanCardView.Droid.Resource.Style.Theme_Design_Light = global::TomskGO.Droid.Resource.Style.Theme_Design_Light;
+			global::PanCardView.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog = global::TomskGO.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog;
+			global::PanCardView.Droid.Resource.Style.Theme_Design_Light_NoActionBar = global::TomskGO.Droid.Resource.Style.Theme_Design_Light_NoActionBar;
+			global::PanCardView.Droid.Resource.Style.Theme_Design_NoActionBar = global::TomskGO.Droid.Resource.Style.Theme_Design_NoActionBar;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_BottomSheetDialog = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_BottomSheetDialog;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Bridge = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Bridge;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_CompactMenu = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_CompactMenu;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Dialog = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Dialog;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Alert = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Alert;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_DialogWhenLarge = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_DialogWhenLarge;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Light;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_Bridge = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Light_Bridge;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar_Bridge;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar;
+			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar_Bridge = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar_Bridge;
+			global::PanCardView.Droid.Resource.Style.Theme_MediaRouter = global::TomskGO.Droid.Resource.Style.Theme_MediaRouter;
+			global::PanCardView.Droid.Resource.Style.Theme_MediaRouter_Light = global::TomskGO.Droid.Resource.Style.Theme_MediaRouter_Light;
+			global::PanCardView.Droid.Resource.Style.Theme_MediaRouter_Light_DarkControlPanel = global::TomskGO.Droid.Resource.Style.Theme_MediaRouter_Light_DarkControlPanel;
+			global::PanCardView.Droid.Resource.Style.Theme_MediaRouter_LightControlPanel = global::TomskGO.Droid.Resource.Style.Theme_MediaRouter_LightControlPanel;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_AppCompat = global::TomskGO.Droid.Resource.Style.ThemeOverlay_AppCompat;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar = global::TomskGO.Droid.Resource.Style.ThemeOverlay_AppCompat_ActionBar;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark = global::TomskGO.Droid.Resource.Style.ThemeOverlay_AppCompat_Dark;
@@ -4577,58 +4666,6 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense = global::TomskGO.Droid.Resource.Style.ThemeOverlay_MaterialComponents_TextInputEditText_OutlinedBox_Dense;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MediaRouter_Dark = global::TomskGO.Droid.Resource.Style.ThemeOverlay_MediaRouter_Dark;
 			global::PanCardView.Droid.Resource.Style.ThemeOverlay_MediaRouter_Light = global::TomskGO.Droid.Resource.Style.ThemeOverlay_MediaRouter_Light;
-			global::PanCardView.Droid.Resource.Style.Theme_AppCompat = global::TomskGO.Droid.Resource.Style.Theme_AppCompat;
-			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_CompactMenu = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_CompactMenu;
-			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_DayNight = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_DayNight;
-			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_DayNight_DarkActionBar;
-			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog;
-			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_DayNight_DialogWhenLarge;
-			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_Alert;
-			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_DayNight_Dialog_MinWidth;
-			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_DayNight_NoActionBar;
-			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Dialog = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_Dialog;
-			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
-			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
-			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
-			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Light = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_Light;
-			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
-			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Light_Dialog = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
-			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_Light_DialogWhenLarge;
-			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_Alert;
-			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_Light_Dialog_MinWidth;
-			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_Light_NoActionBar;
-			global::PanCardView.Droid.Resource.Style.Theme_AppCompat_NoActionBar = global::TomskGO.Droid.Resource.Style.Theme_AppCompat_NoActionBar;
-			global::PanCardView.Droid.Resource.Style.Theme_Design = global::TomskGO.Droid.Resource.Style.Theme_Design;
-			global::PanCardView.Droid.Resource.Style.Theme_Design_BottomSheetDialog = global::TomskGO.Droid.Resource.Style.Theme_Design_BottomSheetDialog;
-			global::PanCardView.Droid.Resource.Style.Theme_Design_Light = global::TomskGO.Droid.Resource.Style.Theme_Design_Light;
-			global::PanCardView.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog = global::TomskGO.Droid.Resource.Style.Theme_Design_Light_BottomSheetDialog;
-			global::PanCardView.Droid.Resource.Style.Theme_Design_Light_NoActionBar = global::TomskGO.Droid.Resource.Style.Theme_Design_Light_NoActionBar;
-			global::PanCardView.Droid.Resource.Style.Theme_Design_NoActionBar = global::TomskGO.Droid.Resource.Style.Theme_Design_NoActionBar;
-			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents;
-			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_BottomSheetDialog = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_BottomSheetDialog;
-			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Bridge = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Bridge;
-			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_CompactMenu = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_CompactMenu;
-			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Dialog = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Dialog;
-			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_DialogWhenLarge = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_DialogWhenLarge;
-			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Alert = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Dialog_Alert;
-			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Dialog_MinWidth;
-			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Light;
-			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Light_BottomSheetDialog;
-			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_Bridge = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Light_Bridge;
-			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar;
-			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar_Bridge = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Light_DarkActionBar_Bridge;
-			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog;
-			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Light_DialogWhenLarge;
-			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_Alert;
-			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Light_Dialog_MinWidth;
-			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar;
-			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_Light_NoActionBar_Bridge;
-			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar;
-			global::PanCardView.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar_Bridge = global::TomskGO.Droid.Resource.Style.Theme_MaterialComponents_NoActionBar_Bridge;
-			global::PanCardView.Droid.Resource.Style.Theme_MediaRouter = global::TomskGO.Droid.Resource.Style.Theme_MediaRouter;
-			global::PanCardView.Droid.Resource.Style.Theme_MediaRouter_Light = global::TomskGO.Droid.Resource.Style.Theme_MediaRouter_Light;
-			global::PanCardView.Droid.Resource.Style.Theme_MediaRouter_LightControlPanel = global::TomskGO.Droid.Resource.Style.Theme_MediaRouter_LightControlPanel;
-			global::PanCardView.Droid.Resource.Style.Theme_MediaRouter_Light_DarkControlPanel = global::TomskGO.Droid.Resource.Style.Theme_MediaRouter_Light_DarkControlPanel;
 			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_ActionBar = global::TomskGO.Droid.Resource.Style.Widget_AppCompat_ActionBar;
 			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid = global::TomskGO.Droid.Resource.Style.Widget_AppCompat_ActionBar_Solid;
 			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar = global::TomskGO.Droid.Resource.Style.Widget_AppCompat_ActionBar_TabBar;
@@ -4641,13 +4678,13 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView = global::TomskGO.Droid.Resource.Style.Widget_AppCompat_ActivityChooserView;
 			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView = global::TomskGO.Droid.Resource.Style.Widget_AppCompat_AutoCompleteTextView;
 			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_Button = global::TomskGO.Droid.Resource.Style.Widget_AppCompat_Button;
-			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_ButtonBar = global::TomskGO.Droid.Resource.Style.Widget_AppCompat_ButtonBar;
-			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::TomskGO.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
 			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_Button_Borderless = global::TomskGO.Droid.Resource.Style.Widget_AppCompat_Button_Borderless;
 			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored = global::TomskGO.Droid.Resource.Style.Widget_AppCompat_Button_Borderless_Colored;
 			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog = global::TomskGO.Droid.Resource.Style.Widget_AppCompat_Button_ButtonBar_AlertDialog;
 			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_Button_Colored = global::TomskGO.Droid.Resource.Style.Widget_AppCompat_Button_Colored;
 			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_Button_Small = global::TomskGO.Droid.Resource.Style.Widget_AppCompat_Button_Small;
+			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_ButtonBar = global::TomskGO.Droid.Resource.Style.Widget_AppCompat_ButtonBar;
+			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog = global::TomskGO.Droid.Resource.Style.Widget_AppCompat_ButtonBar_AlertDialog;
 			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox = global::TomskGO.Droid.Resource.Style.Widget_AppCompat_CompoundButton_CheckBox;
 			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton = global::TomskGO.Droid.Resource.Style.Widget_AppCompat_CompoundButton_RadioButton;
 			global::PanCardView.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch = global::TomskGO.Droid.Resource.Style.Widget_AppCompat_CompoundButton_Switch;
@@ -4729,11 +4766,11 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton = global::TomskGO.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon = global::TomskGO.Droid.Resource.Style.Widget_MaterialComponents_Button_UnelevatedButton_Icon;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_CardView = global::TomskGO.Droid.Resource.Style.Widget_MaterialComponents_CardView;
-			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_ChipGroup = global::TomskGO.Droid.Resource.Style.Widget_MaterialComponents_ChipGroup;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Chip_Action = global::TomskGO.Droid.Resource.Style.Widget_MaterialComponents_Chip_Action;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Chip_Choice = global::TomskGO.Droid.Resource.Style.Widget_MaterialComponents_Chip_Choice;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Chip_Entry = global::TomskGO.Droid.Resource.Style.Widget_MaterialComponents_Chip_Entry;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Chip_Filter = global::TomskGO.Droid.Resource.Style.Widget_MaterialComponents_Chip_Filter;
+			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_ChipGroup = global::TomskGO.Droid.Resource.Style.Widget_MaterialComponents_ChipGroup;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_FloatingActionButton = global::TomskGO.Droid.Resource.Style.Widget_MaterialComponents_FloatingActionButton;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_NavigationView = global::TomskGO.Droid.Resource.Style.Widget_MaterialComponents_NavigationView;
 			global::PanCardView.Droid.Resource.Style.Widget_MaterialComponents_Snackbar = global::TomskGO.Droid.Resource.Style.Widget_MaterialComponents_Snackbar;
@@ -4752,9 +4789,8 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Style.Widget_MediaRouter_Light_MediaRouteButton = global::TomskGO.Droid.Resource.Style.Widget_MediaRouter_Light_MediaRouteButton;
 			global::PanCardView.Droid.Resource.Style.Widget_MediaRouter_MediaRouteButton = global::TomskGO.Droid.Resource.Style.Widget_MediaRouter_MediaRouteButton;
 			global::PanCardView.Droid.Resource.Style.Widget_Support_CoordinatorLayout = global::TomskGO.Droid.Resource.Style.Widget_Support_CoordinatorLayout;
+			global::PanCardView.Droid.Resource.Style.collectionViewStyle = global::TomskGO.Droid.Resource.Style.collectionViewStyle;
 			global::PanCardView.Droid.Resource.Styleable.ActionBar = global::TomskGO.Droid.Resource.Styleable.ActionBar;
-			global::PanCardView.Droid.Resource.Styleable.ActionBarLayout = global::TomskGO.Droid.Resource.Styleable.ActionBarLayout;
-			global::PanCardView.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::TomskGO.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity;
 			global::PanCardView.Droid.Resource.Styleable.ActionBar_background = global::TomskGO.Droid.Resource.Styleable.ActionBar_background;
 			global::PanCardView.Droid.Resource.Styleable.ActionBar_backgroundSplit = global::TomskGO.Droid.Resource.Styleable.ActionBar_backgroundSplit;
 			global::PanCardView.Droid.Resource.Styleable.ActionBar_backgroundStacked = global::TomskGO.Droid.Resource.Styleable.ActionBar_backgroundStacked;
@@ -4784,6 +4820,8 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Styleable.ActionBar_subtitleTextStyle = global::TomskGO.Droid.Resource.Styleable.ActionBar_subtitleTextStyle;
 			global::PanCardView.Droid.Resource.Styleable.ActionBar_title = global::TomskGO.Droid.Resource.Styleable.ActionBar_title;
 			global::PanCardView.Droid.Resource.Styleable.ActionBar_titleTextStyle = global::TomskGO.Droid.Resource.Styleable.ActionBar_titleTextStyle;
+			global::PanCardView.Droid.Resource.Styleable.ActionBarLayout = global::TomskGO.Droid.Resource.Styleable.ActionBarLayout;
+			global::PanCardView.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity = global::TomskGO.Droid.Resource.Styleable.ActionBarLayout_android_layout_gravity;
 			global::PanCardView.Droid.Resource.Styleable.ActionMenuItemView = global::TomskGO.Droid.Resource.Styleable.ActionMenuItemView;
 			global::PanCardView.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth = global::TomskGO.Droid.Resource.Styleable.ActionMenuItemView_android_minWidth;
 			global::PanCardView.Droid.Resource.Styleable.ActionMenuView = global::TomskGO.Droid.Resource.Styleable.ActionMenuView;
@@ -4822,20 +4860,20 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_reversible = global::TomskGO.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_reversible;
 			global::PanCardView.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_toId = global::TomskGO.Droid.Resource.Styleable.AnimatedStateListDrawableTransition_android_toId;
 			global::PanCardView.Droid.Resource.Styleable.AppBarLayout = global::TomskGO.Droid.Resource.Styleable.AppBarLayout;
-			global::PanCardView.Droid.Resource.Styleable.AppBarLayoutStates = global::TomskGO.Droid.Resource.Styleable.AppBarLayoutStates;
-			global::PanCardView.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed = global::TomskGO.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed;
-			global::PanCardView.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible = global::TomskGO.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible;
-			global::PanCardView.Droid.Resource.Styleable.AppBarLayoutStates_state_liftable = global::TomskGO.Droid.Resource.Styleable.AppBarLayoutStates_state_liftable;
-			global::PanCardView.Droid.Resource.Styleable.AppBarLayoutStates_state_lifted = global::TomskGO.Droid.Resource.Styleable.AppBarLayoutStates_state_lifted;
 			global::PanCardView.Droid.Resource.Styleable.AppBarLayout_android_background = global::TomskGO.Droid.Resource.Styleable.AppBarLayout_android_background;
 			global::PanCardView.Droid.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster = global::TomskGO.Droid.Resource.Styleable.AppBarLayout_android_keyboardNavigationCluster;
 			global::PanCardView.Droid.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus = global::TomskGO.Droid.Resource.Styleable.AppBarLayout_android_touchscreenBlocksFocus;
 			global::PanCardView.Droid.Resource.Styleable.AppBarLayout_elevation = global::TomskGO.Droid.Resource.Styleable.AppBarLayout_elevation;
 			global::PanCardView.Droid.Resource.Styleable.AppBarLayout_expanded = global::TomskGO.Droid.Resource.Styleable.AppBarLayout_expanded;
+			global::PanCardView.Droid.Resource.Styleable.AppBarLayout_liftOnScroll = global::TomskGO.Droid.Resource.Styleable.AppBarLayout_liftOnScroll;
+			global::PanCardView.Droid.Resource.Styleable.AppBarLayoutStates = global::TomskGO.Droid.Resource.Styleable.AppBarLayoutStates;
+			global::PanCardView.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed = global::TomskGO.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsed;
+			global::PanCardView.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible = global::TomskGO.Droid.Resource.Styleable.AppBarLayoutStates_state_collapsible;
+			global::PanCardView.Droid.Resource.Styleable.AppBarLayoutStates_state_liftable = global::TomskGO.Droid.Resource.Styleable.AppBarLayoutStates_state_liftable;
+			global::PanCardView.Droid.Resource.Styleable.AppBarLayoutStates_state_lifted = global::TomskGO.Droid.Resource.Styleable.AppBarLayoutStates_state_lifted;
 			global::PanCardView.Droid.Resource.Styleable.AppBarLayout_Layout = global::TomskGO.Droid.Resource.Styleable.AppBarLayout_Layout;
 			global::PanCardView.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags = global::TomskGO.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollFlags;
 			global::PanCardView.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator = global::TomskGO.Droid.Resource.Styleable.AppBarLayout_Layout_layout_scrollInterpolator;
-			global::PanCardView.Droid.Resource.Styleable.AppBarLayout_liftOnScroll = global::TomskGO.Droid.Resource.Styleable.AppBarLayout_liftOnScroll;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatImageView = global::TomskGO.Droid.Resource.Styleable.AppCompatImageView;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatImageView_android_src = global::TomskGO.Droid.Resource.Styleable.AppCompatImageView_android_src;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatImageView_srcCompat = global::TomskGO.Droid.Resource.Styleable.AppCompatImageView_srcCompat;
@@ -4931,8 +4969,8 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_dialogTheme = global::TomskGO.Droid.Resource.Styleable.AppCompatTheme_dialogTheme;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal = global::TomskGO.Droid.Resource.Styleable.AppCompatTheme_dividerHorizontal;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_dividerVertical = global::TomskGO.Droid.Resource.Styleable.AppCompatTheme_dividerVertical;
-			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::TomskGO.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle = global::TomskGO.Droid.Resource.Styleable.AppCompatTheme_dropDownListViewStyle;
+			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight = global::TomskGO.Droid.Resource.Styleable.AppCompatTheme_dropdownListPreferredItemHeight;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_editTextBackground = global::TomskGO.Droid.Resource.Styleable.AppCompatTheme_editTextBackground;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_editTextColor = global::TomskGO.Droid.Resource.Styleable.AppCompatTheme_editTextColor;
 			global::PanCardView.Droid.Resource.Styleable.AppCompatTheme_editTextStyle = global::TomskGO.Droid.Resource.Styleable.AppCompatTheme_editTextStyle;
@@ -5028,13 +5066,6 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Styleable.CardView_contentPaddingRight = global::TomskGO.Droid.Resource.Styleable.CardView_contentPaddingRight;
 			global::PanCardView.Droid.Resource.Styleable.CardView_contentPaddingTop = global::TomskGO.Droid.Resource.Styleable.CardView_contentPaddingTop;
 			global::PanCardView.Droid.Resource.Styleable.Chip = global::TomskGO.Droid.Resource.Styleable.Chip;
-			global::PanCardView.Droid.Resource.Styleable.ChipGroup = global::TomskGO.Droid.Resource.Styleable.ChipGroup;
-			global::PanCardView.Droid.Resource.Styleable.ChipGroup_checkedChip = global::TomskGO.Droid.Resource.Styleable.ChipGroup_checkedChip;
-			global::PanCardView.Droid.Resource.Styleable.ChipGroup_chipSpacing = global::TomskGO.Droid.Resource.Styleable.ChipGroup_chipSpacing;
-			global::PanCardView.Droid.Resource.Styleable.ChipGroup_chipSpacingHorizontal = global::TomskGO.Droid.Resource.Styleable.ChipGroup_chipSpacingHorizontal;
-			global::PanCardView.Droid.Resource.Styleable.ChipGroup_chipSpacingVertical = global::TomskGO.Droid.Resource.Styleable.ChipGroup_chipSpacingVertical;
-			global::PanCardView.Droid.Resource.Styleable.ChipGroup_singleLine = global::TomskGO.Droid.Resource.Styleable.ChipGroup_singleLine;
-			global::PanCardView.Droid.Resource.Styleable.ChipGroup_singleSelection = global::TomskGO.Droid.Resource.Styleable.ChipGroup_singleSelection;
 			global::PanCardView.Droid.Resource.Styleable.Chip_android_checkable = global::TomskGO.Droid.Resource.Styleable.Chip_android_checkable;
 			global::PanCardView.Droid.Resource.Styleable.Chip_android_ellipsize = global::TomskGO.Droid.Resource.Styleable.Chip_android_ellipsize;
 			global::PanCardView.Droid.Resource.Styleable.Chip_android_maxWidth = global::TomskGO.Droid.Resource.Styleable.Chip_android_maxWidth;
@@ -5069,6 +5100,13 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Styleable.Chip_showMotionSpec = global::TomskGO.Droid.Resource.Styleable.Chip_showMotionSpec;
 			global::PanCardView.Droid.Resource.Styleable.Chip_textEndPadding = global::TomskGO.Droid.Resource.Styleable.Chip_textEndPadding;
 			global::PanCardView.Droid.Resource.Styleable.Chip_textStartPadding = global::TomskGO.Droid.Resource.Styleable.Chip_textStartPadding;
+			global::PanCardView.Droid.Resource.Styleable.ChipGroup = global::TomskGO.Droid.Resource.Styleable.ChipGroup;
+			global::PanCardView.Droid.Resource.Styleable.ChipGroup_checkedChip = global::TomskGO.Droid.Resource.Styleable.ChipGroup_checkedChip;
+			global::PanCardView.Droid.Resource.Styleable.ChipGroup_chipSpacing = global::TomskGO.Droid.Resource.Styleable.ChipGroup_chipSpacing;
+			global::PanCardView.Droid.Resource.Styleable.ChipGroup_chipSpacingHorizontal = global::TomskGO.Droid.Resource.Styleable.ChipGroup_chipSpacingHorizontal;
+			global::PanCardView.Droid.Resource.Styleable.ChipGroup_chipSpacingVertical = global::TomskGO.Droid.Resource.Styleable.ChipGroup_chipSpacingVertical;
+			global::PanCardView.Droid.Resource.Styleable.ChipGroup_singleLine = global::TomskGO.Droid.Resource.Styleable.ChipGroup_singleLine;
+			global::PanCardView.Droid.Resource.Styleable.ChipGroup_singleSelection = global::TomskGO.Droid.Resource.Styleable.ChipGroup_singleSelection;
 			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout = global::TomskGO.Droid.Resource.Styleable.CollapsingToolbarLayout;
 			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity = global::TomskGO.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleGravity;
 			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance = global::TomskGO.Droid.Resource.Styleable.CollapsingToolbarLayout_collapsedTitleTextAppearance;
@@ -5080,15 +5118,15 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart = global::TomskGO.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginStart;
 			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop = global::TomskGO.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleMarginTop;
 			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance = global::TomskGO.Droid.Resource.Styleable.CollapsingToolbarLayout_expandedTitleTextAppearance;
-			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout = global::TomskGO.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout;
-			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode = global::TomskGO.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode;
-			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = global::TomskGO.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier;
 			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration = global::TomskGO.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimAnimationDuration;
 			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger = global::TomskGO.Droid.Resource.Styleable.CollapsingToolbarLayout_scrimVisibleHeightTrigger;
 			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim = global::TomskGO.Droid.Resource.Styleable.CollapsingToolbarLayout_statusBarScrim;
 			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_title = global::TomskGO.Droid.Resource.Styleable.CollapsingToolbarLayout_title;
 			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled = global::TomskGO.Droid.Resource.Styleable.CollapsingToolbarLayout_titleEnabled;
 			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId = global::TomskGO.Droid.Resource.Styleable.CollapsingToolbarLayout_toolbarId;
+			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout = global::TomskGO.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout;
+			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode = global::TomskGO.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseMode;
+			global::PanCardView.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier = global::TomskGO.Droid.Resource.Styleable.CollapsingToolbarLayout_Layout_layout_collapseParallaxMultiplier;
 			global::PanCardView.Droid.Resource.Styleable.ColorStateListItem = global::TomskGO.Droid.Resource.Styleable.ColorStateListItem;
 			global::PanCardView.Droid.Resource.Styleable.ColorStateListItem_alpha = global::TomskGO.Droid.Resource.Styleable.ColorStateListItem_alpha;
 			global::PanCardView.Droid.Resource.Styleable.ColorStateListItem_android_alpha = global::TomskGO.Droid.Resource.Styleable.ColorStateListItem_android_alpha;
@@ -5099,6 +5137,7 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Styleable.CompoundButton_buttonTintMode = global::TomskGO.Droid.Resource.Styleable.CompoundButton_buttonTintMode;
 			global::PanCardView.Droid.Resource.Styleable.CoordinatorLayout = global::TomskGO.Droid.Resource.Styleable.CoordinatorLayout;
 			global::PanCardView.Droid.Resource.Styleable.CoordinatorLayout_keylines = global::TomskGO.Droid.Resource.Styleable.CoordinatorLayout_keylines;
+			global::PanCardView.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::TomskGO.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
 			global::PanCardView.Droid.Resource.Styleable.CoordinatorLayout_Layout = global::TomskGO.Droid.Resource.Styleable.CoordinatorLayout_Layout;
 			global::PanCardView.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity = global::TomskGO.Droid.Resource.Styleable.CoordinatorLayout_Layout_android_layout_gravity;
 			global::PanCardView.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor = global::TomskGO.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_anchor;
@@ -5107,7 +5146,6 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges = global::TomskGO.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_dodgeInsetEdges;
 			global::PanCardView.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge = global::TomskGO.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_insetEdge;
 			global::PanCardView.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline = global::TomskGO.Droid.Resource.Styleable.CoordinatorLayout_Layout_layout_keyline;
-			global::PanCardView.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground = global::TomskGO.Droid.Resource.Styleable.CoordinatorLayout_statusBarBackground;
 			global::PanCardView.Droid.Resource.Styleable.DesignTheme = global::TomskGO.Droid.Resource.Styleable.DesignTheme;
 			global::PanCardView.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme = global::TomskGO.Droid.Resource.Styleable.DesignTheme_bottomSheetDialogTheme;
 			global::PanCardView.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle = global::TomskGO.Droid.Resource.Styleable.DesignTheme_bottomSheetStyle;
@@ -5123,8 +5161,6 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton = global::TomskGO.Droid.Resource.Styleable.FloatingActionButton;
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_backgroundTint = global::TomskGO.Droid.Resource.Styleable.FloatingActionButton_backgroundTint;
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode = global::TomskGO.Droid.Resource.Styleable.FloatingActionButton_backgroundTintMode;
-			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout = global::TomskGO.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout;
-			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::TomskGO.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_borderWidth = global::TomskGO.Droid.Resource.Styleable.FloatingActionButton_borderWidth;
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_elevation = global::TomskGO.Droid.Resource.Styleable.FloatingActionButton_elevation;
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_fabCustomSize = global::TomskGO.Droid.Resource.Styleable.FloatingActionButton_fabCustomSize;
@@ -5136,10 +5172,18 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_rippleColor = global::TomskGO.Droid.Resource.Styleable.FloatingActionButton_rippleColor;
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_showMotionSpec = global::TomskGO.Droid.Resource.Styleable.FloatingActionButton_showMotionSpec;
 			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding = global::TomskGO.Droid.Resource.Styleable.FloatingActionButton_useCompatPadding;
+			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout = global::TomskGO.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout;
+			global::PanCardView.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide = global::TomskGO.Droid.Resource.Styleable.FloatingActionButton_Behavior_Layout_behavior_autoHide;
 			global::PanCardView.Droid.Resource.Styleable.FlowLayout = global::TomskGO.Droid.Resource.Styleable.FlowLayout;
 			global::PanCardView.Droid.Resource.Styleable.FlowLayout_itemSpacing = global::TomskGO.Droid.Resource.Styleable.FlowLayout_itemSpacing;
 			global::PanCardView.Droid.Resource.Styleable.FlowLayout_lineSpacing = global::TomskGO.Droid.Resource.Styleable.FlowLayout_lineSpacing;
 			global::PanCardView.Droid.Resource.Styleable.FontFamily = global::TomskGO.Droid.Resource.Styleable.FontFamily;
+			global::PanCardView.Droid.Resource.Styleable.FontFamily_fontProviderAuthority = global::TomskGO.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
+			global::PanCardView.Droid.Resource.Styleable.FontFamily_fontProviderCerts = global::TomskGO.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
+			global::PanCardView.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::TomskGO.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
+			global::PanCardView.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::TomskGO.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
+			global::PanCardView.Droid.Resource.Styleable.FontFamily_fontProviderPackage = global::TomskGO.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
+			global::PanCardView.Droid.Resource.Styleable.FontFamily_fontProviderQuery = global::TomskGO.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
 			global::PanCardView.Droid.Resource.Styleable.FontFamilyFont = global::TomskGO.Droid.Resource.Styleable.FontFamilyFont;
 			global::PanCardView.Droid.Resource.Styleable.FontFamilyFont_android_font = global::TomskGO.Droid.Resource.Styleable.FontFamilyFont_android_font;
 			global::PanCardView.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle = global::TomskGO.Droid.Resource.Styleable.FontFamilyFont_android_fontStyle;
@@ -5151,20 +5195,11 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Styleable.FontFamilyFont_fontVariationSettings = global::TomskGO.Droid.Resource.Styleable.FontFamilyFont_fontVariationSettings;
 			global::PanCardView.Droid.Resource.Styleable.FontFamilyFont_fontWeight = global::TomskGO.Droid.Resource.Styleable.FontFamilyFont_fontWeight;
 			global::PanCardView.Droid.Resource.Styleable.FontFamilyFont_ttcIndex = global::TomskGO.Droid.Resource.Styleable.FontFamilyFont_ttcIndex;
-			global::PanCardView.Droid.Resource.Styleable.FontFamily_fontProviderAuthority = global::TomskGO.Droid.Resource.Styleable.FontFamily_fontProviderAuthority;
-			global::PanCardView.Droid.Resource.Styleable.FontFamily_fontProviderCerts = global::TomskGO.Droid.Resource.Styleable.FontFamily_fontProviderCerts;
-			global::PanCardView.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy = global::TomskGO.Droid.Resource.Styleable.FontFamily_fontProviderFetchStrategy;
-			global::PanCardView.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::TomskGO.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
-			global::PanCardView.Droid.Resource.Styleable.FontFamily_fontProviderPackage = global::TomskGO.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
-			global::PanCardView.Droid.Resource.Styleable.FontFamily_fontProviderQuery = global::TomskGO.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
 			global::PanCardView.Droid.Resource.Styleable.ForegroundLinearLayout = global::TomskGO.Droid.Resource.Styleable.ForegroundLinearLayout;
 			global::PanCardView.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground = global::TomskGO.Droid.Resource.Styleable.ForegroundLinearLayout_android_foreground;
 			global::PanCardView.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity = global::TomskGO.Droid.Resource.Styleable.ForegroundLinearLayout_android_foregroundGravity;
 			global::PanCardView.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding = global::TomskGO.Droid.Resource.Styleable.ForegroundLinearLayout_foregroundInsidePadding;
 			global::PanCardView.Droid.Resource.Styleable.GradientColor = global::TomskGO.Droid.Resource.Styleable.GradientColor;
-			global::PanCardView.Droid.Resource.Styleable.GradientColorItem = global::TomskGO.Droid.Resource.Styleable.GradientColorItem;
-			global::PanCardView.Droid.Resource.Styleable.GradientColorItem_android_color = global::TomskGO.Droid.Resource.Styleable.GradientColorItem_android_color;
-			global::PanCardView.Droid.Resource.Styleable.GradientColorItem_android_offset = global::TomskGO.Droid.Resource.Styleable.GradientColorItem_android_offset;
 			global::PanCardView.Droid.Resource.Styleable.GradientColor_android_centerColor = global::TomskGO.Droid.Resource.Styleable.GradientColor_android_centerColor;
 			global::PanCardView.Droid.Resource.Styleable.GradientColor_android_centerX = global::TomskGO.Droid.Resource.Styleable.GradientColor_android_centerX;
 			global::PanCardView.Droid.Resource.Styleable.GradientColor_android_centerY = global::TomskGO.Droid.Resource.Styleable.GradientColor_android_centerY;
@@ -5177,6 +5212,9 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Styleable.GradientColor_android_startY = global::TomskGO.Droid.Resource.Styleable.GradientColor_android_startY;
 			global::PanCardView.Droid.Resource.Styleable.GradientColor_android_tileMode = global::TomskGO.Droid.Resource.Styleable.GradientColor_android_tileMode;
 			global::PanCardView.Droid.Resource.Styleable.GradientColor_android_type = global::TomskGO.Droid.Resource.Styleable.GradientColor_android_type;
+			global::PanCardView.Droid.Resource.Styleable.GradientColorItem = global::TomskGO.Droid.Resource.Styleable.GradientColorItem;
+			global::PanCardView.Droid.Resource.Styleable.GradientColorItem_android_color = global::TomskGO.Droid.Resource.Styleable.GradientColorItem_android_color;
+			global::PanCardView.Droid.Resource.Styleable.GradientColorItem_android_offset = global::TomskGO.Droid.Resource.Styleable.GradientColorItem_android_offset;
 			global::PanCardView.Droid.Resource.Styleable.LinearLayoutCompat = global::TomskGO.Droid.Resource.Styleable.LinearLayoutCompat;
 			global::PanCardView.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned = global::TomskGO.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAligned;
 			global::PanCardView.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex = global::TomskGO.Droid.Resource.Styleable.LinearLayoutCompat_android_baselineAlignedChildIndex;
@@ -5185,13 +5223,13 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum = global::TomskGO.Droid.Resource.Styleable.LinearLayoutCompat_android_weightSum;
 			global::PanCardView.Droid.Resource.Styleable.LinearLayoutCompat_divider = global::TomskGO.Droid.Resource.Styleable.LinearLayoutCompat_divider;
 			global::PanCardView.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding = global::TomskGO.Droid.Resource.Styleable.LinearLayoutCompat_dividerPadding;
+			global::PanCardView.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::TomskGO.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
+			global::PanCardView.Droid.Resource.Styleable.LinearLayoutCompat_showDividers = global::TomskGO.Droid.Resource.Styleable.LinearLayoutCompat_showDividers;
 			global::PanCardView.Droid.Resource.Styleable.LinearLayoutCompat_Layout = global::TomskGO.Droid.Resource.Styleable.LinearLayoutCompat_Layout;
 			global::PanCardView.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity = global::TomskGO.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_gravity;
 			global::PanCardView.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height = global::TomskGO.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_height;
 			global::PanCardView.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight = global::TomskGO.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_weight;
 			global::PanCardView.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width = global::TomskGO.Droid.Resource.Styleable.LinearLayoutCompat_Layout_android_layout_width;
-			global::PanCardView.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild = global::TomskGO.Droid.Resource.Styleable.LinearLayoutCompat_measureWithLargestChild;
-			global::PanCardView.Droid.Resource.Styleable.LinearLayoutCompat_showDividers = global::TomskGO.Droid.Resource.Styleable.LinearLayoutCompat_showDividers;
 			global::PanCardView.Droid.Resource.Styleable.ListPopupWindow = global::TomskGO.Droid.Resource.Styleable.ListPopupWindow;
 			global::PanCardView.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset = global::TomskGO.Droid.Resource.Styleable.ListPopupWindow_android_dropDownHorizontalOffset;
 			global::PanCardView.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset = global::TomskGO.Droid.Resource.Styleable.ListPopupWindow_android_dropDownVerticalOffset;
@@ -5308,11 +5346,11 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Styleable.NavigationView_itemTextColor = global::TomskGO.Droid.Resource.Styleable.NavigationView_itemTextColor;
 			global::PanCardView.Droid.Resource.Styleable.NavigationView_menu = global::TomskGO.Droid.Resource.Styleable.NavigationView_menu;
 			global::PanCardView.Droid.Resource.Styleable.PopupWindow = global::TomskGO.Droid.Resource.Styleable.PopupWindow;
-			global::PanCardView.Droid.Resource.Styleable.PopupWindowBackgroundState = global::TomskGO.Droid.Resource.Styleable.PopupWindowBackgroundState;
-			global::PanCardView.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::TomskGO.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
 			global::PanCardView.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle = global::TomskGO.Droid.Resource.Styleable.PopupWindow_android_popupAnimationStyle;
 			global::PanCardView.Droid.Resource.Styleable.PopupWindow_android_popupBackground = global::TomskGO.Droid.Resource.Styleable.PopupWindow_android_popupBackground;
 			global::PanCardView.Droid.Resource.Styleable.PopupWindow_overlapAnchor = global::TomskGO.Droid.Resource.Styleable.PopupWindow_overlapAnchor;
+			global::PanCardView.Droid.Resource.Styleable.PopupWindowBackgroundState = global::TomskGO.Droid.Resource.Styleable.PopupWindowBackgroundState;
+			global::PanCardView.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor = global::TomskGO.Droid.Resource.Styleable.PopupWindowBackgroundState_state_above_anchor;
 			global::PanCardView.Droid.Resource.Styleable.RecycleListView = global::TomskGO.Droid.Resource.Styleable.RecycleListView;
 			global::PanCardView.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons = global::TomskGO.Droid.Resource.Styleable.RecycleListView_paddingBottomNoButtons;
 			global::PanCardView.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle = global::TomskGO.Droid.Resource.Styleable.RecycleListView_paddingTopNoTitle;
@@ -5351,12 +5389,12 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Styleable.SearchView_suggestionRowLayout = global::TomskGO.Droid.Resource.Styleable.SearchView_suggestionRowLayout;
 			global::PanCardView.Droid.Resource.Styleable.SearchView_voiceIcon = global::TomskGO.Droid.Resource.Styleable.SearchView_voiceIcon;
 			global::PanCardView.Droid.Resource.Styleable.Snackbar = global::TomskGO.Droid.Resource.Styleable.Snackbar;
+			global::PanCardView.Droid.Resource.Styleable.Snackbar_snackbarButtonStyle = global::TomskGO.Droid.Resource.Styleable.Snackbar_snackbarButtonStyle;
+			global::PanCardView.Droid.Resource.Styleable.Snackbar_snackbarStyle = global::TomskGO.Droid.Resource.Styleable.Snackbar_snackbarStyle;
 			global::PanCardView.Droid.Resource.Styleable.SnackbarLayout = global::TomskGO.Droid.Resource.Styleable.SnackbarLayout;
 			global::PanCardView.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth = global::TomskGO.Droid.Resource.Styleable.SnackbarLayout_android_maxWidth;
 			global::PanCardView.Droid.Resource.Styleable.SnackbarLayout_elevation = global::TomskGO.Droid.Resource.Styleable.SnackbarLayout_elevation;
 			global::PanCardView.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth = global::TomskGO.Droid.Resource.Styleable.SnackbarLayout_maxActionInlineWidth;
-			global::PanCardView.Droid.Resource.Styleable.Snackbar_snackbarButtonStyle = global::TomskGO.Droid.Resource.Styleable.Snackbar_snackbarButtonStyle;
-			global::PanCardView.Droid.Resource.Styleable.Snackbar_snackbarStyle = global::TomskGO.Droid.Resource.Styleable.Snackbar_snackbarStyle;
 			global::PanCardView.Droid.Resource.Styleable.Spinner = global::TomskGO.Droid.Resource.Styleable.Spinner;
 			global::PanCardView.Droid.Resource.Styleable.Spinner_android_dropDownWidth = global::TomskGO.Droid.Resource.Styleable.Spinner_android_dropDownWidth;
 			global::PanCardView.Droid.Resource.Styleable.Spinner_android_entries = global::TomskGO.Droid.Resource.Styleable.Spinner_android_entries;
@@ -5364,14 +5402,14 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Styleable.Spinner_android_prompt = global::TomskGO.Droid.Resource.Styleable.Spinner_android_prompt;
 			global::PanCardView.Droid.Resource.Styleable.Spinner_popupTheme = global::TomskGO.Droid.Resource.Styleable.Spinner_popupTheme;
 			global::PanCardView.Droid.Resource.Styleable.StateListDrawable = global::TomskGO.Droid.Resource.Styleable.StateListDrawable;
-			global::PanCardView.Droid.Resource.Styleable.StateListDrawableItem = global::TomskGO.Droid.Resource.Styleable.StateListDrawableItem;
-			global::PanCardView.Droid.Resource.Styleable.StateListDrawableItem_android_drawable = global::TomskGO.Droid.Resource.Styleable.StateListDrawableItem_android_drawable;
 			global::PanCardView.Droid.Resource.Styleable.StateListDrawable_android_constantSize = global::TomskGO.Droid.Resource.Styleable.StateListDrawable_android_constantSize;
 			global::PanCardView.Droid.Resource.Styleable.StateListDrawable_android_dither = global::TomskGO.Droid.Resource.Styleable.StateListDrawable_android_dither;
 			global::PanCardView.Droid.Resource.Styleable.StateListDrawable_android_enterFadeDuration = global::TomskGO.Droid.Resource.Styleable.StateListDrawable_android_enterFadeDuration;
 			global::PanCardView.Droid.Resource.Styleable.StateListDrawable_android_exitFadeDuration = global::TomskGO.Droid.Resource.Styleable.StateListDrawable_android_exitFadeDuration;
 			global::PanCardView.Droid.Resource.Styleable.StateListDrawable_android_variablePadding = global::TomskGO.Droid.Resource.Styleable.StateListDrawable_android_variablePadding;
 			global::PanCardView.Droid.Resource.Styleable.StateListDrawable_android_visible = global::TomskGO.Droid.Resource.Styleable.StateListDrawable_android_visible;
+			global::PanCardView.Droid.Resource.Styleable.StateListDrawableItem = global::TomskGO.Droid.Resource.Styleable.StateListDrawableItem;
+			global::PanCardView.Droid.Resource.Styleable.StateListDrawableItem_android_drawable = global::TomskGO.Droid.Resource.Styleable.StateListDrawableItem_android_drawable;
 			global::PanCardView.Droid.Resource.Styleable.SwitchCompat = global::TomskGO.Droid.Resource.Styleable.SwitchCompat;
 			global::PanCardView.Droid.Resource.Styleable.SwitchCompat_android_textOff = global::TomskGO.Droid.Resource.Styleable.SwitchCompat_android_textOff;
 			global::PanCardView.Droid.Resource.Styleable.SwitchCompat_android_textOn = global::TomskGO.Droid.Resource.Styleable.SwitchCompat_android_textOn;
@@ -5489,12 +5527,17 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Styleable.Toolbar_titleMargin = global::TomskGO.Droid.Resource.Styleable.Toolbar_titleMargin;
 			global::PanCardView.Droid.Resource.Styleable.Toolbar_titleMarginBottom = global::TomskGO.Droid.Resource.Styleable.Toolbar_titleMarginBottom;
 			global::PanCardView.Droid.Resource.Styleable.Toolbar_titleMarginEnd = global::TomskGO.Droid.Resource.Styleable.Toolbar_titleMarginEnd;
-			global::PanCardView.Droid.Resource.Styleable.Toolbar_titleMargins = global::TomskGO.Droid.Resource.Styleable.Toolbar_titleMargins;
 			global::PanCardView.Droid.Resource.Styleable.Toolbar_titleMarginStart = global::TomskGO.Droid.Resource.Styleable.Toolbar_titleMarginStart;
 			global::PanCardView.Droid.Resource.Styleable.Toolbar_titleMarginTop = global::TomskGO.Droid.Resource.Styleable.Toolbar_titleMarginTop;
+			global::PanCardView.Droid.Resource.Styleable.Toolbar_titleMargins = global::TomskGO.Droid.Resource.Styleable.Toolbar_titleMargins;
 			global::PanCardView.Droid.Resource.Styleable.Toolbar_titleTextAppearance = global::TomskGO.Droid.Resource.Styleable.Toolbar_titleTextAppearance;
 			global::PanCardView.Droid.Resource.Styleable.Toolbar_titleTextColor = global::TomskGO.Droid.Resource.Styleable.Toolbar_titleTextColor;
 			global::PanCardView.Droid.Resource.Styleable.View = global::TomskGO.Droid.Resource.Styleable.View;
+			global::PanCardView.Droid.Resource.Styleable.View_android_focusable = global::TomskGO.Droid.Resource.Styleable.View_android_focusable;
+			global::PanCardView.Droid.Resource.Styleable.View_android_theme = global::TomskGO.Droid.Resource.Styleable.View_android_theme;
+			global::PanCardView.Droid.Resource.Styleable.View_paddingEnd = global::TomskGO.Droid.Resource.Styleable.View_paddingEnd;
+			global::PanCardView.Droid.Resource.Styleable.View_paddingStart = global::TomskGO.Droid.Resource.Styleable.View_paddingStart;
+			global::PanCardView.Droid.Resource.Styleable.View_theme = global::TomskGO.Droid.Resource.Styleable.View_theme;
 			global::PanCardView.Droid.Resource.Styleable.ViewBackgroundHelper = global::TomskGO.Droid.Resource.Styleable.ViewBackgroundHelper;
 			global::PanCardView.Droid.Resource.Styleable.ViewBackgroundHelper_android_background = global::TomskGO.Droid.Resource.Styleable.ViewBackgroundHelper_android_background;
 			global::PanCardView.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint = global::TomskGO.Droid.Resource.Styleable.ViewBackgroundHelper_backgroundTint;
@@ -5503,11 +5546,6 @@ namespace TomskGO.Droid
 			global::PanCardView.Droid.Resource.Styleable.ViewStubCompat_android_id = global::TomskGO.Droid.Resource.Styleable.ViewStubCompat_android_id;
 			global::PanCardView.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId = global::TomskGO.Droid.Resource.Styleable.ViewStubCompat_android_inflatedId;
 			global::PanCardView.Droid.Resource.Styleable.ViewStubCompat_android_layout = global::TomskGO.Droid.Resource.Styleable.ViewStubCompat_android_layout;
-			global::PanCardView.Droid.Resource.Styleable.View_android_focusable = global::TomskGO.Droid.Resource.Styleable.View_android_focusable;
-			global::PanCardView.Droid.Resource.Styleable.View_android_theme = global::TomskGO.Droid.Resource.Styleable.View_android_theme;
-			global::PanCardView.Droid.Resource.Styleable.View_paddingEnd = global::TomskGO.Droid.Resource.Styleable.View_paddingEnd;
-			global::PanCardView.Droid.Resource.Styleable.View_paddingStart = global::TomskGO.Droid.Resource.Styleable.View_paddingStart;
-			global::PanCardView.Droid.Resource.Styleable.View_theme = global::TomskGO.Droid.Resource.Styleable.View_theme;
 			global::Stormlion.PhotoBrowser.Droid.Resource.Animation.abc_fade_in = global::TomskGO.Droid.Resource.Animation.abc_fade_in;
 			global::Stormlion.PhotoBrowser.Droid.Resource.Animation.abc_fade_out = global::TomskGO.Droid.Resource.Animation.abc_fade_out;
 			global::Stormlion.PhotoBrowser.Droid.Resource.Animation.abc_grow_fade_in_from_bottom = global::TomskGO.Droid.Resource.Animation.abc_grow_fade_in_from_bottom;
@@ -18453,773 +18491,755 @@ namespace TomskGO.Droid
 			// aapt resource value: 0x7f020054
 			public const int avd_hide_password = 2130837588;
 			
-			// aapt resource value: 0x7f02014f
-			public const int avd_hide_password_1 = 2130837839;
+			// aapt resource value: 0x7f020149
+			public const int avd_hide_password_1 = 2130837833;
 			
-			// aapt resource value: 0x7f020150
-			public const int avd_hide_password_2 = 2130837840;
+			// aapt resource value: 0x7f02014a
+			public const int avd_hide_password_2 = 2130837834;
 			
-			// aapt resource value: 0x7f020151
-			public const int avd_hide_password_3 = 2130837841;
+			// aapt resource value: 0x7f02014b
+			public const int avd_hide_password_3 = 2130837835;
 			
 			// aapt resource value: 0x7f020055
 			public const int avd_show_password = 2130837589;
 			
-			// aapt resource value: 0x7f020152
-			public const int avd_show_password_1 = 2130837842;
-			
-			// aapt resource value: 0x7f020153
-			public const int avd_show_password_2 = 2130837843;
-			
-			// aapt resource value: 0x7f020154
-			public const int avd_show_password_3 = 2130837844;
-			
-			// aapt resource value: 0x7f020056
-			public const int back = 2130837590;
-			
-			// aapt resource value: 0x7f020057
-			public const int back_white = 2130837591;
-			
-			// aapt resource value: 0x7f020058
-			public const int design_bottom_navigation_item_background = 2130837592;
-			
-			// aapt resource value: 0x7f020059
-			public const int design_fab_background = 2130837593;
-			
-			// aapt resource value: 0x7f02005a
-			public const int design_ic_visibility = 2130837594;
-			
-			// aapt resource value: 0x7f02005b
-			public const int design_ic_visibility_off = 2130837595;
-			
-			// aapt resource value: 0x7f02005c
-			public const int design_password_eye = 2130837596;
-			
-			// aapt resource value: 0x7f02005d
-			public const int design_snackbar_background = 2130837597;
-			
-			// aapt resource value: 0x7f02005e
-			public const int drawable_ripple = 2130837598;
-			
-			// aapt resource value: 0x7f02005f
-			public const int drawable_ripple_image = 2130837599;
-			
-			// aapt resource value: 0x7f020060
-			public const int drawable_ripple_outlined = 2130837600;
-			
-			// aapt resource value: 0x7f020061
-			public const int drawable_ripple_outlined_with_icon = 2130837601;
-			
-			// aapt resource value: 0x7f020062
-			public const int drawable_ripple_text = 2130837602;
-			
-			// aapt resource value: 0x7f020063
-			public const int drawable_ripple_with_icon = 2130837603;
-			
-			// aapt resource value: 0x7f020064
-			public const int drawable_selector = 2130837604;
-			
-			// aapt resource value: 0x7f020065
-			public const int drawable_shape = 2130837605;
-			
-			// aapt resource value: 0x7f020066
-			public const int drawable_shape_text = 2130837606;
-			
-			// aapt resource value: 0x7f020067
-			public const int drawable_shape_with_icon = 2130837607;
-			
-			// aapt resource value: 0x7f020068
-			public const int ic_audiotrack_dark = 2130837608;
-			
-			// aapt resource value: 0x7f020069
-			public const int ic_audiotrack_light = 2130837609;
-			
-			// aapt resource value: 0x7f02006a
-			public const int ic_dialog_close_dark = 2130837610;
-			
-			// aapt resource value: 0x7f02006b
-			public const int ic_dialog_close_light = 2130837611;
-			
-			// aapt resource value: 0x7f02006c
-			public const int ic_group_collapse_00 = 2130837612;
-			
-			// aapt resource value: 0x7f02006d
-			public const int ic_group_collapse_01 = 2130837613;
-			
-			// aapt resource value: 0x7f02006e
-			public const int ic_group_collapse_02 = 2130837614;
-			
-			// aapt resource value: 0x7f02006f
-			public const int ic_group_collapse_03 = 2130837615;
-			
-			// aapt resource value: 0x7f020070
-			public const int ic_group_collapse_04 = 2130837616;
-			
-			// aapt resource value: 0x7f020071
-			public const int ic_group_collapse_05 = 2130837617;
-			
-			// aapt resource value: 0x7f020072
-			public const int ic_group_collapse_06 = 2130837618;
-			
-			// aapt resource value: 0x7f020073
-			public const int ic_group_collapse_07 = 2130837619;
-			
-			// aapt resource value: 0x7f020074
-			public const int ic_group_collapse_08 = 2130837620;
-			
-			// aapt resource value: 0x7f020075
-			public const int ic_group_collapse_09 = 2130837621;
-			
-			// aapt resource value: 0x7f020076
-			public const int ic_group_collapse_10 = 2130837622;
-			
-			// aapt resource value: 0x7f020077
-			public const int ic_group_collapse_11 = 2130837623;
-			
-			// aapt resource value: 0x7f020078
-			public const int ic_group_collapse_12 = 2130837624;
-			
-			// aapt resource value: 0x7f020079
-			public const int ic_group_collapse_13 = 2130837625;
-			
-			// aapt resource value: 0x7f02007a
-			public const int ic_group_collapse_14 = 2130837626;
-			
-			// aapt resource value: 0x7f02007b
-			public const int ic_group_collapse_15 = 2130837627;
-			
-			// aapt resource value: 0x7f02007c
-			public const int ic_group_expand_00 = 2130837628;
-			
-			// aapt resource value: 0x7f02007d
-			public const int ic_group_expand_01 = 2130837629;
-			
-			// aapt resource value: 0x7f02007e
-			public const int ic_group_expand_02 = 2130837630;
-			
-			// aapt resource value: 0x7f02007f
-			public const int ic_group_expand_03 = 2130837631;
-			
-			// aapt resource value: 0x7f020080
-			public const int ic_group_expand_04 = 2130837632;
-			
-			// aapt resource value: 0x7f020081
-			public const int ic_group_expand_05 = 2130837633;
-			
-			// aapt resource value: 0x7f020082
-			public const int ic_group_expand_06 = 2130837634;
-			
-			// aapt resource value: 0x7f020083
-			public const int ic_group_expand_07 = 2130837635;
-			
-			// aapt resource value: 0x7f020084
-			public const int ic_group_expand_08 = 2130837636;
-			
-			// aapt resource value: 0x7f020085
-			public const int ic_group_expand_09 = 2130837637;
-			
-			// aapt resource value: 0x7f020086
-			public const int ic_group_expand_10 = 2130837638;
-			
-			// aapt resource value: 0x7f020087
-			public const int ic_group_expand_11 = 2130837639;
-			
-			// aapt resource value: 0x7f020088
-			public const int ic_group_expand_12 = 2130837640;
-			
-			// aapt resource value: 0x7f020089
-			public const int ic_group_expand_13 = 2130837641;
-			
-			// aapt resource value: 0x7f02008a
-			public const int ic_group_expand_14 = 2130837642;
-			
-			// aapt resource value: 0x7f02008b
-			public const int ic_group_expand_15 = 2130837643;
-			
-			// aapt resource value: 0x7f02008c
-			public const int ic_media_pause_dark = 2130837644;
-			
-			// aapt resource value: 0x7f02008d
-			public const int ic_media_pause_light = 2130837645;
-			
-			// aapt resource value: 0x7f02008e
-			public const int ic_media_play_dark = 2130837646;
-			
-			// aapt resource value: 0x7f02008f
-			public const int ic_media_play_light = 2130837647;
-			
-			// aapt resource value: 0x7f020090
-			public const int ic_media_stop_dark = 2130837648;
-			
-			// aapt resource value: 0x7f020091
-			public const int ic_media_stop_light = 2130837649;
-			
-			// aapt resource value: 0x7f020092
-			public const int ic_mr_button_connected_00_dark = 2130837650;
-			
-			// aapt resource value: 0x7f020093
-			public const int ic_mr_button_connected_00_light = 2130837651;
-			
-			// aapt resource value: 0x7f020094
-			public const int ic_mr_button_connected_01_dark = 2130837652;
-			
-			// aapt resource value: 0x7f020095
-			public const int ic_mr_button_connected_01_light = 2130837653;
-			
-			// aapt resource value: 0x7f020096
-			public const int ic_mr_button_connected_02_dark = 2130837654;
-			
-			// aapt resource value: 0x7f020097
-			public const int ic_mr_button_connected_02_light = 2130837655;
-			
-			// aapt resource value: 0x7f020098
-			public const int ic_mr_button_connected_03_dark = 2130837656;
-			
-			// aapt resource value: 0x7f020099
-			public const int ic_mr_button_connected_03_light = 2130837657;
-			
-			// aapt resource value: 0x7f02009a
-			public const int ic_mr_button_connected_04_dark = 2130837658;
-			
-			// aapt resource value: 0x7f02009b
-			public const int ic_mr_button_connected_04_light = 2130837659;
-			
-			// aapt resource value: 0x7f02009c
-			public const int ic_mr_button_connected_05_dark = 2130837660;
-			
-			// aapt resource value: 0x7f02009d
-			public const int ic_mr_button_connected_05_light = 2130837661;
-			
-			// aapt resource value: 0x7f02009e
-			public const int ic_mr_button_connected_06_dark = 2130837662;
-			
-			// aapt resource value: 0x7f02009f
-			public const int ic_mr_button_connected_06_light = 2130837663;
-			
-			// aapt resource value: 0x7f0200a0
-			public const int ic_mr_button_connected_07_dark = 2130837664;
-			
-			// aapt resource value: 0x7f0200a1
-			public const int ic_mr_button_connected_07_light = 2130837665;
-			
-			// aapt resource value: 0x7f0200a2
-			public const int ic_mr_button_connected_08_dark = 2130837666;
-			
-			// aapt resource value: 0x7f0200a3
-			public const int ic_mr_button_connected_08_light = 2130837667;
-			
-			// aapt resource value: 0x7f0200a4
-			public const int ic_mr_button_connected_09_dark = 2130837668;
-			
-			// aapt resource value: 0x7f0200a5
-			public const int ic_mr_button_connected_09_light = 2130837669;
-			
-			// aapt resource value: 0x7f0200a6
-			public const int ic_mr_button_connected_10_dark = 2130837670;
-			
-			// aapt resource value: 0x7f0200a7
-			public const int ic_mr_button_connected_10_light = 2130837671;
-			
-			// aapt resource value: 0x7f0200a8
-			public const int ic_mr_button_connected_11_dark = 2130837672;
-			
-			// aapt resource value: 0x7f0200a9
-			public const int ic_mr_button_connected_11_light = 2130837673;
-			
-			// aapt resource value: 0x7f0200aa
-			public const int ic_mr_button_connected_12_dark = 2130837674;
-			
-			// aapt resource value: 0x7f0200ab
-			public const int ic_mr_button_connected_12_light = 2130837675;
-			
-			// aapt resource value: 0x7f0200ac
-			public const int ic_mr_button_connected_13_dark = 2130837676;
-			
-			// aapt resource value: 0x7f0200ad
-			public const int ic_mr_button_connected_13_light = 2130837677;
-			
-			// aapt resource value: 0x7f0200ae
-			public const int ic_mr_button_connected_14_dark = 2130837678;
-			
-			// aapt resource value: 0x7f0200af
-			public const int ic_mr_button_connected_14_light = 2130837679;
-			
-			// aapt resource value: 0x7f0200b0
-			public const int ic_mr_button_connected_15_dark = 2130837680;
-			
-			// aapt resource value: 0x7f0200b1
-			public const int ic_mr_button_connected_15_light = 2130837681;
-			
-			// aapt resource value: 0x7f0200b2
-			public const int ic_mr_button_connected_16_dark = 2130837682;
-			
-			// aapt resource value: 0x7f0200b3
-			public const int ic_mr_button_connected_16_light = 2130837683;
-			
-			// aapt resource value: 0x7f0200b4
-			public const int ic_mr_button_connected_17_dark = 2130837684;
-			
-			// aapt resource value: 0x7f0200b5
-			public const int ic_mr_button_connected_17_light = 2130837685;
-			
-			// aapt resource value: 0x7f0200b6
-			public const int ic_mr_button_connected_18_dark = 2130837686;
-			
-			// aapt resource value: 0x7f0200b7
-			public const int ic_mr_button_connected_18_light = 2130837687;
-			
-			// aapt resource value: 0x7f0200b8
-			public const int ic_mr_button_connected_19_dark = 2130837688;
-			
-			// aapt resource value: 0x7f0200b9
-			public const int ic_mr_button_connected_19_light = 2130837689;
-			
-			// aapt resource value: 0x7f0200ba
-			public const int ic_mr_button_connected_20_dark = 2130837690;
-			
-			// aapt resource value: 0x7f0200bb
-			public const int ic_mr_button_connected_20_light = 2130837691;
-			
-			// aapt resource value: 0x7f0200bc
-			public const int ic_mr_button_connected_21_dark = 2130837692;
-			
-			// aapt resource value: 0x7f0200bd
-			public const int ic_mr_button_connected_21_light = 2130837693;
-			
-			// aapt resource value: 0x7f0200be
-			public const int ic_mr_button_connected_22_dark = 2130837694;
-			
-			// aapt resource value: 0x7f0200bf
-			public const int ic_mr_button_connected_22_light = 2130837695;
-			
-			// aapt resource value: 0x7f0200c0
-			public const int ic_mr_button_connected_23_dark = 2130837696;
-			
-			// aapt resource value: 0x7f0200c1
-			public const int ic_mr_button_connected_23_light = 2130837697;
-			
-			// aapt resource value: 0x7f0200c2
-			public const int ic_mr_button_connected_24_dark = 2130837698;
-			
-			// aapt resource value: 0x7f0200c3
-			public const int ic_mr_button_connected_24_light = 2130837699;
-			
-			// aapt resource value: 0x7f0200c4
-			public const int ic_mr_button_connected_25_dark = 2130837700;
-			
-			// aapt resource value: 0x7f0200c5
-			public const int ic_mr_button_connected_25_light = 2130837701;
-			
-			// aapt resource value: 0x7f0200c6
-			public const int ic_mr_button_connected_26_dark = 2130837702;
-			
-			// aapt resource value: 0x7f0200c7
-			public const int ic_mr_button_connected_26_light = 2130837703;
-			
-			// aapt resource value: 0x7f0200c8
-			public const int ic_mr_button_connected_27_dark = 2130837704;
-			
-			// aapt resource value: 0x7f0200c9
-			public const int ic_mr_button_connected_27_light = 2130837705;
-			
-			// aapt resource value: 0x7f0200ca
-			public const int ic_mr_button_connected_28_dark = 2130837706;
-			
-			// aapt resource value: 0x7f0200cb
-			public const int ic_mr_button_connected_28_light = 2130837707;
-			
-			// aapt resource value: 0x7f0200cc
-			public const int ic_mr_button_connected_29_dark = 2130837708;
-			
-			// aapt resource value: 0x7f0200cd
-			public const int ic_mr_button_connected_29_light = 2130837709;
-			
-			// aapt resource value: 0x7f0200ce
-			public const int ic_mr_button_connected_30_dark = 2130837710;
-			
-			// aapt resource value: 0x7f0200cf
-			public const int ic_mr_button_connected_30_light = 2130837711;
-			
-			// aapt resource value: 0x7f0200d0
-			public const int ic_mr_button_connecting_00_dark = 2130837712;
-			
-			// aapt resource value: 0x7f0200d1
-			public const int ic_mr_button_connecting_00_light = 2130837713;
-			
-			// aapt resource value: 0x7f0200d2
-			public const int ic_mr_button_connecting_01_dark = 2130837714;
-			
-			// aapt resource value: 0x7f0200d3
-			public const int ic_mr_button_connecting_01_light = 2130837715;
-			
-			// aapt resource value: 0x7f0200d4
-			public const int ic_mr_button_connecting_02_dark = 2130837716;
-			
-			// aapt resource value: 0x7f0200d5
-			public const int ic_mr_button_connecting_02_light = 2130837717;
-			
-			// aapt resource value: 0x7f0200d6
-			public const int ic_mr_button_connecting_03_dark = 2130837718;
-			
-			// aapt resource value: 0x7f0200d7
-			public const int ic_mr_button_connecting_03_light = 2130837719;
-			
-			// aapt resource value: 0x7f0200d8
-			public const int ic_mr_button_connecting_04_dark = 2130837720;
-			
-			// aapt resource value: 0x7f0200d9
-			public const int ic_mr_button_connecting_04_light = 2130837721;
-			
-			// aapt resource value: 0x7f0200da
-			public const int ic_mr_button_connecting_05_dark = 2130837722;
-			
-			// aapt resource value: 0x7f0200db
-			public const int ic_mr_button_connecting_05_light = 2130837723;
-			
-			// aapt resource value: 0x7f0200dc
-			public const int ic_mr_button_connecting_06_dark = 2130837724;
-			
-			// aapt resource value: 0x7f0200dd
-			public const int ic_mr_button_connecting_06_light = 2130837725;
-			
-			// aapt resource value: 0x7f0200de
-			public const int ic_mr_button_connecting_07_dark = 2130837726;
-			
-			// aapt resource value: 0x7f0200df
-			public const int ic_mr_button_connecting_07_light = 2130837727;
-			
-			// aapt resource value: 0x7f0200e0
-			public const int ic_mr_button_connecting_08_dark = 2130837728;
-			
-			// aapt resource value: 0x7f0200e1
-			public const int ic_mr_button_connecting_08_light = 2130837729;
-			
-			// aapt resource value: 0x7f0200e2
-			public const int ic_mr_button_connecting_09_dark = 2130837730;
-			
-			// aapt resource value: 0x7f0200e3
-			public const int ic_mr_button_connecting_09_light = 2130837731;
-			
-			// aapt resource value: 0x7f0200e4
-			public const int ic_mr_button_connecting_10_dark = 2130837732;
-			
-			// aapt resource value: 0x7f0200e5
-			public const int ic_mr_button_connecting_10_light = 2130837733;
-			
-			// aapt resource value: 0x7f0200e6
-			public const int ic_mr_button_connecting_11_dark = 2130837734;
-			
-			// aapt resource value: 0x7f0200e7
-			public const int ic_mr_button_connecting_11_light = 2130837735;
-			
-			// aapt resource value: 0x7f0200e8
-			public const int ic_mr_button_connecting_12_dark = 2130837736;
-			
-			// aapt resource value: 0x7f0200e9
-			public const int ic_mr_button_connecting_12_light = 2130837737;
-			
-			// aapt resource value: 0x7f0200ea
-			public const int ic_mr_button_connecting_13_dark = 2130837738;
-			
-			// aapt resource value: 0x7f0200eb
-			public const int ic_mr_button_connecting_13_light = 2130837739;
-			
-			// aapt resource value: 0x7f0200ec
-			public const int ic_mr_button_connecting_14_dark = 2130837740;
-			
-			// aapt resource value: 0x7f0200ed
-			public const int ic_mr_button_connecting_14_light = 2130837741;
-			
-			// aapt resource value: 0x7f0200ee
-			public const int ic_mr_button_connecting_15_dark = 2130837742;
-			
-			// aapt resource value: 0x7f0200ef
-			public const int ic_mr_button_connecting_15_light = 2130837743;
-			
-			// aapt resource value: 0x7f0200f0
-			public const int ic_mr_button_connecting_16_dark = 2130837744;
-			
-			// aapt resource value: 0x7f0200f1
-			public const int ic_mr_button_connecting_16_light = 2130837745;
-			
-			// aapt resource value: 0x7f0200f2
-			public const int ic_mr_button_connecting_17_dark = 2130837746;
-			
-			// aapt resource value: 0x7f0200f3
-			public const int ic_mr_button_connecting_17_light = 2130837747;
-			
-			// aapt resource value: 0x7f0200f4
-			public const int ic_mr_button_connecting_18_dark = 2130837748;
-			
-			// aapt resource value: 0x7f0200f5
-			public const int ic_mr_button_connecting_18_light = 2130837749;
-			
-			// aapt resource value: 0x7f0200f6
-			public const int ic_mr_button_connecting_19_dark = 2130837750;
-			
-			// aapt resource value: 0x7f0200f7
-			public const int ic_mr_button_connecting_19_light = 2130837751;
-			
-			// aapt resource value: 0x7f0200f8
-			public const int ic_mr_button_connecting_20_dark = 2130837752;
-			
-			// aapt resource value: 0x7f0200f9
-			public const int ic_mr_button_connecting_20_light = 2130837753;
-			
-			// aapt resource value: 0x7f0200fa
-			public const int ic_mr_button_connecting_21_dark = 2130837754;
-			
-			// aapt resource value: 0x7f0200fb
-			public const int ic_mr_button_connecting_21_light = 2130837755;
-			
-			// aapt resource value: 0x7f0200fc
-			public const int ic_mr_button_connecting_22_dark = 2130837756;
-			
-			// aapt resource value: 0x7f0200fd
-			public const int ic_mr_button_connecting_22_light = 2130837757;
-			
-			// aapt resource value: 0x7f0200fe
-			public const int ic_mr_button_connecting_23_dark = 2130837758;
-			
-			// aapt resource value: 0x7f0200ff
-			public const int ic_mr_button_connecting_23_light = 2130837759;
-			
-			// aapt resource value: 0x7f020100
-			public const int ic_mr_button_connecting_24_dark = 2130837760;
-			
-			// aapt resource value: 0x7f020101
-			public const int ic_mr_button_connecting_24_light = 2130837761;
-			
-			// aapt resource value: 0x7f020102
-			public const int ic_mr_button_connecting_25_dark = 2130837762;
-			
-			// aapt resource value: 0x7f020103
-			public const int ic_mr_button_connecting_25_light = 2130837763;
-			
-			// aapt resource value: 0x7f020104
-			public const int ic_mr_button_connecting_26_dark = 2130837764;
-			
-			// aapt resource value: 0x7f020105
-			public const int ic_mr_button_connecting_26_light = 2130837765;
-			
-			// aapt resource value: 0x7f020106
-			public const int ic_mr_button_connecting_27_dark = 2130837766;
-			
-			// aapt resource value: 0x7f020107
-			public const int ic_mr_button_connecting_27_light = 2130837767;
-			
-			// aapt resource value: 0x7f020108
-			public const int ic_mr_button_connecting_28_dark = 2130837768;
-			
-			// aapt resource value: 0x7f020109
-			public const int ic_mr_button_connecting_28_light = 2130837769;
-			
-			// aapt resource value: 0x7f02010a
-			public const int ic_mr_button_connecting_29_dark = 2130837770;
-			
-			// aapt resource value: 0x7f02010b
-			public const int ic_mr_button_connecting_29_light = 2130837771;
-			
-			// aapt resource value: 0x7f02010c
-			public const int ic_mr_button_connecting_30_dark = 2130837772;
-			
-			// aapt resource value: 0x7f02010d
-			public const int ic_mr_button_connecting_30_light = 2130837773;
-			
-			// aapt resource value: 0x7f02010e
-			public const int ic_mr_button_disabled_dark = 2130837774;
-			
-			// aapt resource value: 0x7f02010f
-			public const int ic_mr_button_disabled_light = 2130837775;
-			
-			// aapt resource value: 0x7f020110
-			public const int ic_mr_button_disconnected_dark = 2130837776;
-			
-			// aapt resource value: 0x7f020111
-			public const int ic_mr_button_disconnected_light = 2130837777;
-			
-			// aapt resource value: 0x7f020112
-			public const int ic_mr_button_grey = 2130837778;
-			
-			// aapt resource value: 0x7f020113
-			public const int ic_mtrl_chip_checked_black = 2130837779;
-			
-			// aapt resource value: 0x7f020114
-			public const int ic_mtrl_chip_checked_circle = 2130837780;
-			
-			// aapt resource value: 0x7f020115
-			public const int ic_mtrl_chip_close_circle = 2130837781;
-			
-			// aapt resource value: 0x7f020116
-			public const int ic_vol_type_speaker_dark = 2130837782;
-			
-			// aapt resource value: 0x7f020117
-			public const int ic_vol_type_speaker_group_dark = 2130837783;
-			
-			// aapt resource value: 0x7f020118
-			public const int ic_vol_type_speaker_group_light = 2130837784;
-			
-			// aapt resource value: 0x7f020119
-			public const int ic_vol_type_speaker_light = 2130837785;
-			
-			// aapt resource value: 0x7f02011a
-			public const int ic_vol_type_tv_dark = 2130837786;
-			
-			// aapt resource value: 0x7f02011b
-			public const int ic_vol_type_tv_light = 2130837787;
-			
-			// aapt resource value: 0x7f02011c
-			public const int info = 2130837788;
-			
-			// aapt resource value: 0x7f02011d
-			public const int moon = 2130837789;
-			
-			// aapt resource value: 0x7f02011e
-			public const int mr_button_connected_dark = 2130837790;
-			
-			// aapt resource value: 0x7f02011f
-			public const int mr_button_connected_light = 2130837791;
-			
-			// aapt resource value: 0x7f020120
-			public const int mr_button_connecting_dark = 2130837792;
-			
-			// aapt resource value: 0x7f020121
-			public const int mr_button_connecting_light = 2130837793;
-			
-			// aapt resource value: 0x7f020122
-			public const int mr_button_dark = 2130837794;
-			
-			// aapt resource value: 0x7f020123
-			public const int mr_button_light = 2130837795;
-			
-			// aapt resource value: 0x7f020124
-			public const int mr_dialog_close_dark = 2130837796;
-			
-			// aapt resource value: 0x7f020125
-			public const int mr_dialog_close_light = 2130837797;
-			
-			// aapt resource value: 0x7f020126
-			public const int mr_dialog_material_background_dark = 2130837798;
-			
-			// aapt resource value: 0x7f020127
-			public const int mr_dialog_material_background_light = 2130837799;
-			
-			// aapt resource value: 0x7f020128
-			public const int mr_group_collapse = 2130837800;
-			
-			// aapt resource value: 0x7f020129
-			public const int mr_group_expand = 2130837801;
-			
-			// aapt resource value: 0x7f02012a
-			public const int mr_media_pause_dark = 2130837802;
-			
-			// aapt resource value: 0x7f02012b
-			public const int mr_media_pause_light = 2130837803;
-			
-			// aapt resource value: 0x7f02012c
-			public const int mr_media_play_dark = 2130837804;
-			
-			// aapt resource value: 0x7f02012d
-			public const int mr_media_play_light = 2130837805;
-			
-			// aapt resource value: 0x7f02012e
-			public const int mr_media_stop_dark = 2130837806;
-			
-			// aapt resource value: 0x7f02012f
-			public const int mr_media_stop_light = 2130837807;
-			
-			// aapt resource value: 0x7f020130
-			public const int mr_vol_type_audiotrack_dark = 2130837808;
-			
-			// aapt resource value: 0x7f020131
-			public const int mr_vol_type_audiotrack_light = 2130837809;
-			
-			// aapt resource value: 0x7f020132
-			public const int mtrl_snackbar_background = 2130837810;
-			
-			// aapt resource value: 0x7f020133
-			public const int mtrl_tabs_default_indicator = 2130837811;
-			
-			// aapt resource value: 0x7f020134
-			public const int navigation_empty_icon = 2130837812;
-			
-			// aapt resource value: 0x7f020135
-			public const int news = 2130837813;
-			
-			// aapt resource value: 0x7f020136
-			public const int notification_action_background = 2130837814;
-			
-			// aapt resource value: 0x7f020137
-			public const int notification_bg = 2130837815;
-			
-			// aapt resource value: 0x7f020138
-			public const int notification_bg_low = 2130837816;
-			
-			// aapt resource value: 0x7f020139
-			public const int notification_bg_low_normal = 2130837817;
-			
-			// aapt resource value: 0x7f02013a
-			public const int notification_bg_low_pressed = 2130837818;
-			
-			// aapt resource value: 0x7f02013b
-			public const int notification_bg_normal = 2130837819;
-			
-			// aapt resource value: 0x7f02013c
-			public const int notification_bg_normal_pressed = 2130837820;
-			
-			// aapt resource value: 0x7f02013d
-			public const int notification_icon_background = 2130837821;
+			// aapt resource value: 0x7f02014c
+			public const int avd_show_password_1 = 2130837836;
 			
 			// aapt resource value: 0x7f02014d
-			public const int notification_template_icon_bg = 2130837837;
+			public const int avd_show_password_2 = 2130837837;
 			
 			// aapt resource value: 0x7f02014e
-			public const int notification_template_icon_low_bg = 2130837838;
+			public const int avd_show_password_3 = 2130837838;
 			
-			// aapt resource value: 0x7f02013e
-			public const int notification_tile_bg = 2130837822;
+			// aapt resource value: 0x7f020056
+			public const int design_bottom_navigation_item_background = 2130837590;
 			
-			// aapt resource value: 0x7f02013f
-			public const int notify_panel_notification_icon_bg = 2130837823;
+			// aapt resource value: 0x7f020057
+			public const int design_fab_background = 2130837591;
 			
-			// aapt resource value: 0x7f020140
-			public const int settings = 2130837824;
+			// aapt resource value: 0x7f020058
+			public const int design_ic_visibility = 2130837592;
 			
-			// aapt resource value: 0x7f020141
-			public const int share = 2130837825;
+			// aapt resource value: 0x7f020059
+			public const int design_ic_visibility_off = 2130837593;
 			
-			// aapt resource value: 0x7f020142
-			public const int sun = 2130837826;
+			// aapt resource value: 0x7f02005a
+			public const int design_password_eye = 2130837594;
 			
-			// aapt resource value: 0x7f020143
-			public const int tooltip_frame_dark = 2130837827;
+			// aapt resource value: 0x7f02005b
+			public const int design_snackbar_background = 2130837595;
 			
-			// aapt resource value: 0x7f020144
-			public const int tooltip_frame_light = 2130837828;
+			// aapt resource value: 0x7f02005c
+			public const int drawable_ripple = 2130837596;
 			
-			// aapt resource value: 0x7f020145
-			public const int xf_arrow_dropdown = 2130837829;
+			// aapt resource value: 0x7f02005d
+			public const int drawable_ripple_image = 2130837597;
 			
-			// aapt resource value: 0x7f020146
-			public const int xf_check = 2130837830;
+			// aapt resource value: 0x7f02005e
+			public const int drawable_ripple_outlined = 2130837598;
+			
+			// aapt resource value: 0x7f02005f
+			public const int drawable_ripple_outlined_with_icon = 2130837599;
+			
+			// aapt resource value: 0x7f020060
+			public const int drawable_ripple_text = 2130837600;
+			
+			// aapt resource value: 0x7f020061
+			public const int drawable_ripple_with_icon = 2130837601;
+			
+			// aapt resource value: 0x7f020062
+			public const int drawable_selector = 2130837602;
+			
+			// aapt resource value: 0x7f020063
+			public const int drawable_shape = 2130837603;
+			
+			// aapt resource value: 0x7f020064
+			public const int drawable_shape_text = 2130837604;
+			
+			// aapt resource value: 0x7f020065
+			public const int drawable_shape_with_icon = 2130837605;
+			
+			// aapt resource value: 0x7f020066
+			public const int ic_audiotrack_dark = 2130837606;
+			
+			// aapt resource value: 0x7f020067
+			public const int ic_audiotrack_light = 2130837607;
+			
+			// aapt resource value: 0x7f020068
+			public const int ic_dialog_close_dark = 2130837608;
+			
+			// aapt resource value: 0x7f020069
+			public const int ic_dialog_close_light = 2130837609;
+			
+			// aapt resource value: 0x7f02006a
+			public const int ic_group_collapse_00 = 2130837610;
+			
+			// aapt resource value: 0x7f02006b
+			public const int ic_group_collapse_01 = 2130837611;
+			
+			// aapt resource value: 0x7f02006c
+			public const int ic_group_collapse_02 = 2130837612;
+			
+			// aapt resource value: 0x7f02006d
+			public const int ic_group_collapse_03 = 2130837613;
+			
+			// aapt resource value: 0x7f02006e
+			public const int ic_group_collapse_04 = 2130837614;
+			
+			// aapt resource value: 0x7f02006f
+			public const int ic_group_collapse_05 = 2130837615;
+			
+			// aapt resource value: 0x7f020070
+			public const int ic_group_collapse_06 = 2130837616;
+			
+			// aapt resource value: 0x7f020071
+			public const int ic_group_collapse_07 = 2130837617;
+			
+			// aapt resource value: 0x7f020072
+			public const int ic_group_collapse_08 = 2130837618;
+			
+			// aapt resource value: 0x7f020073
+			public const int ic_group_collapse_09 = 2130837619;
+			
+			// aapt resource value: 0x7f020074
+			public const int ic_group_collapse_10 = 2130837620;
+			
+			// aapt resource value: 0x7f020075
+			public const int ic_group_collapse_11 = 2130837621;
+			
+			// aapt resource value: 0x7f020076
+			public const int ic_group_collapse_12 = 2130837622;
+			
+			// aapt resource value: 0x7f020077
+			public const int ic_group_collapse_13 = 2130837623;
+			
+			// aapt resource value: 0x7f020078
+			public const int ic_group_collapse_14 = 2130837624;
+			
+			// aapt resource value: 0x7f020079
+			public const int ic_group_collapse_15 = 2130837625;
+			
+			// aapt resource value: 0x7f02007a
+			public const int ic_group_expand_00 = 2130837626;
+			
+			// aapt resource value: 0x7f02007b
+			public const int ic_group_expand_01 = 2130837627;
+			
+			// aapt resource value: 0x7f02007c
+			public const int ic_group_expand_02 = 2130837628;
+			
+			// aapt resource value: 0x7f02007d
+			public const int ic_group_expand_03 = 2130837629;
+			
+			// aapt resource value: 0x7f02007e
+			public const int ic_group_expand_04 = 2130837630;
+			
+			// aapt resource value: 0x7f02007f
+			public const int ic_group_expand_05 = 2130837631;
+			
+			// aapt resource value: 0x7f020080
+			public const int ic_group_expand_06 = 2130837632;
+			
+			// aapt resource value: 0x7f020081
+			public const int ic_group_expand_07 = 2130837633;
+			
+			// aapt resource value: 0x7f020082
+			public const int ic_group_expand_08 = 2130837634;
+			
+			// aapt resource value: 0x7f020083
+			public const int ic_group_expand_09 = 2130837635;
+			
+			// aapt resource value: 0x7f020084
+			public const int ic_group_expand_10 = 2130837636;
+			
+			// aapt resource value: 0x7f020085
+			public const int ic_group_expand_11 = 2130837637;
+			
+			// aapt resource value: 0x7f020086
+			public const int ic_group_expand_12 = 2130837638;
+			
+			// aapt resource value: 0x7f020087
+			public const int ic_group_expand_13 = 2130837639;
+			
+			// aapt resource value: 0x7f020088
+			public const int ic_group_expand_14 = 2130837640;
+			
+			// aapt resource value: 0x7f020089
+			public const int ic_group_expand_15 = 2130837641;
+			
+			// aapt resource value: 0x7f02008a
+			public const int ic_media_pause_dark = 2130837642;
+			
+			// aapt resource value: 0x7f02008b
+			public const int ic_media_pause_light = 2130837643;
+			
+			// aapt resource value: 0x7f02008c
+			public const int ic_media_play_dark = 2130837644;
+			
+			// aapt resource value: 0x7f02008d
+			public const int ic_media_play_light = 2130837645;
+			
+			// aapt resource value: 0x7f02008e
+			public const int ic_media_stop_dark = 2130837646;
+			
+			// aapt resource value: 0x7f02008f
+			public const int ic_media_stop_light = 2130837647;
+			
+			// aapt resource value: 0x7f020090
+			public const int ic_mr_button_connected_00_dark = 2130837648;
+			
+			// aapt resource value: 0x7f020091
+			public const int ic_mr_button_connected_00_light = 2130837649;
+			
+			// aapt resource value: 0x7f020092
+			public const int ic_mr_button_connected_01_dark = 2130837650;
+			
+			// aapt resource value: 0x7f020093
+			public const int ic_mr_button_connected_01_light = 2130837651;
+			
+			// aapt resource value: 0x7f020094
+			public const int ic_mr_button_connected_02_dark = 2130837652;
+			
+			// aapt resource value: 0x7f020095
+			public const int ic_mr_button_connected_02_light = 2130837653;
+			
+			// aapt resource value: 0x7f020096
+			public const int ic_mr_button_connected_03_dark = 2130837654;
+			
+			// aapt resource value: 0x7f020097
+			public const int ic_mr_button_connected_03_light = 2130837655;
+			
+			// aapt resource value: 0x7f020098
+			public const int ic_mr_button_connected_04_dark = 2130837656;
+			
+			// aapt resource value: 0x7f020099
+			public const int ic_mr_button_connected_04_light = 2130837657;
+			
+			// aapt resource value: 0x7f02009a
+			public const int ic_mr_button_connected_05_dark = 2130837658;
+			
+			// aapt resource value: 0x7f02009b
+			public const int ic_mr_button_connected_05_light = 2130837659;
+			
+			// aapt resource value: 0x7f02009c
+			public const int ic_mr_button_connected_06_dark = 2130837660;
+			
+			// aapt resource value: 0x7f02009d
+			public const int ic_mr_button_connected_06_light = 2130837661;
+			
+			// aapt resource value: 0x7f02009e
+			public const int ic_mr_button_connected_07_dark = 2130837662;
+			
+			// aapt resource value: 0x7f02009f
+			public const int ic_mr_button_connected_07_light = 2130837663;
+			
+			// aapt resource value: 0x7f0200a0
+			public const int ic_mr_button_connected_08_dark = 2130837664;
+			
+			// aapt resource value: 0x7f0200a1
+			public const int ic_mr_button_connected_08_light = 2130837665;
+			
+			// aapt resource value: 0x7f0200a2
+			public const int ic_mr_button_connected_09_dark = 2130837666;
+			
+			// aapt resource value: 0x7f0200a3
+			public const int ic_mr_button_connected_09_light = 2130837667;
+			
+			// aapt resource value: 0x7f0200a4
+			public const int ic_mr_button_connected_10_dark = 2130837668;
+			
+			// aapt resource value: 0x7f0200a5
+			public const int ic_mr_button_connected_10_light = 2130837669;
+			
+			// aapt resource value: 0x7f0200a6
+			public const int ic_mr_button_connected_11_dark = 2130837670;
+			
+			// aapt resource value: 0x7f0200a7
+			public const int ic_mr_button_connected_11_light = 2130837671;
+			
+			// aapt resource value: 0x7f0200a8
+			public const int ic_mr_button_connected_12_dark = 2130837672;
+			
+			// aapt resource value: 0x7f0200a9
+			public const int ic_mr_button_connected_12_light = 2130837673;
+			
+			// aapt resource value: 0x7f0200aa
+			public const int ic_mr_button_connected_13_dark = 2130837674;
+			
+			// aapt resource value: 0x7f0200ab
+			public const int ic_mr_button_connected_13_light = 2130837675;
+			
+			// aapt resource value: 0x7f0200ac
+			public const int ic_mr_button_connected_14_dark = 2130837676;
+			
+			// aapt resource value: 0x7f0200ad
+			public const int ic_mr_button_connected_14_light = 2130837677;
+			
+			// aapt resource value: 0x7f0200ae
+			public const int ic_mr_button_connected_15_dark = 2130837678;
+			
+			// aapt resource value: 0x7f0200af
+			public const int ic_mr_button_connected_15_light = 2130837679;
+			
+			// aapt resource value: 0x7f0200b0
+			public const int ic_mr_button_connected_16_dark = 2130837680;
+			
+			// aapt resource value: 0x7f0200b1
+			public const int ic_mr_button_connected_16_light = 2130837681;
+			
+			// aapt resource value: 0x7f0200b2
+			public const int ic_mr_button_connected_17_dark = 2130837682;
+			
+			// aapt resource value: 0x7f0200b3
+			public const int ic_mr_button_connected_17_light = 2130837683;
+			
+			// aapt resource value: 0x7f0200b4
+			public const int ic_mr_button_connected_18_dark = 2130837684;
+			
+			// aapt resource value: 0x7f0200b5
+			public const int ic_mr_button_connected_18_light = 2130837685;
+			
+			// aapt resource value: 0x7f0200b6
+			public const int ic_mr_button_connected_19_dark = 2130837686;
+			
+			// aapt resource value: 0x7f0200b7
+			public const int ic_mr_button_connected_19_light = 2130837687;
+			
+			// aapt resource value: 0x7f0200b8
+			public const int ic_mr_button_connected_20_dark = 2130837688;
+			
+			// aapt resource value: 0x7f0200b9
+			public const int ic_mr_button_connected_20_light = 2130837689;
+			
+			// aapt resource value: 0x7f0200ba
+			public const int ic_mr_button_connected_21_dark = 2130837690;
+			
+			// aapt resource value: 0x7f0200bb
+			public const int ic_mr_button_connected_21_light = 2130837691;
+			
+			// aapt resource value: 0x7f0200bc
+			public const int ic_mr_button_connected_22_dark = 2130837692;
+			
+			// aapt resource value: 0x7f0200bd
+			public const int ic_mr_button_connected_22_light = 2130837693;
+			
+			// aapt resource value: 0x7f0200be
+			public const int ic_mr_button_connected_23_dark = 2130837694;
+			
+			// aapt resource value: 0x7f0200bf
+			public const int ic_mr_button_connected_23_light = 2130837695;
+			
+			// aapt resource value: 0x7f0200c0
+			public const int ic_mr_button_connected_24_dark = 2130837696;
+			
+			// aapt resource value: 0x7f0200c1
+			public const int ic_mr_button_connected_24_light = 2130837697;
+			
+			// aapt resource value: 0x7f0200c2
+			public const int ic_mr_button_connected_25_dark = 2130837698;
+			
+			// aapt resource value: 0x7f0200c3
+			public const int ic_mr_button_connected_25_light = 2130837699;
+			
+			// aapt resource value: 0x7f0200c4
+			public const int ic_mr_button_connected_26_dark = 2130837700;
+			
+			// aapt resource value: 0x7f0200c5
+			public const int ic_mr_button_connected_26_light = 2130837701;
+			
+			// aapt resource value: 0x7f0200c6
+			public const int ic_mr_button_connected_27_dark = 2130837702;
+			
+			// aapt resource value: 0x7f0200c7
+			public const int ic_mr_button_connected_27_light = 2130837703;
+			
+			// aapt resource value: 0x7f0200c8
+			public const int ic_mr_button_connected_28_dark = 2130837704;
+			
+			// aapt resource value: 0x7f0200c9
+			public const int ic_mr_button_connected_28_light = 2130837705;
+			
+			// aapt resource value: 0x7f0200ca
+			public const int ic_mr_button_connected_29_dark = 2130837706;
+			
+			// aapt resource value: 0x7f0200cb
+			public const int ic_mr_button_connected_29_light = 2130837707;
+			
+			// aapt resource value: 0x7f0200cc
+			public const int ic_mr_button_connected_30_dark = 2130837708;
+			
+			// aapt resource value: 0x7f0200cd
+			public const int ic_mr_button_connected_30_light = 2130837709;
+			
+			// aapt resource value: 0x7f0200ce
+			public const int ic_mr_button_connecting_00_dark = 2130837710;
+			
+			// aapt resource value: 0x7f0200cf
+			public const int ic_mr_button_connecting_00_light = 2130837711;
+			
+			// aapt resource value: 0x7f0200d0
+			public const int ic_mr_button_connecting_01_dark = 2130837712;
+			
+			// aapt resource value: 0x7f0200d1
+			public const int ic_mr_button_connecting_01_light = 2130837713;
+			
+			// aapt resource value: 0x7f0200d2
+			public const int ic_mr_button_connecting_02_dark = 2130837714;
+			
+			// aapt resource value: 0x7f0200d3
+			public const int ic_mr_button_connecting_02_light = 2130837715;
+			
+			// aapt resource value: 0x7f0200d4
+			public const int ic_mr_button_connecting_03_dark = 2130837716;
+			
+			// aapt resource value: 0x7f0200d5
+			public const int ic_mr_button_connecting_03_light = 2130837717;
+			
+			// aapt resource value: 0x7f0200d6
+			public const int ic_mr_button_connecting_04_dark = 2130837718;
+			
+			// aapt resource value: 0x7f0200d7
+			public const int ic_mr_button_connecting_04_light = 2130837719;
+			
+			// aapt resource value: 0x7f0200d8
+			public const int ic_mr_button_connecting_05_dark = 2130837720;
+			
+			// aapt resource value: 0x7f0200d9
+			public const int ic_mr_button_connecting_05_light = 2130837721;
+			
+			// aapt resource value: 0x7f0200da
+			public const int ic_mr_button_connecting_06_dark = 2130837722;
+			
+			// aapt resource value: 0x7f0200db
+			public const int ic_mr_button_connecting_06_light = 2130837723;
+			
+			// aapt resource value: 0x7f0200dc
+			public const int ic_mr_button_connecting_07_dark = 2130837724;
+			
+			// aapt resource value: 0x7f0200dd
+			public const int ic_mr_button_connecting_07_light = 2130837725;
+			
+			// aapt resource value: 0x7f0200de
+			public const int ic_mr_button_connecting_08_dark = 2130837726;
+			
+			// aapt resource value: 0x7f0200df
+			public const int ic_mr_button_connecting_08_light = 2130837727;
+			
+			// aapt resource value: 0x7f0200e0
+			public const int ic_mr_button_connecting_09_dark = 2130837728;
+			
+			// aapt resource value: 0x7f0200e1
+			public const int ic_mr_button_connecting_09_light = 2130837729;
+			
+			// aapt resource value: 0x7f0200e2
+			public const int ic_mr_button_connecting_10_dark = 2130837730;
+			
+			// aapt resource value: 0x7f0200e3
+			public const int ic_mr_button_connecting_10_light = 2130837731;
+			
+			// aapt resource value: 0x7f0200e4
+			public const int ic_mr_button_connecting_11_dark = 2130837732;
+			
+			// aapt resource value: 0x7f0200e5
+			public const int ic_mr_button_connecting_11_light = 2130837733;
+			
+			// aapt resource value: 0x7f0200e6
+			public const int ic_mr_button_connecting_12_dark = 2130837734;
+			
+			// aapt resource value: 0x7f0200e7
+			public const int ic_mr_button_connecting_12_light = 2130837735;
+			
+			// aapt resource value: 0x7f0200e8
+			public const int ic_mr_button_connecting_13_dark = 2130837736;
+			
+			// aapt resource value: 0x7f0200e9
+			public const int ic_mr_button_connecting_13_light = 2130837737;
+			
+			// aapt resource value: 0x7f0200ea
+			public const int ic_mr_button_connecting_14_dark = 2130837738;
+			
+			// aapt resource value: 0x7f0200eb
+			public const int ic_mr_button_connecting_14_light = 2130837739;
+			
+			// aapt resource value: 0x7f0200ec
+			public const int ic_mr_button_connecting_15_dark = 2130837740;
+			
+			// aapt resource value: 0x7f0200ed
+			public const int ic_mr_button_connecting_15_light = 2130837741;
+			
+			// aapt resource value: 0x7f0200ee
+			public const int ic_mr_button_connecting_16_dark = 2130837742;
+			
+			// aapt resource value: 0x7f0200ef
+			public const int ic_mr_button_connecting_16_light = 2130837743;
+			
+			// aapt resource value: 0x7f0200f0
+			public const int ic_mr_button_connecting_17_dark = 2130837744;
+			
+			// aapt resource value: 0x7f0200f1
+			public const int ic_mr_button_connecting_17_light = 2130837745;
+			
+			// aapt resource value: 0x7f0200f2
+			public const int ic_mr_button_connecting_18_dark = 2130837746;
+			
+			// aapt resource value: 0x7f0200f3
+			public const int ic_mr_button_connecting_18_light = 2130837747;
+			
+			// aapt resource value: 0x7f0200f4
+			public const int ic_mr_button_connecting_19_dark = 2130837748;
+			
+			// aapt resource value: 0x7f0200f5
+			public const int ic_mr_button_connecting_19_light = 2130837749;
+			
+			// aapt resource value: 0x7f0200f6
+			public const int ic_mr_button_connecting_20_dark = 2130837750;
+			
+			// aapt resource value: 0x7f0200f7
+			public const int ic_mr_button_connecting_20_light = 2130837751;
+			
+			// aapt resource value: 0x7f0200f8
+			public const int ic_mr_button_connecting_21_dark = 2130837752;
+			
+			// aapt resource value: 0x7f0200f9
+			public const int ic_mr_button_connecting_21_light = 2130837753;
+			
+			// aapt resource value: 0x7f0200fa
+			public const int ic_mr_button_connecting_22_dark = 2130837754;
+			
+			// aapt resource value: 0x7f0200fb
+			public const int ic_mr_button_connecting_22_light = 2130837755;
+			
+			// aapt resource value: 0x7f0200fc
+			public const int ic_mr_button_connecting_23_dark = 2130837756;
+			
+			// aapt resource value: 0x7f0200fd
+			public const int ic_mr_button_connecting_23_light = 2130837757;
+			
+			// aapt resource value: 0x7f0200fe
+			public const int ic_mr_button_connecting_24_dark = 2130837758;
+			
+			// aapt resource value: 0x7f0200ff
+			public const int ic_mr_button_connecting_24_light = 2130837759;
+			
+			// aapt resource value: 0x7f020100
+			public const int ic_mr_button_connecting_25_dark = 2130837760;
+			
+			// aapt resource value: 0x7f020101
+			public const int ic_mr_button_connecting_25_light = 2130837761;
+			
+			// aapt resource value: 0x7f020102
+			public const int ic_mr_button_connecting_26_dark = 2130837762;
+			
+			// aapt resource value: 0x7f020103
+			public const int ic_mr_button_connecting_26_light = 2130837763;
+			
+			// aapt resource value: 0x7f020104
+			public const int ic_mr_button_connecting_27_dark = 2130837764;
+			
+			// aapt resource value: 0x7f020105
+			public const int ic_mr_button_connecting_27_light = 2130837765;
+			
+			// aapt resource value: 0x7f020106
+			public const int ic_mr_button_connecting_28_dark = 2130837766;
+			
+			// aapt resource value: 0x7f020107
+			public const int ic_mr_button_connecting_28_light = 2130837767;
+			
+			// aapt resource value: 0x7f020108
+			public const int ic_mr_button_connecting_29_dark = 2130837768;
+			
+			// aapt resource value: 0x7f020109
+			public const int ic_mr_button_connecting_29_light = 2130837769;
+			
+			// aapt resource value: 0x7f02010a
+			public const int ic_mr_button_connecting_30_dark = 2130837770;
+			
+			// aapt resource value: 0x7f02010b
+			public const int ic_mr_button_connecting_30_light = 2130837771;
+			
+			// aapt resource value: 0x7f02010c
+			public const int ic_mr_button_disabled_dark = 2130837772;
+			
+			// aapt resource value: 0x7f02010d
+			public const int ic_mr_button_disabled_light = 2130837773;
+			
+			// aapt resource value: 0x7f02010e
+			public const int ic_mr_button_disconnected_dark = 2130837774;
+			
+			// aapt resource value: 0x7f02010f
+			public const int ic_mr_button_disconnected_light = 2130837775;
+			
+			// aapt resource value: 0x7f020110
+			public const int ic_mr_button_grey = 2130837776;
+			
+			// aapt resource value: 0x7f020111
+			public const int ic_mtrl_chip_checked_black = 2130837777;
+			
+			// aapt resource value: 0x7f020112
+			public const int ic_mtrl_chip_checked_circle = 2130837778;
+			
+			// aapt resource value: 0x7f020113
+			public const int ic_mtrl_chip_close_circle = 2130837779;
+			
+			// aapt resource value: 0x7f020114
+			public const int ic_vol_type_speaker_dark = 2130837780;
+			
+			// aapt resource value: 0x7f020115
+			public const int ic_vol_type_speaker_group_dark = 2130837781;
+			
+			// aapt resource value: 0x7f020116
+			public const int ic_vol_type_speaker_group_light = 2130837782;
+			
+			// aapt resource value: 0x7f020117
+			public const int ic_vol_type_speaker_light = 2130837783;
+			
+			// aapt resource value: 0x7f020118
+			public const int ic_vol_type_tv_dark = 2130837784;
+			
+			// aapt resource value: 0x7f020119
+			public const int ic_vol_type_tv_light = 2130837785;
+			
+			// aapt resource value: 0x7f02011a
+			public const int icon = 2130837786;
+			
+			// aapt resource value: 0x7f02011b
+			public const int mr_button_connected_dark = 2130837787;
+			
+			// aapt resource value: 0x7f02011c
+			public const int mr_button_connected_light = 2130837788;
+			
+			// aapt resource value: 0x7f02011d
+			public const int mr_button_connecting_dark = 2130837789;
+			
+			// aapt resource value: 0x7f02011e
+			public const int mr_button_connecting_light = 2130837790;
+			
+			// aapt resource value: 0x7f02011f
+			public const int mr_button_dark = 2130837791;
+			
+			// aapt resource value: 0x7f020120
+			public const int mr_button_light = 2130837792;
+			
+			// aapt resource value: 0x7f020121
+			public const int mr_dialog_close_dark = 2130837793;
+			
+			// aapt resource value: 0x7f020122
+			public const int mr_dialog_close_light = 2130837794;
+			
+			// aapt resource value: 0x7f020123
+			public const int mr_dialog_material_background_dark = 2130837795;
+			
+			// aapt resource value: 0x7f020124
+			public const int mr_dialog_material_background_light = 2130837796;
+			
+			// aapt resource value: 0x7f020125
+			public const int mr_group_collapse = 2130837797;
+			
+			// aapt resource value: 0x7f020126
+			public const int mr_group_expand = 2130837798;
+			
+			// aapt resource value: 0x7f020127
+			public const int mr_media_pause_dark = 2130837799;
+			
+			// aapt resource value: 0x7f020128
+			public const int mr_media_pause_light = 2130837800;
+			
+			// aapt resource value: 0x7f020129
+			public const int mr_media_play_dark = 2130837801;
+			
+			// aapt resource value: 0x7f02012a
+			public const int mr_media_play_light = 2130837802;
+			
+			// aapt resource value: 0x7f02012b
+			public const int mr_media_stop_dark = 2130837803;
+			
+			// aapt resource value: 0x7f02012c
+			public const int mr_media_stop_light = 2130837804;
+			
+			// aapt resource value: 0x7f02012d
+			public const int mr_vol_type_audiotrack_dark = 2130837805;
+			
+			// aapt resource value: 0x7f02012e
+			public const int mr_vol_type_audiotrack_light = 2130837806;
+			
+			// aapt resource value: 0x7f02012f
+			public const int mtrl_snackbar_background = 2130837807;
+			
+			// aapt resource value: 0x7f020130
+			public const int mtrl_tabs_default_indicator = 2130837808;
+			
+			// aapt resource value: 0x7f020131
+			public const int navigation_empty_icon = 2130837809;
+			
+			// aapt resource value: 0x7f020132
+			public const int notification_action_background = 2130837810;
+			
+			// aapt resource value: 0x7f020133
+			public const int notification_bg = 2130837811;
+			
+			// aapt resource value: 0x7f020134
+			public const int notification_bg_low = 2130837812;
+			
+			// aapt resource value: 0x7f020135
+			public const int notification_bg_low_normal = 2130837813;
+			
+			// aapt resource value: 0x7f020136
+			public const int notification_bg_low_pressed = 2130837814;
+			
+			// aapt resource value: 0x7f020137
+			public const int notification_bg_normal = 2130837815;
+			
+			// aapt resource value: 0x7f020138
+			public const int notification_bg_normal_pressed = 2130837816;
+			
+			// aapt resource value: 0x7f020139
+			public const int notification_icon_background = 2130837817;
 			
 			// aapt resource value: 0x7f020147
-			public const int xf_checkbox_selected = 2130837831;
+			public const int notification_template_icon_bg = 2130837831;
 			
 			// aapt resource value: 0x7f020148
-			public const int xf_checkbox_unselected = 2130837832;
+			public const int notification_template_icon_low_bg = 2130837832;
 			
-			// aapt resource value: 0x7f020149
-			public const int xf_clear = 2130837833;
+			// aapt resource value: 0x7f02013a
+			public const int notification_tile_bg = 2130837818;
 			
-			// aapt resource value: 0x7f02014a
-			public const int xf_error = 2130837834;
+			// aapt resource value: 0x7f02013b
+			public const int notify_panel_notification_icon_bg = 2130837819;
 			
-			// aapt resource value: 0x7f02014b
-			public const int xf_radio_button_selected = 2130837835;
+			// aapt resource value: 0x7f02013c
+			public const int share = 2130837820;
 			
-			// aapt resource value: 0x7f02014c
-			public const int xf_radio_button_unselected = 2130837836;
+			// aapt resource value: 0x7f02013d
+			public const int tooltip_frame_dark = 2130837821;
+			
+			// aapt resource value: 0x7f02013e
+			public const int tooltip_frame_light = 2130837822;
+			
+			// aapt resource value: 0x7f02013f
+			public const int xf_arrow_dropdown = 2130837823;
+			
+			// aapt resource value: 0x7f020140
+			public const int xf_check = 2130837824;
+			
+			// aapt resource value: 0x7f020141
+			public const int xf_checkbox_selected = 2130837825;
+			
+			// aapt resource value: 0x7f020142
+			public const int xf_checkbox_unselected = 2130837826;
+			
+			// aapt resource value: 0x7f020143
+			public const int xf_clear = 2130837827;
+			
+			// aapt resource value: 0x7f020144
+			public const int xf_error = 2130837828;
+			
+			// aapt resource value: 0x7f020145
+			public const int xf_radio_button_selected = 2130837829;
+			
+			// aapt resource value: 0x7f020146
+			public const int xf_radio_button_unselected = 2130837830;
 			
 			static Drawable()
 			{

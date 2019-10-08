@@ -26,11 +26,23 @@
         <Style x:Key="cardBackground" TargetType="Grid">
             <Setter Property="BackgroundColor" Value="{x:DynamicResource cardBackgroundColor}"/>
         </Style>
-        <Style x:Key="themeSelectorButton" TargetType="ImageButton">
+        <Style x:Key="themeSelectorButton" TargetType="Image">
             <Setter Property="Source" Value="{x:DynamicResource themeSwitchIcon}"/>
         </Style>
         <Style x:Key="backButton" TargetType="Image">
             <Setter Property="Source" Value="{x:DynamicResource backBtn}"/>
+        </Style>
+        <Style x:Key="newsResource" TargetType="ShellContent">
+            <Setter Property="Icon" Value="{x:DynamicResource newsIcon}"/>
+        </Style>
+        <Style x:Key="filterResource" TargetType="ShellContent">
+            <Setter Property="Icon" Value="{x:DynamicResource filterIcon}"/>
+        </Style>
+        <Style x:Key="infoResource" TargetType="ShellContent">
+            <Setter Property="Icon" Value="{x:DynamicResource infoIcon}"/>
+        </Style>
+        <Style x:Key="settingsResource" TargetType="ShellContent">
+            <Setter Property="Icon" Value="{x:DynamicResource settingsIcon}"/>
         </Style>
     </Application.Resources>
 </Application>

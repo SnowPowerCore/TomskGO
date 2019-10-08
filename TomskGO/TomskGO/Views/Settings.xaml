@@ -1,5 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:managers="clr-namespace:TomskGO.Managers"
+             xmlns:xe="clr-namespace:XamEffects;assembly=XamEffects"
+             xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+             Shell.NavBarIsVisible="False"
+             Style="{x:StaticResource themeBackground}"
              x:Class="TomskGO.Views.Settings">
+    <TableView Intent="Settings" RowHeight="50">
+        <TableSection>
+            <ViewCell>
+                <Grid Padding="15,3" xe:TouchEffect.Color="White"
+                    xe:Commands.Tap="{x:Static managers:CacheManager.SwitchThemeCommand}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.85*"/>
+                        <ColumnDefinition Width="0.15*"/>
+                    </Grid.ColumnDefinitions>
+                    <ui:MaterialLabel FontSize="Medium" VerticalTextAlignment="Center"
+                        Style="{x:StaticResource themeText}" Text="Тема приложения: "/>
+                    <Image Grid.Column="1" BackgroundColor="Transparent" HorizontalOptions="Center"
+                        Style="{x:StaticResource themeSelectorButton}"/>
+                </Grid>
+            </ViewCell>
+        </TableSection>
+        <TableSection>
+            <ViewCell>
+                <Grid Padding="15,3" xe:TouchEffect.Color="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="0.5*"/>
+                    </Grid.ColumnDefinitions>
+                    <ui:MaterialLabel FontSize="Medium" VerticalTextAlignment="Center"
+                        Style="{x:StaticResource themeText}" Text="Язык: "/>
+                    <ui:MaterialLabel Grid.Column="1" FontSize="Medium" VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="End" Text="Системный"
+                        Style="{x:StaticResource themeText}"/>
+                </Grid>
+            </ViewCell>
+        </TableSection>
+        <TableSection>
+            <ViewCell>
+                <Grid xe:TouchEffect.Color="White">
+                    <ui:MaterialLabel FontSize="Medium" VerticalTextAlignment="Center"
+                        HorizontalTextAlignment="Center" Text="..."
+                        Style="{x:StaticResource themeText}"/>
+                </Grid>
+            </ViewCell>
+        </TableSection>
+    </TableView>
 </ContentPage>

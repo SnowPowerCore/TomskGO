@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:helpers="clr-namespace:TomskGO.Helpers"
-    xmlns:pages="clr-namespace:TomskGO.Views"
-    x:Class="TomskGO.Views.MainPage"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:helpers="clr-namespace:TomskGO.Helpers"
+       xmlns:pages="clr-namespace:TomskGO.Views"
+       x:Class="TomskGO.Views.MainPage"
     Style="{x:StaticResource shell}">
     <Shell.ItemTemplate>
         <DataTemplate>
@@ -18,8 +18,9 @@
                     <RowDefinition Height="1"/>
                 </Grid.RowDefinitions>
                 <Image Grid.Column="1" Source="{Binding Icon}" HeightRequest="20"/>
-                <Label Grid.Column="2" TextColor="{x:StaticResource themeTextColor}" Text="{Binding Title}"/>
-                <BoxView Grid.Row="1" Grid.Column="2" Margin="0" BackgroundColor="{x:DynamicResource flyoutSeparatorColor}"/>
+                <Label Grid.Column="2" Style="{x:StaticResource themeText}" Text="{Binding Title}"/>
+                <BoxView Grid.Row="1" Grid.Column="2" Margin="0" 
+                    BackgroundColor="{x:DynamicResource flyoutSeparatorColor}"/>
             </Grid>
         </DataTemplate>
     </Shell.ItemTemplate>
@@ -43,8 +44,8 @@
         </DataTemplate>
     </Shell.MenuItemTemplate>
 
-    <ShellContent Title="{helpers:Translate allNews}" Icon="news.png" Route="news" ContentTemplate="{x:DataTemplate pages:NewsFeed}"/>
-    <ShellContent Title="{helpers:Translate filter}" Route="filter" ContentTemplate="{x:DataTemplate pages:Filter}"/>
-    <MenuItem Text="{helpers:Translate info}" IconImageSource="info.png"/>
-    <MenuItem Text="{helpers:Translate settings}" IconImageSource="settings.png"/>
+    <ShellContent Title="{helpers:Translate allNews}" Style="{x:StaticResource newsResource}" Route="news" ContentTemplate="{x:DataTemplate pages:NewsFeed}"/>
+    <ShellContent Title="{helpers:Translate filter}" Style="{x:StaticResource filterResource}" Route="filter" ContentTemplate="{x:DataTemplate pages:Filter}"/>
+    <ShellContent Title="{helpers:Translate info}" Style="{x:StaticResource infoResource}" Route="about" ContentTemplate="{x:DataTemplate pages:About}"/>
+    <ShellContent Title="{helpers:Translate settings}" Style="{x:StaticResource settingsResource}" Route="settings" ContentTemplate="{x:DataTemplate pages:Settings}"/>
 </Shell>

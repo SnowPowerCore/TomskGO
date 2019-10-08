@@ -46,19 +46,17 @@
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
     <AndroidCreatePackagePerAbi>false</AndroidCreatePackagePerAbi>
-    <AotAssemblies>false</AotAssemblies>
+    <AotAssemblies>true</AotAssemblies>
     <EnableLLVM>false</EnableLLVM>
     <AndroidAotAdditionalArguments>no-write-symbols,nodebug</AndroidAotAdditionalArguments>
     <DebugSymbols>false</DebugSymbols>
-    <BundleAssemblies>false</BundleAssemblies>
+    <BundleAssemblies>true</BundleAssemblies>
     <AndroidEnableMultiDex>false</AndroidEnableMultiDex>
     <AndroidDexTool>d8</AndroidDexTool>
     <EnableProguard>true</EnableProguard>
     <AndroidSupportedAbis>armeabi-v7a;arm64-v8a</AndroidSupportedAbis>
     <AndroidLinkSkip>Xamarin.Android.Support.v7.AppCompat;Xamarin.Android.Support.v4</AndroidLinkSkip>
     <AndroidExplicitCrunch>true</AndroidExplicitCrunch>
-    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
-    <MandroidI18n />
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
@@ -69,13 +67,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CardsView">
-      <Version>2.2.1</Version>
+      <Version>2.3.2</Version>
     </PackageReference>
     <PackageReference Include="glidex.forms">
-      <Version>1.0.4</Version>
-    </PackageReference>
-    <PackageReference Include="PhotoBrowser.Forms">
-      <Version>0.1.4</Version>
+      <Version>2.0.0.336</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter">
       <Version>28.0.0.3</Version>
@@ -87,13 +82,16 @@
       <Version>2.4.11.982</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>4.2.0.815419</Version>
+      <Version>4.2.0.848062</Version>
     </PackageReference>
     <PackageReference Include="XamEffects">
       <Version>1.6.3</Version>
     </PackageReference>
     <PackageReference Include="XF.Material">
-      <Version>1.4.1.3</Version>
+      <Version>1.5.2</Version>
+    </PackageReference>
+    <PackageReference Include="XF.PhotoBrowser">
+      <Version>0.1.5</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -103,6 +101,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProguardConfiguration Include="Proguard\proguard.cfg" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />

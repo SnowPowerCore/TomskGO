@@ -17,7 +17,7 @@ namespace TomskGO.Droid
             base.OnCreate(savedInstanceState);
             Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            AGlide.Forms.Init();
+            AGlide.Forms.Init(this);
             XamEffects.Droid.Effects.Init();
             PanCardView.Droid.CardsViewRenderer.Preserve();
             XF.Material.Droid.Material.Init(this, savedInstanceState);

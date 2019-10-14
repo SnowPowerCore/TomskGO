@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using System.Threading;
 using System.Globalization;
+using TomskGO.Interfaces;
 
 [assembly: Dependency(typeof(TomskGO.Android.helper))]
 

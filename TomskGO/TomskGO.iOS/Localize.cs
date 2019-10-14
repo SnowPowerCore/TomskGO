@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using System.Threading;
 using System.Globalization;
 using Foundation;
+using TomskGO.Interfaces;
 
 [assembly: Dependency(typeof(TomskGO.iOS.helper))]
 

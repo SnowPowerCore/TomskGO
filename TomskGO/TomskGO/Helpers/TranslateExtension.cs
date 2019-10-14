@@ -2,6 +2,7 @@
 using System.Globalization;
 using System.Reflection;
 using System.Resources;
+using TomskGO.Interfaces;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

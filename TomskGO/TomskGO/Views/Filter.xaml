@@ -27,8 +27,8 @@
                     AlignContent="Start" BindableLayout.ItemsSource="{Binding Source={x:Reference filter}, Path=BindingContext.Tags}" HeightRequest="50">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate>
-                            <ui:MaterialButton ButtonType="Elevated" Padding="24,5" CornerRadius="16" TextColor="Black" FontSize="Caption"
-                                               AllCaps="True" BorderWidth="2" BorderColor="Accent" Text="{Binding Name}"
+                            <ui:MaterialButton ButtonType="Elevated" Padding="24,5" CornerRadius="16" TextColor="Accent" FontSize="Caption"
+                                               AllCaps="True" Text="{Binding Name}"
                                                BackgroundColor="{Binding Selected, Converter={x:StaticResource boolToColor}}"
                                                Command="{Binding Source={x:Reference filter}, Path=BindingContext.ChangeTagSelectionCommand, Mode=OneTime}"
                                                CommandParameter="{Binding .}"/>

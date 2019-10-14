@@ -11,7 +11,7 @@ namespace TomskGO.Converters
             if (value is bool)
             {
                 var b = (bool)value;
-                return b ? Color.Green : Color.White;
+                return b ? Color.LightGreen : Color.White;
             }
             return Color.White;
         }

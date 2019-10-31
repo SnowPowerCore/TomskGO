@@ -10,20 +10,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Assets\Icons\back.svg" />
-    <None Remove="Assets\Icons\info.svg" />
-    <None Remove="Assets\Icons\news.svg" />
-    <None Remove="Assets\Icons\settings.svg" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Assets\Icons\back.svg" />
-    <EmbeddedResource Include="Assets\Icons\info.svg" />
-    <EmbeddedResource Include="Assets\Icons\news.svg" />
-    <EmbeddedResource Include="Assets\Icons\settings.svg" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="CardsView" Version="2.3.3" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
     <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.11.982" />

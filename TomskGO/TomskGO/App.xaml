@@ -11,6 +11,11 @@
         <Style x:Key="themeBackground" TargetType="Page">
             <Setter Property="BackgroundColor" Value="{x:DynamicResource themeBackgroundColor}"/>
         </Style>
+        <Style x:Key="chipBackground" TargetType="ui:MaterialButton">
+            <Setter Property="BackgroundColor" Value="{x:DynamicResource chipBackgroundColor}"/>
+            <Setter Property="PressedBackgroundColor" Value="{x:DynamicResource pressedChipColor}"/>
+            <Setter Property="TextColor" Value="{x:DynamicResource chipTextColor}"/>
+        </Style>
         <Style x:Key="themeText" TargetType="ui:MaterialLabel">
             <Setter Property="TextColor" Value="{x:DynamicResource themeTextColor}"/>
         </Style>

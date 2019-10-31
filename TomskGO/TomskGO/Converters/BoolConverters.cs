@@ -11,7 +11,7 @@ namespace TomskGO.Converters
             if (value is bool)
             {
                 var b = (bool)value;
-                return b ? Color.LightGreen : Color.White;
+                return b ? Color.FromHex("#d3f5e4") : Application.Current.Resources["chipBackgroundColor"];
             }
             return Color.White;
         }

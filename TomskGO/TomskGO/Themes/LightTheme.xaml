@@ -3,6 +3,9 @@
     x:Class="TomskGO.Themes.LightTheme">
     <Color x:Key="shellBackgroundColor">WhiteSmoke</Color>
     <Color x:Key="cardBackgroundColor">White</Color>
+    <Color x:Key="chipBackgroundColor">White</Color>
+    <Color x:Key="pressedChipColor">#029E00</Color>
+    <Color x:Key="chipTextColor">DimGray</Color>
     <Color x:Key="themeBackgroundColor">WhiteSmoke</Color>
     <Color x:Key="themeTextColor">DimGray</Color>
     <Color x:Key="themeTextSecondaryColor">SlateGray</Color>

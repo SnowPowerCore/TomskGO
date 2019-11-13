@@ -3,8 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using System.IO;
 using System.Threading.Tasks;
 
 namespace TomskGO.Functions
@@ -13,10 +11,10 @@ namespace TomskGO.Functions
     {
         [FunctionName("GetNews")]
         public static async Task<IActionResult> Run(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "/news")] HttpRequest req,
+            [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "news")] HttpRequest req,
             ILogger log)
         {
-
+            
             return new OkObjectResult("OK!");
             //return name != null
             //    ? (ActionResult)new OkObjectResult($"Hello, {name}")

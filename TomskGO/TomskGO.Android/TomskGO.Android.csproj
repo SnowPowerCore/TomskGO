@@ -113,9 +113,9 @@
     <AndroidResource Include="Resources\values\colors.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TomskGO\TomskGO.csproj">
-      <Project>{D7B549DD-DD68-46AC-A88E-B08E47B7C0BB}</Project>
-      <Name>TomskGO</Name>
+    <ProjectReference Include="..\TomskGO\TomskGO.Core.csproj">
+      <Project>{25A1FA5C-5A9D-4A8E-9803-9A981A8424DB}</Project>
+      <Name>TomskGO.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

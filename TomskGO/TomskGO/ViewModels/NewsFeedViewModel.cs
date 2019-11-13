@@ -1,36 +1,24 @@
-﻿using Newtonsoft.Json;
+﻿using AsyncAwaitBestPractices.MVVM;
+using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using TomskGO.Managers;
-using TomskGO.Models;
-using TomskGO.Providers;
+using TomskGO.Core.ViewModels;
+using TomskGO.Models.API;
+using TomskGO.Models.Utils;
 using Xamarin.Forms;
 
 namespace TomskGO.ViewModels
 {
-    class NewsFeedViewModel : INotifyPropertyChanged
+    class NewsFeedViewModel : BaseViewModel
     {
-        private List<AbstractFeedProvider> _providers;
-        private ObservableRangeCollection<FeedModel> _posts;
-        private ObservableRangeCollection<FeedModel> _filteredPosts;
-        private ObservableRangeCollection<Tag> _tags;
-        private ObservableRangeCollection<Tag> _selectedTags;
-
-        public List<AbstractFeedProvider> Providers
-        {
-            get => _providers;
-            set
-            {
-                _providers = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public ObservableRangeCollection<FeedModel> Posts
+        private ObservableRangeCollection<NewsModel> _posts;
+        private ObservableRangeCollection<NewsModel> _filteredPosts;
+        private ObservableRangeCollection<NewsTag> _tags;
+        private ObservableRangeCollection<NewsTag> _selectedTags;
+        
+        public ObservableRangeCollection<NewsModel> Posts
         {
             get => _posts;
             set
@@ -40,7 +28,7 @@ namespace TomskGO.ViewModels
                 OnPropertyChanged();
             }
         }
-        public ObservableRangeCollection<FeedModel> FilteredPosts
+        public ObservableRangeCollection<NewsModel> FilteredPosts
         {
             get => _filteredPosts;
             set
@@ -51,7 +39,7 @@ namespace TomskGO.ViewModels
             }
         }
 
-        public ObservableRangeCollection<Tag> Tags
+        public ObservableRangeCollection<NewsTag> Tags
         {
             get => _tags;
             set
@@ -61,7 +49,7 @@ namespace TomskGO.ViewModels
             }
         }
 
-        public ObservableRangeCollection<Tag> SelectedTags
+        public ObservableRangeCollection<NewsTag> SelectedTags
         {
             get => _selectedTags;
             set
@@ -73,50 +61,34 @@ namespace TomskGO.ViewModels
 
         public NewsFeedViewModel()
         {
-            Providers = new List<AbstractFeedProvider>
-            {
-                new VKProvider(new VKRequestModel
-                {
-                    owner_id = 66471096,
-                    extended = VKRequestModel.ExtendedFlag.no,
-                    filter = VKRequestModel.PostType.all
-                })
-            };
             RefreshFeedCommand?.Execute(null);
         }
 
         public ICommand RefreshFeedCommand =>
-            new Command(() => TaskManager.Instance.RegisterTask(async () => await RefreshFeedAsync(), true));
+            new AsyncCommand(RefreshFeedAsync);
         public ICommand NavigatePostCommand =>
-            new Command<FeedModel>(f => TaskManager.Instance.RegisterTask(() => NavigatePost(f), true, isUIRelated: true));
+            new Command<NewsModel>(NavigatePost);
         public ICommand FilterPostsCommand =>
-            new Command<string>(t => TaskManager.Instance.RegisterTask(() => FilterPosts(t), true));
+            new Command<string>(FilterPosts);
         public ICommand ChangeTagSelectionCommand =>
-            new Command<Tag>(t => TaskManager.Instance.RegisterTask(() => ChangeTagSelection(t), true));
+            new Command<NewsTag>(ChangeTagSelection);
 
         private async Task RefreshFeedAsync()
         {
-            foreach (var provider in Providers)
-                Posts = new ObservableRangeCollection<FeedModel>(await provider.ProvideData());
-            Tags = new ObservableRangeCollection<Tag>(Posts
-                .SelectMany(t => t.Tags)
-                .Distinct()
-                .Select(x => new Tag { Name = x }));
-            FilteredPosts = Posts;
-            SelectedTags = new ObservableRangeCollection<Tag>();
+
         }
 
         private void FilterPosts(string t)
         {
             if (Posts == null) return;
-            FilteredPosts = new ObservableRangeCollection<FeedModel>(Posts
-                .Where(x => x.Tags.Any(tag => tag == t)));
+            FilteredPosts = new ObservableRangeCollection<NewsModel>(Posts
+                .Where(x => x.Tags.Any(tag => tag.Name == t)));
             var searchedTag = Tags.FirstOrDefault(x => x.Name == t);
             searchedTag.Selected = true;
-            SelectedTags = new ObservableRangeCollection<Tag> { searchedTag };
+            SelectedTags = new ObservableRangeCollection<NewsTag> { searchedTag };
         }
 
-        private void ChangeTagSelection(Tag t)
+        private void ChangeTagSelection(NewsTag t)
         {
             if (t.Selected)
             {
@@ -138,23 +110,15 @@ namespace TomskGO.ViewModels
                 return;
             }
 
-            FilteredPosts = new ObservableRangeCollection<FeedModel>(Posts
-                .Where(x => x.Tags.Any(tag => SelectedTags.Any(s => s.Name == tag))));
+            FilteredPosts = new ObservableRangeCollection<NewsModel>(Posts
+                .Where(x => x.Tags.Any(tag => SelectedTags.Any(s => s.Name == tag.Name))));
         }
 
-        private async void NavigatePost(FeedModel item)
+        private async void NavigatePost(NewsModel item)
         {
             var serialized = JsonConvert.SerializeObject(item);
             var modified = Uri.EscapeDataString(serialized);
             await Shell.Current.GoToAsync("post?feedData="+modified);
         }
-
-        #region Auto-implemented
-        public event PropertyChangedEventHandler PropertyChanged;
-        void OnPropertyChanged(string propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        #endregion
     }
 }

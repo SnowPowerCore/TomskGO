@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace TomskGO.Models
+namespace TomskGO.Models.VK
 {
     class VKFeedModel
     {

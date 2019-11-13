@@ -5,16 +5,17 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using TomskGO.Models;
+using TomskGO.Core.ViewModels;
+using TomskGO.Models.API;
 using Xamarin.Forms;
 
 namespace TomskGO.ViewModels
 {
-    class PostViewModel : INotifyPropertyChanged
+    class PostViewModel : BaseViewModel
     {
-        private FeedModel _selectedItem;
+        private NewsModel _selectedItem;
 
-        public FeedModel SelectedItem
+        public NewsModel SelectedItem
         {
             get => _selectedItem;
             set
@@ -26,17 +27,17 @@ namespace TomskGO.ViewModels
 
         public PostViewModel(object feedModel)
         {
-            if (feedModel is FeedModel) SelectedItem = (FeedModel)feedModel;
+            if (feedModel is NewsModel) SelectedItem = (NewsModel)feedModel;
         }
 
         public ICommand NavigateBackCommand => new Command(() => 
             Managers.TaskManager.Instance.RegisterTask(async () => await NavigateBackAsync(), true, isUIRelated: true));
-        public ICommand OpenPhotoCommand => new Command<FeedModel.Attachment.Photo>((p) => 
+        public ICommand OpenPhotoCommand => new Command<NewsAttachment.Photo>((p) => 
             Managers.TaskManager.Instance.RegisterTask(() => OpenPhoto(p), true, isUIRelated: true));
         public ICommand OpenFilterCommand => new Command<string>((t) =>
             Managers.TaskManager.Instance.RegisterTask(async () => await OpenFilterAsync(t), true, isUIRelated: true));
 
-        private void OpenPhoto(FeedModel.Attachment.Photo photo)
+        private void OpenPhoto(NewsAttachment.Photo photo)
         {
             var browser = new PhotoBrowser
             {
@@ -57,13 +58,5 @@ namespace TomskGO.ViewModels
         {
             await Shell.Current.Navigation.PopAsync(true);
         }
-
-        #region Auto-implemented
-        public event PropertyChangedEventHandler PropertyChanged;
-        void OnPropertyChanged(string propertyName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        #endregion
     }
 }

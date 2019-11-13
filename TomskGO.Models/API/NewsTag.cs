@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel;
 
-namespace TomskGO.Models
+namespace TomskGO.Models.API
 {
-    class Tag : INotifyPropertyChanged
+    public class NewsTag : INotifyPropertyChanged
     {
         private bool _selected = false;
         public string Name { get; set; }

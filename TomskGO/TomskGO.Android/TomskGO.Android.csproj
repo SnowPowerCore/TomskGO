@@ -68,7 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="CardsView">
-      <Version>2.3.5</Version>
+      <Version>2.3.7</Version>
     </PackageReference>
     <PackageReference Include="glidex.forms">
       <Version>2.0.0.336</Version>
@@ -83,13 +83,13 @@
       <Version>2.4.11.982</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>4.3.0.947036</Version>
+      <Version>4.3.0.991211</Version>
     </PackageReference>
     <PackageReference Include="XamEffects">
       <Version>1.6.3</Version>
     </PackageReference>
     <PackageReference Include="XF.Material">
-      <Version>1.5.4</Version>
+      <Version>1.5.7</Version>
     </PackageReference>
     <PackageReference Include="XF.PhotoBrowser">
       <Version>0.1.5</Version>

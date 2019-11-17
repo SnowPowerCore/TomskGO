@@ -14,7 +14,6 @@ namespace TomskGO.Functions
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "news")] HttpRequest req,
             ILogger log)
         {
-            
             return new OkObjectResult("OK!");
             //return name != null
             //    ? (ActionResult)new OkObjectResult($"Hello, {name}")

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
-using TomskGO.Models;
+using TomskGO.Models.API;
 using Xamarin.Forms;
 
 namespace TomskGO.Views
@@ -15,7 +15,7 @@ namespace TomskGO.Views
             set => _feedData = Uri.UnescapeDataString(value);
         }
 
-        private FeedModel SelectedItem => JsonConvert.DeserializeObject<FeedModel>(FeedData);
+        private NewsModel SelectedItem => JsonConvert.DeserializeObject<NewsModel>(FeedData);
 
         public Post()
         {

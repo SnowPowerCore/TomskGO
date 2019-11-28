@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomskGO.Core", "TomskGO\Tom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomskGO.Functions", "TomskGO.Functions\TomskGO.Functions.csproj", "{4B4F1655-F65A-4725-995C-A35E3F83AF0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TomskGO.Models", "TomskGO.Models\TomskGO.Models.csproj", "{DB711A00-E01E-4610-B0B7-5A7298E7AE29}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TomskGO.Models", "TomskGO.Models\TomskGO.Models.csproj", "{DB711A00-E01E-4610-B0B7-5A7298E7AE29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

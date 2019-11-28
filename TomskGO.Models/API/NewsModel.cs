@@ -12,9 +12,7 @@ namespace TomskGO.Models.API
         public string PreviewSource { get; set; }
         public string SourceLabel { get; set; }
         public List<NewsTag> Tags { get; set; }
-
         public NewsAttachment Attachments { get; set; }
-
-        public bool AttachmentsVisible { get; set; }
+        public bool? AttachmentsVisible { get; set; }
     }
 }

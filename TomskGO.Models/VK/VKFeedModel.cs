@@ -1,8 +1,9 @@
 ﻿using Newtonsoft.Json;
+using System;
 
 namespace TomskGO.Models.VK
 {
-    class VKFeedModel
+    public class VKFeedModel
     {
         [JsonProperty("count")]
         public int Count { get; set; }
@@ -15,6 +16,9 @@ namespace TomskGO.Models.VK
 
         public class Post
         {
+            [JsonProperty("id")]
+            public long ID { get; set; }
+
             [JsonProperty("date")]
             public double Date { get; set; }
             [JsonProperty("text")]
@@ -134,21 +138,20 @@ namespace TomskGO.Models.VK
         }
     }
 
-    class VKRequestModel
+    public enum PostType
     {
-        public enum PostType
-        {
-            owner,
-            others,
-            all
-        }
+        owner,
+        others,
+        all
+    }
 
-        public enum ExtendedFlag { no, yes }
-
+    public class VKRequestModel
+    {
         public int owner_id { get; set; }
-        public PostType filter { get; set; }
-        public ExtendedFlag extended { get; set; }
-        public string access_token => "3e82ecd03e82ecd03e82ecd0e33ee8faaa33e823e82ecd0623b059abd9efc287f1a3a85";
-        public string version => "5.95";
+        public PostType filter { get; set; } = PostType.all;
+        public bool extended { get; set; } = false;
+        public int count { get; set; } = 100;
+        public string access_token => Environment.GetEnvironmentVariable("VkAccessToken");
+        public string v => Environment.GetEnvironmentVariable("VkApiVersion");
     }
 }

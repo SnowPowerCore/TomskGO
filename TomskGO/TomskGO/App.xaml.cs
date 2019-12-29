@@ -1,13 +1,14 @@
-﻿using TomskGO.Managers;
+﻿using System;
+using TomskGO.Managers;
 using TomskGO.Views;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
-[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace TomskGO
 {
     public partial class App : Application
     {
+        public static IServiceProvider Services { get; set; }
+
         public App()
         {
             InitializeComponent();
@@ -24,14 +25,6 @@ namespace TomskGO
         private void RegisterRoutes()
         {
             Routing.RegisterRoute("post", typeof(Post));
-        }
-
-        protected override void OnSleep()
-        {
-        }
-
-        protected override void OnResume()
-        {
         }
     }
 }

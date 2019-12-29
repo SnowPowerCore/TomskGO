@@ -13,7 +13,7 @@ namespace TomskGO.Functions.Serverless.Vk
     {
         private static string VkBaseAddress => Environment.GetEnvironmentVariable("VkBaseAddress");
 
-        [FunctionName("VkFetchPosts")]
+        //[FunctionName("VkFetchPosts")]
         public static async Task Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer,
                                      [CosmosDB(
                                      databaseName: "News",
@@ -29,39 +29,43 @@ namespace TomskGO.Functions.Serverless.Vk
                 BaseAddress = new Uri(VkBaseAddress)
             };
             var vk = RestService.For<IVk>(client);
-            var data = await vk.GetPostsAsync(new Models.VK.VKRequestModel
+            await vk.GetPostsAsync(new Models.VK.VKRequestModel
             {
                 owner_id = -66471096
-            });
-            var posts = data.response?.Items;
-            var filteredItems = posts.Filter();
-            foreach (var item in filteredItems)
-            {
-                var newsItem = item.ConvertDataToUniversal();
-                await newsContext.AddAsync(new
+            })
+                .ContinueWith(async t =>
                 {
-                    newsItem.Date,
-                    newsItem.ShortDescription,
-                    newsItem.FullText,
-                    newsItem.SourceLabel,
-                    newsItem.PreviewSource,
-                    newsItem.Tags,
-                    newsItem.Attachments
-                })
-            .ContinueWith(t =>
-            {
-                if (t.IsFaulted || t.IsCanceled)
-                {
-                    var error = "Couldn't add news item. Perhaps, you entered a duplicate id. Maybe data has incorrect structure.";
-                    log.LogError(error);
-                }
+                    var data = t.Result;
+                    var posts = data.response?.Items;
+                    var filteredItems = posts.Filter();
+                    foreach (var item in filteredItems)
+                    {
+                        var newsItem = item.ConvertDataToUniversal();
+                        await newsContext.AddAsync(new
+                        {
+                            newsItem.Date,
+                            newsItem.ShortDescription,
+                            newsItem.FullText,
+                            newsItem.SourceLabel,
+                            newsItem.PreviewSource,
+                            newsItem.Tags,
+                            newsItem.Attachments
+                        })
+                        .ContinueWith(t =>
+                        {
+                            if (t.IsFaulted || t.IsCanceled)
+                            {
+                                var error = "Couldn't add news item. Perhaps, you entered a duplicate id. Maybe data has incorrect structure.";
+                                log.LogError(error);
+                            }
 
-                if (t.IsCompletedSuccessfully)
-                {
-                    log.LogInformation("Added news item: {data}", data);
-                }
-            });
-            }
+                            if (t.IsCompletedSuccessfully)
+                            {
+                                log.LogInformation("Added news item: {data}", data);
+                            }
+                        });
+                    }
+                }, TaskContinuationOptions.OnlyOnRanToCompletion);
         }
     }
 }

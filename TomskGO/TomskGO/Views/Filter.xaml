@@ -16,7 +16,7 @@
     </ContentPage.Resources>
     <CollectionView ItemsSource="{Binding FilteredPosts}" SelectionMode="None" ItemSizingStrategy="MeasureAllItems">
         <CollectionView.ItemsLayout>
-            <ListItemsLayout ItemSpacing="10" Orientation="Vertical"/>
+            <LinearItemsLayout ItemSpacing="10" Orientation="Vertical"/>
         </CollectionView.ItemsLayout>
         <CollectionView.Header>
             <ScrollView Padding="20,15,0,0" Orientation="Horizontal" HorizontalScrollBarVisibility="Never">

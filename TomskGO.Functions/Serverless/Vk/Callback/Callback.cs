@@ -78,14 +78,22 @@ namespace TomskGO.Functions.Serverless.Vk.Callback
             else _log.LogInformation("Successfully converted vk post to universal.");
 
             var news = RestService.For<INews>(BaseAddress);
-            var result = await news.AddNewsItem(newsItem);
 
-            if (result is null)
-            {
-                _log.LogError("Couldn't add news item.");
-                return NotFoundResult;
-            }
-            else return OkResult;
+            IActionResult result = new EmptyResult();
+
+            await news.AddNewsItem(newsItem)
+                .ContinueWith(t =>
+                {
+                    var response = t.Result;
+                    if (response is null)
+                    {
+                        _log.LogError("Couldn't add news item.");
+                        result = NotFoundResult;
+                    }
+                    else result = OkResult;
+                }, TaskContinuationOptions.OnlyOnRanToCompletion);
+
+            return result;
         }
     }
 

@@ -12,13 +12,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AsyncAwaitBestPractices.MVVM" Version="3.1.0" />
-    <PackageReference Include="CardsView" Version="2.3.7" />
+    <PackageReference Include="AsyncAwaitBestPractices.MVVM" Version="4.0.1" />
+    <PackageReference Include="CardsView" Version="2.4.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="3.1.0" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
-    <PackageReference Include="Refit" Version="5.0.15" />
+    <PackageReference Include="Refit" Version="5.0.23" />
     <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.FFImageLoading.Transformations" Version="2.4.11.982" />
-    <PackageReference Include="Xamarin.Forms" Version="4.3.0.991211" />
+    <PackageReference Include="Xamarin.Forms" Version="4.4.0.991265" />
     <PackageReference Include="XamEffects" Version="1.6.3" />
     <PackageReference Include="XF.Material" Version="1.5.7" />
     <PackageReference Include="XF.PhotoBrowser" Version="0.1.5" />

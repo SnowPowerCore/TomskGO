@@ -1,11 +1,14 @@
-﻿namespace TomskGO.Views
+﻿using TomskGO.Core.Helpers;
+using TomskGO.ViewModels;
+
+namespace TomskGO.Views
 {
     public partial class NewsFeed
 	{
 		public NewsFeed()
 		{
 			InitializeComponent();
-            BindingContext = Managers.CacheManager.NewsFeed;
+			ViewModelLocator.SetWireType(this, typeof(NewsFeedViewModel));
         }
 	}
 }

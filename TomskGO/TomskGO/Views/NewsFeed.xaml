@@ -14,7 +14,7 @@
     </ContentPage.Resources>
     <CollectionView ItemsSource="{Binding Posts}" SelectionMode="None" ItemSizingStrategy="MeasureAllItems">
         <CollectionView.ItemsLayout>
-            <ListItemsLayout ItemSpacing="10" Orientation="Vertical"/>
+            <LinearItemsLayout ItemSpacing="10" Orientation="Vertical"/>
         </CollectionView.ItemsLayout>
         <CollectionView.Header>
             <StackLayout Padding="25,10,25,0">

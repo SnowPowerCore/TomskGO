@@ -10,15 +10,15 @@ namespace TomskGO.Services.Api.News
         Task<TResult> GetAllNewsAsync<TResult>();
 
         [Get("/api/news/{id}")]
-        Task<TResult> GetNewsItemByIdAsync<TResult>([Body] int id);
+        Task<TResult> GetNewsItemByIdAsync<TResult>(int id);
 
         [Post("/api/news")]
         Task<TResult> PostNewsItemAsync<TResult>([Body] NewsModel news);
 
         [Put("/api/news/{id}")]
-        Task<TResult> UpdateNewsItemAsync<TResult>([Body] int id, [Body] NewsModel news);
+        Task<TResult> UpdateNewsItemAsync<TResult>(int id, [Body] NewsModel news);
 
         [Delete("/api/news/{id}")]
-        Task<TResult> DeleteNewsItemAsync<TResult>([Body] int id);
+        Task<TResult> DeleteNewsItemAsync<TResult>(int id);
     }
 }

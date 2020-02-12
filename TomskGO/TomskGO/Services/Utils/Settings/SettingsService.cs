@@ -12,7 +12,7 @@ namespace TomskGO.Core.Services.Utils.Settings
         private readonly string _projectName = "Tomsk GO!";
         private readonly string _supportNumber = "-";
         private readonly string _supportEmail = "-";
-        private readonly string _defaultApiUrl = "http://localhost:7071";
+        private readonly string _defaultApiUrl = "http://10.0.2.2:7071";
         private readonly string _defaultAppUpdateUrl = "";
         private readonly string _appCenterAndroidKey = "android=;";
         private readonly string _appCenteriOSKey = "ios=;";

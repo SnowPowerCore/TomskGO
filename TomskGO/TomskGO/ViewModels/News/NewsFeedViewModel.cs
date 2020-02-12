@@ -81,9 +81,11 @@ namespace TomskGO.Core.ViewModels.News
         #endregion
 
         #region Constructor
-        public NewsFeedViewModel(INewsService news)
+        public NewsFeedViewModel(INewsService news,
+                                 INavigationService navigation)
         {
             _news = news;
+            _navigation = navigation;
 
             RefreshFeedCommand?.ExecuteAsync();
         }

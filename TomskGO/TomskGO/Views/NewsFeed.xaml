@@ -10,6 +10,7 @@
              Style="{x:StaticResource themeBackground}"
              Shell.NavBarIsVisible="False"
              x:Class="TomskGO.Views.NewsFeed"
+             x:Name="news"
              x:DataType="vms:NewsFeedViewModel"
              BindingContext="{helpers:ViewModelLocator ViewModelType={x:Type vms:NewsFeedViewModel}}">
     <ContentPage.Resources>
@@ -31,7 +32,7 @@
                 <StackLayout Padding="25,15">
                     <ui:MaterialCard CornerRadius="10" Elevation="8" Padding="0" IsClippedToBounds="True" BackgroundColor="White">
                         <Grid xe:TouchEffect.Color="White"
-                        xe:Commands.Tap="{Binding Source={x:Reference filter}, Path=BindingContext.NavigatePostCommand}"
+                        xe:Commands.Tap="{Binding Source={x:Reference news}, Path=BindingContext.NavigatePostCommand}"
                         xe:Commands.TapParameter="{Binding .}"
                         RowSpacing="10" Style="{x:StaticResource cardBackground}">
                             <Grid.RowDefinitions>
@@ -49,7 +50,7 @@
                             <ui:MaterialButton Grid.Row="3" VerticalOptions="End" HorizontalOptions="End" Margin="0,0,10,10" BackgroundColor="White" 
                                 Text="Подробнее"
                                 ButtonType="Text" xe:TouchEffect.Color="White"
-                                xe:Commands.Tap="{Binding Source={x:Reference filter}, Path=BindingContext.NavigatePostCommand}"
+                                xe:Commands.Tap="{Binding Source={x:Reference news}, Path=BindingContext.NavigatePostCommand}"
                                 xe:Commands.TapParameter="{Binding .}" TextColor="#029E00"/>
                         </Grid>
                     </ui:MaterialCard>

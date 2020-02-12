@@ -21,7 +21,7 @@ namespace TomskGO.Functions.Serverless.Vk
                                      ConnectionStringSetting = "CosmosDBConnection")] IAsyncCollector<object> newsContext,
                                      ILogger log)
         {
-            var client = new HttpClient(new HttpClientHandler
+            using var client = new HttpClient(new HttpClientHandler
             {
                 UseProxy = false
             })

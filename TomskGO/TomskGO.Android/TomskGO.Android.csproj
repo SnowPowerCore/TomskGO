@@ -95,7 +95,9 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Localize.cs" />
+    <Compile Include="Implementations\AppQuit.cs" />
+    <Compile Include="Implementations\Localize.cs" />
+    <Compile Include="Implementations\Toast.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

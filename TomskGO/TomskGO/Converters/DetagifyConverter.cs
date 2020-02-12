@@ -3,13 +3,13 @@ using System.Globalization;
 using System.Text.RegularExpressions;
 using Xamarin.Forms;
 
-namespace TomskGO.Converters
+namespace TomskGO.Core.Converters
 {
     class DetagifyConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if(value is string)
+            if (value is string)
             {
                 var str = (string)value;
                 var regex = new Regex(@"#\w+");
@@ -26,6 +26,7 @@ namespace TomskGO.Converters
             return value;
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) => null;
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) =>
+            null;
     }
 }

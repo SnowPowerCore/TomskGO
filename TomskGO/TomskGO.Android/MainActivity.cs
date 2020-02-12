@@ -2,6 +2,11 @@
 using Android.Content.PM;
 using Android.OS;
 using FFImageLoading.Forms.Platform;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using TomskGO.Core;
+using TomskGO.Core.Interfaces;
+using TomskGO.Droid.Implementations;
 using AGlide = Android.Glide;
 
 namespace TomskGO.Droid
@@ -26,7 +31,14 @@ namespace TomskGO.Droid
             Stormlion.PhotoBrowser.Droid.Platform.Init(this);
             CachedImageRenderer.Init(true);
             _ = typeof(FFImageLoading.Svg.Forms.SvgCachedImage);
-            LoadApplication(new App());
+            LoadApplication(Startup.Init(ConfigureServices));
+        }
+
+        private void ConfigureServices(IServiceCollection services)
+        {
+            services.AddSingleton(typeof(ILocalizeService), typeof(LocalizeService));
+            services.AddSingleton(typeof(IAppQuit), typeof(AppQuit));
+            services.AddSingleton(typeof(IToast), typeof(Toast));
         }
     }
 }

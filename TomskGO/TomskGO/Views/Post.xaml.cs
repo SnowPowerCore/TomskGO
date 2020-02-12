@@ -1,19 +1,19 @@
-﻿using TomskGO.Core.Helpers;
-using TomskGO.ViewModels;
+﻿using TomskGO.Core.ViewModels.News;
 
 namespace TomskGO.Views
 {
     public partial class Post
     {
-        public Post()
-        {
+        private PostViewModel PostViewModel =>
+            (PostViewModel)BindingContext;
+
+        public Post() =>
             InitializeComponent();
-        }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            ViewModelLocator.SetWireType(this, typeof(PostViewModel));
+            PostViewModel.UpdateCurrentPostCommand?.Execute(null);
         }
     }
 }

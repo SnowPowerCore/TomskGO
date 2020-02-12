@@ -3,13 +3,13 @@ using Xamarin.Forms;
 using System.Threading;
 using System.Globalization;
 using Foundation;
-using TomskGO.Interfaces;
+using TomskGO.Core.Interfaces;
 
 [assembly: Dependency(typeof(TomskGO.iOS.helper))]
 
 namespace TomskGO.iOS
 {
-    public class helper : Ihelper
+    public class helper : ILocalizeService
     {
         public void SetLocale(CultureInfo ci)
         {

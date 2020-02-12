@@ -2,7 +2,7 @@
 using System.Globalization;
 using Xamarin.Forms;
 
-namespace TomskGO.Converters
+namespace TomskGO.Core.Converters
 {
     class BoolToColor : IValueConverter
     {

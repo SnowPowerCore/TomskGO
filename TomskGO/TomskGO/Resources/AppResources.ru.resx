@@ -123,8 +123,14 @@
   <data name="browsePhotos" xml:space="preserve">
     <value>Посмотрите фотографии статьи: </value>
   </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
   <data name="categories" xml:space="preserve">
     <value>Категории</value>
+  </data>
+  <data name="confirmExit" xml:space="preserve">
+    <value>Нажмите назад ещё раз для выхода</value>
   </data>
   <data name="filter" xml:space="preserve">
     <value>Категории</value>

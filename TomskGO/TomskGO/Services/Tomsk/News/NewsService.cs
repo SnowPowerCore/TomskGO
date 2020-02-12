@@ -1,18 +1,23 @@
-﻿using System.Collections.Generic;
+﻿using Refit;
+using System.Collections.Generic;
 using System.Threading.Tasks;
+using TomskGO.Core.Services.Tomsk.Api.News;
+using TomskGO.Core.Services.Tomsk.RestClient;
 using TomskGO.Models.API;
-using TomskGO.Services.Api.News;
-using TomskGO.Services.News;
 
-namespace TomskGO.Core.Services.News
+namespace TomskGO.Core.Services.Tomsk.News
 {
     public class NewsService : INewsService
     {
         private INewsApi _news;
 
-        public NewsService(INewsApi news)
+        public NewsModel SelectedPost { get; set; }
+
+        public string SelectedTagName { get; set; }
+
+        public NewsService(IRestClientProvider client)
         {
-            _news = news;
+            _news = RestService.For<INewsApi>(client.BetrouteClient);
         }
 
         public Task<List<NewsModel>> GetAllNewsAsync() =>

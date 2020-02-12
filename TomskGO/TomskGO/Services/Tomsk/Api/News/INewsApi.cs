@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using TomskGO.Models.API;
 
-namespace TomskGO.Services.Api.News
+namespace TomskGO.Core.Services.Tomsk.Api.News
 {
     public interface INewsApi
     {

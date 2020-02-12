@@ -2,7 +2,7 @@
 
 namespace TomskGO.Core.ViewModels
 {
-    class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged
     {
         #region Auto-implemented
         public event PropertyChangedEventHandler PropertyChanged;

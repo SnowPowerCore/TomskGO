@@ -2,13 +2,13 @@
 using System.Globalization;
 using Xamarin.Forms;
 
-namespace TomskGO.Converters
+namespace TomskGO.Core.Converters
 {
     class InverseBoolConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if(value is bool)
+            if (value is bool)
             {
                 return !(bool)value;
             }

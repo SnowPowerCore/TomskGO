@@ -79,11 +79,29 @@ namespace TomskGO.Core.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Cancel.
+        /// </summary>
+        internal static string cancel {
+            get {
+                return ResourceManager.GetString("cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Categories.
         /// </summary>
         internal static string categories {
             get {
                 return ResourceManager.GetString("categories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Press back button again to exit.
+        /// </summary>
+        internal static string confirmExit {
+            get {
+                return ResourceManager.GetString("confirmExit", resourceCulture);
             }
         }
         

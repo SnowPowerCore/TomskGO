@@ -3,14 +3,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:parent="clr-namespace:PanCardView.Controls;assembly=PanCardView"
              xmlns:carousel="clr-namespace:PanCardView;assembly=PanCardView"
-             xmlns:converters="clr-namespace:TomskGO.Converters"
-             xmlns:helpers="clr-namespace:TomskGO.Helpers"
+             xmlns:converters="clr-namespace:TomskGO.Core.Converters"
+             xmlns:helpers="clr-namespace:TomskGO.Core.Helpers"
+             xmlns:vms="clr-namespace:TomskGO.Core.ViewModels.News"
+             xmlns:models="clr-namespace:TomskGO.Models.API;assembly=TomskGO.Models"
              xmlns:xe="clr-namespace:XamEffects;assembly=XamEffects"
              xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
              x:Name="post"
              Shell.NavBarIsVisible="False"
              Style="{x:StaticResource themeBackground}"
-             x:Class="TomskGO.Views.Post">
+             x:DataType="vms:PostViewModel"
+             x:Class="TomskGO.Views.Post"
+             BindingContext="{helpers:ViewModelLocator ViewModelType={x:Type vms:PostViewModel}}">
     <ContentPage.Resources>
         <converters:DetagifyConverter x:Key="detagify"/>
     </ContentPage.Resources>
@@ -29,7 +33,7 @@
                                    ItemsSource="{Binding SelectedItem.Attachments.Photos}" IsClippedToBounds="True"
                                    IsCyclical="False" HeightRequest="230" VerticalSwipeThresholdDistance="2700">
                 <carousel:CarouselView.ItemTemplate>
-                    <DataTemplate>
+                    <DataTemplate x:DataType="{x:Null}">
                         <ui:MaterialCard Margin="15,20" CornerRadius="10" Elevation="10" BackgroundColor="White" IsClippedToBounds="True" Padding="0">
                             <Image Aspect="AspectFill" Source="{Binding ImageSource}"
                                xe:Commands.Tap="{Binding Source={x:Reference post}, Path=BindingContext.OpenPhotoCommand}"
@@ -46,7 +50,7 @@
                     AlignItems="Start"
                     AlignContent="Start" BindableLayout.ItemsSource="{Binding SelectedItem.Tags}" HeightRequest="50">
                     <BindableLayout.ItemTemplate>
-                        <DataTemplate>
+                        <DataTemplate x:DataType="models:NewsTag">
                             <ui:MaterialButton ButtonType="Elevated" Padding="12,3" Elevation="2,4" BackgroundColor="Accent" TextColor="White"
                                                CornerRadius="16" Text="{Binding .}" FontSize="12"
                                                Command="{Binding Source={x:Reference post}, Path=BindingContext.OpenFilterCommand}"

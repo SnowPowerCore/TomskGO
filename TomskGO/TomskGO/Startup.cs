@@ -1,29 +1,34 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using System;
-using TomskGO.Core.Services.News;
-using TomskGO.Services.News;
-using TomskGO.ViewModels;
+using TomskGO.Core.Services.Tomsk.News;
+using TomskGO.Core.Services.Tomsk.RestClient;
+using TomskGO.Core.Services.Utils.Analytics;
+using TomskGO.Core.Services.Utils.Language;
+using TomskGO.Core.Services.Utils.LocalAuth;
+using TomskGO.Core.Services.Utils.Message;
+using TomskGO.Core.Services.Utils.Navigation;
+using TomskGO.Core.Services.Utils.Settings;
+using TomskGO.Core.Services.Utils.Shell;
+using TomskGO.Core.Services.Utils.Theme;
+using TomskGO.Core.ViewModels.News;
 using TomskGO.Views;
+using Xamarin.Forms;
 
 namespace TomskGO.Core
 {
     public static class Startup
     {
-        public static App Init(Action<HostBuilderContext, IServiceCollection> nativeConfigureServices)
+        public static App Init(Action<IServiceCollection> nativeConfigureServices)
         {
             var host = Host
                 .CreateDefaultBuilder()
-                .ConfigureServices((c, x) =>
+                .ConfigureServices(x =>
                 {
-                    nativeConfigureServices(c, x);
-                    ConfigureServices(c, x);
+                    nativeConfigureServices(x);
+                    ConfigureServices(x);
                 })
-                .ConfigureLogging(l => l.AddConsole(o =>
-                {
-                    o.DisableColors = true;
-                }))
+                .RegisterRoutes()
                 .Build();
 
             App.Services = host.Services;
@@ -31,20 +36,25 @@ namespace TomskGO.Core
             return App.Services.GetService<App>();
         }
 
-        private static void ConfigureServices(HostBuilderContext ctx, IServiceCollection services)
+        private static void ConfigureServices(IServiceCollection services)
         {
             #region Services
+            services.AddSingleton<IAnalyticsService, AnalyticsService>();
+            services.AddSingleton<ILanguageService, LanguageService>();
+            services.AddSingleton<ILocalAuthService, LocalAuthService>();
+            services.AddSingleton<IMessageService, MessageService>();
+            services.AddSingleton<INavigationService, NavigationService>();
+            services.AddSingleton<ISettingsService, SettingsService>();
+            services.AddSingleton<IShellService, ShellService>();
+            services.AddSingleton<IThemeService, ThemeService>();
+
             services.AddSingleton<INewsService, NewsService>();
+            services.AddSingleton<IRestClientProvider, RestClientProvider>();
             #endregion
 
             #region ViewModels
             services.AddSingleton<NewsFeedViewModel>();
             services.AddSingleton<PostViewModel>();
-            #endregion
-
-            #region Views
-            services.AddSingleton<NewsFeed>();
-            services.AddSingleton<Post>();
             #endregion
 
             #region Application
@@ -68,5 +78,15 @@ namespace TomskGO.Core
         //        }
         //    }
         //}
+    }
+
+    static class StartupExtensions
+    {
+        public static IHostBuilder RegisterRoutes(this IHostBuilder host)
+        {
+            Routing.RegisterRoute("post", typeof(Post));
+
+            return host;
+        }
     }
 }

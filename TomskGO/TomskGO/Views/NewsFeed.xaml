@@ -1,13 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:converters="clr-namespace:TomskGO.Converters"
-             xmlns:managers="clr-namespace:TomskGO.Managers"
+             xmlns:converters="clr-namespace:TomskGO.Core.Converters"
+             xmlns:helpers="clr-namespace:TomskGO.Core.Helpers"
+             xmlns:vms="clr-namespace:TomskGO.Core.ViewModels.News"
+             xmlns:models="clr-namespace:TomskGO.Models.API;assembly=TomskGO.Models"
              xmlns:xe="clr-namespace:XamEffects;assembly=XamEffects"
              xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
              Style="{x:StaticResource themeBackground}"
              Shell.NavBarIsVisible="False"
-             x:Class="TomskGO.Views.NewsFeed">
+             x:Class="TomskGO.Views.NewsFeed"
+             x:DataType="vms:NewsFeedViewModel"
+             BindingContext="{helpers:ViewModelLocator ViewModelType={x:Type vms:NewsFeedViewModel}}">
     <ContentPage.Resources>
         <converters:DetagifyConverter x:Key="detagify"/>
         <converters:InverseBoolConverter x:Key="inverseBool"/>
@@ -23,11 +27,11 @@
             </StackLayout>
         </CollectionView.Header>
         <CollectionView.ItemTemplate>
-            <DataTemplate>
+            <DataTemplate x:DataType="models:NewsModel">
                 <StackLayout Padding="25,15">
                     <ui:MaterialCard CornerRadius="10" Elevation="8" Padding="0" IsClippedToBounds="True" BackgroundColor="White">
                         <Grid xe:TouchEffect.Color="White"
-                        xe:Commands.Tap="{Binding NavigatePostCommand, Source={x:Static managers:CacheManager.NewsFeed}}"
+                        xe:Commands.Tap="{Binding Source={x:Reference filter}, Path=BindingContext.NavigatePostCommand}"
                         xe:Commands.TapParameter="{Binding .}"
                         RowSpacing="10" Style="{x:StaticResource cardBackground}">
                             <Grid.RowDefinitions>
@@ -45,7 +49,7 @@
                             <ui:MaterialButton Grid.Row="3" VerticalOptions="End" HorizontalOptions="End" Margin="0,0,10,10" BackgroundColor="White" 
                                 Text="Подробнее"
                                 ButtonType="Text" xe:TouchEffect.Color="White"
-                                xe:Commands.Tap="{Binding NavigatePostCommand, Source={x:Static managers:CacheManager.NewsFeed}}"
+                                xe:Commands.Tap="{Binding Source={x:Reference filter}, Path=BindingContext.NavigatePostCommand}"
                                 xe:Commands.TapParameter="{Binding .}" TextColor="#029E00"/>
                         </Grid>
                     </ui:MaterialCard>

@@ -123,8 +123,14 @@
   <data name="browsePhotos" xml:space="preserve">
     <value>Post's photos: </value>
   </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
   <data name="categories" xml:space="preserve">
     <value>Categories</value>
+  </data>
+  <data name="confirmExit" xml:space="preserve">
+    <value>Press back button again to exit</value>
   </data>
   <data name="filter" xml:space="preserve">
     <value>Filter</value>

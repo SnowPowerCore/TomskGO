@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Globalization;
 
-namespace TomskGO.Interfaces
+namespace TomskGO.Core.Interfaces
 {
-    public interface Ihelper
+    public interface ILocalizeService
     {
         CultureInfo GetCurrentCultureInfo();
+
         void SetLocale(CultureInfo ci);
     }
 
@@ -14,7 +15,10 @@ namespace TomskGO.Interfaces
         public PlatformCulture(string platformCultureString)
         {
             if (string.IsNullOrEmpty(platformCultureString))
-                throw new ArgumentException("Expected culture identifier", "platformCultureString"); // in C# 6 use nameof(platformCultureString)
+            {
+                throw new ArgumentException("Expected culture identifier",
+                    "platformCultureString"); // in C# 6 use nameof(platformCultureString)
+            }
 
             PlatformString = platformCultureString.Replace("_", "-"); // .NET expects dash, not underscore
             var dashIndex = PlatformString.IndexOf("-", StringComparison.Ordinal);
@@ -30,9 +34,11 @@ namespace TomskGO.Interfaces
                 LocaleCode = "";
             }
         }
-        public string PlatformString { get; private set; }
-        public string LanguageCode { get; private set; }
-        public string LocaleCode { get; private set; }
+
+        public string PlatformString { get; }
+        public string LanguageCode { get; }
+        public string LocaleCode { get; }
+
         public override string ToString()
         {
             return PlatformString;

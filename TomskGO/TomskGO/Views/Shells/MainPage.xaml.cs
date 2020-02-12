@@ -1,10 +1,8 @@
-﻿namespace TomskGO.Views
+﻿namespace TomskGO.Core.Views.Shells
 {
     public partial class MainPage
     {
-        public MainPage()
-        {
+        public MainPage() =>
             InitializeComponent();
-        }
     }
 }

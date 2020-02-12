@@ -1,14 +1,11 @@
 ﻿using System;
-using Xamarin.Forms;
-using System.Threading;
 using System.Globalization;
-using TomskGO.Interfaces;
+using System.Threading;
+using TomskGO.Core.Interfaces;
 
-[assembly: Dependency(typeof(TomskGO.Android.helper))]
-
-namespace TomskGO.Android
+namespace TomskGO.Droid.Implementations
 {
-    public class helper : Ihelper
+    public class LocalizeService : ILocalizeService
     {
         public void SetLocale(CultureInfo ci)
         {

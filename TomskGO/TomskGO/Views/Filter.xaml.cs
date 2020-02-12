@@ -1,28 +1,19 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using TomskGO.Core.ViewModels.News;
 
 namespace TomskGO.Views
 {
-    [QueryProperty(nameof(TagName), "tagName")]
     public partial class Filter
     {
-        private string _tagName;
-        public string TagName
-        {
-            get => _tagName;
-            set
-            {
-                var data = Uri.UnescapeDataString(value);
-                if (!string.IsNullOrEmpty(data))
-                    Managers.CacheManager.NewsFeed.FilterPostsCommand?.Execute(data);
-                _tagName = data;
-            }
-        }
+        public NewsFeedViewModel NewsFeedViewModel =>
+            (NewsFeedViewModel)BindingContext;
 
-        public Filter()
-        {
+        public Filter() => 
             InitializeComponent();
-            BindingContext = Managers.CacheManager.NewsFeed;
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            NewsFeedViewModel.FilterPostsCommand?.Execute(null);
         }
     }
 }

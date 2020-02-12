@@ -2,47 +2,54 @@
 using System.Globalization;
 using System.Reflection;
 using System.Resources;
-using TomskGO.Interfaces;
+using TomskGO.Core.Resources;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace TomskGO.Helpers
+namespace TomskGO.Core.Helpers
 {
+    /// <summary>
+    /// Extension, which helps with text translation
+    /// </summary>
     [ContentProperty(nameof(Text))]
     public class TranslateExtension : IMarkupExtension
     {
-        CultureInfo ci = null;
-        const string ResourceId = "TomskGO.Resources.AppResources";
-
-        static readonly Lazy<ResourceManager> ResMgr = new Lazy<ResourceManager>(() => new ResourceManager(ResourceId, IntrospectionExtensions.GetTypeInfo(typeof(TranslateExtension)).Assembly));
-
         public string Text { get; set; }
-
-        public TranslateExtension()
-        {
-            if (Device.RuntimePlatform == Device.iOS || Device.RuntimePlatform == Device.Android)
-            {
-                ci = DependencyService.Get<Ihelper>().GetCurrentCultureInfo();
-            }
-        }
 
         public object ProvideValue(IServiceProvider serviceProvider)
         {
             if (Text == null)
-                return string.Empty;
+                return null;
 
-            var translation = ResMgr.Value.GetString(Text, ci);
-            if (translation == null)
+            return Text.Translate();
+        }
+    }
+
+    public static class StringTranslationExtensions
+    {
+        static ResourceManager resourceManager;
+
+        static StringTranslationExtensions()
+        {
+            var assembly = typeof(AppResources).GetTypeInfo().Assembly;
+            var assemblyName = assembly.GetName();
+            resourceManager = new ResourceManager($"{assemblyName.Name}.Resources.AppResources", assembly);
+        }
+
+        /// <summary>
+        /// Translate the text automatically
+        /// </summary>
+        /// <param name="text"></param>
+        /// <returns></returns>
+        public static string Translate(this string text)
+        {
+            if (text != null)
             {
-#if DEBUG
-                throw new ArgumentException(
-                    string.Format("Key '{0}' was not found in resources '{1}' for culture '{2}'.", Text, ResourceId, ci.Name),
-                    "Text");
-#else
-                translation = Text; // HACK: returns the key, which GETS DISPLAYED TO THE USER
-#endif
+                var current = CultureInfo.CurrentCulture;
+                return resourceManager.GetString(text, current);
             }
-            return translation;
+
+            return "";
         }
     }
 }

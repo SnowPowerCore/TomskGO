@@ -1,30 +1,47 @@
 ﻿using System;
-using TomskGO.Managers;
-using TomskGO.Views;
+using TomskGO.Core.Services.Utils.Language;
+using TomskGO.Core.Services.Utils.Navigation;
+using TomskGO.Core.Services.Utils.Theme;
 using Xamarin.Forms;
 
 namespace TomskGO
 {
     public partial class App : Application
     {
-        public static IServiceProvider Services { get; set; }
+        #region Fields
+        private IThemeService _theme;
+        private ILanguageService _language;
+        private INavigationService _navigation;
+        #endregion
 
+        #region Properties
+        public static IServiceProvider Services { get; set; }
+        #endregion
+
+        #region Constructor
         public App()
         {
             InitializeComponent();
             XF.Material.Forms.Material.Init(this);
-            MainPage = new MainPage();
+
+            InitApp();
+        }
+        #endregion
+
+        #region Methods
+        private void InitApp()
+        {
+            _theme = (IThemeService)Services.GetService(typeof(IThemeService));
+            _language = (ILanguageService)Services.GetService(typeof(ILanguageService));
+            _navigation = (INavigationService)Services.GetService(typeof(INavigationService));
         }
 
         protected override void OnStart()
         {
-            RegisterRoutes();
-            CacheManager.LoadThemeCommand?.Execute(null);
+            _theme.DetermineAndLoadTheme();
+            _language.DetermineAndSetLanguage();
+            _navigation.DetermineAndSetMainPage();
         }
-
-        private void RegisterRoutes()
-        {
-            Routing.RegisterRoute("post", typeof(Post));
-        }
+        #endregion
     }
 }

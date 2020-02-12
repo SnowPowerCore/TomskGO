@@ -1,21 +1,20 @@
 ﻿using AsyncAwaitBestPractices.MVVM;
-using Newtonsoft.Json;
-using System;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using TomskGO.Core.ViewModels;
+using TomskGO.Core.Services.Tomsk.News;
+using TomskGO.Core.Services.Utils.Navigation;
 using TomskGO.Models.API;
 using TomskGO.Models.Utils;
-using TomskGO.Services.News;
 using Xamarin.Forms;
 
-namespace TomskGO.ViewModels
+namespace TomskGO.Core.ViewModels.News
 {
-    class NewsFeedViewModel : BaseViewModel
+    public class NewsFeedViewModel : BaseViewModel
     {
         #region Fields
-        private INewsService _news;
+        private readonly INewsService _news;
+        private readonly INavigationService _navigation;
 
         private ObservableRangeCollection<NewsModel> _posts;
         private ObservableRangeCollection<NewsModel> _filteredPosts;
@@ -29,8 +28,8 @@ namespace TomskGO.ViewModels
             get => _posts;
             set
             {
-                if(value.Count > 0)
-                _posts = value;
+                if (value.Count > 0)
+                    _posts = value;
                 OnPropertyChanged();
             }
         }
@@ -41,7 +40,7 @@ namespace TomskGO.ViewModels
             set
             {
                 if (value.Count > 0)
-                _filteredPosts = value;
+                    _filteredPosts = value;
                 OnPropertyChanged();
             }
         }
@@ -72,10 +71,10 @@ namespace TomskGO.ViewModels
             new AsyncCommand(RefreshFeedAsync);
 
         public IAsyncCommand<NewsModel> NavigatePostCommand =>
-            new AsyncCommand<NewsModel>(NavigatePost);
+            new AsyncCommand<NewsModel>(NavigatePostAsync);
 
         public ICommand FilterPostsCommand =>
-            new Command<string>(FilterPosts);
+            new Command(FilterPosts);
 
         public ICommand ChangeTagSelectionCommand =>
             new Command<NewsTag>(ChangeTagSelection);
@@ -91,22 +90,25 @@ namespace TomskGO.ViewModels
         #endregion
 
         #region Methods
-        private async Task RefreshFeedAsync()
-        {
-            Posts = new ObservableRangeCollection<NewsModel>(await _news.GetAllNewsAsync());
-            Tags = new ObservableRangeCollection<NewsTag>(Posts
-                .SelectMany(t => t.Tags)
-                .Distinct());
-            FilteredPosts = Posts;
-            SelectedTags = new ObservableRangeCollection<NewsTag>();
-        }
+        private Task RefreshFeedAsync() =>
+            _news.GetAllNewsAsync()
+                .ContinueWith(t =>
+                {
+                    Posts = new ObservableRangeCollection<NewsModel>(t.Result);
+                    FilteredPosts = Posts;
+                    Tags = new ObservableRangeCollection<NewsTag>(Posts
+                        .SelectMany(t => t.Tags)
+                        .Distinct());
+                    SelectedTags = new ObservableRangeCollection<NewsTag>();
+                }, TaskContinuationOptions.OnlyOnRanToCompletion);
 
-        private void FilterPosts(string t)
+        private void FilterPosts()
         {
-            if (Posts == null) return;
+            if (string.IsNullOrEmpty(_news.SelectedTagName)) return;
+            var tagName = _news.SelectedTagName;
             FilteredPosts = new ObservableRangeCollection<NewsModel>(Posts
-                .Where(x => x.Tags.Any(tag => tag.Name == t)));
-            var searchedTag = Tags.FirstOrDefault(x => x.Name == t);
+                .Where(x => x.Tags.Any(tag => tag.Name == tagName)));
+            var searchedTag = Tags.FirstOrDefault(tag => tag.Name == tagName);
             searchedTag.Selected = true;
             SelectedTags = new ObservableRangeCollection<NewsTag> { searchedTag };
         }
@@ -137,11 +139,10 @@ namespace TomskGO.ViewModels
                 .Where(x => x.Tags.Any(tag => SelectedTags.Any(s => s.Name == tag.Name))));
         }
 
-        private async Task NavigatePost(NewsModel item)
+        private Task NavigatePostAsync(NewsModel item)
         {
-            var serialized = JsonConvert.SerializeObject(item);
-            var modified = Uri.EscapeDataString(serialized);
-            await Shell.Current.GoToAsync("post?feedData="+modified);
+            _news.SelectedPost = item;
+            return _navigation.NavigateToPageAsync("post");
         }
         #endregion
     }

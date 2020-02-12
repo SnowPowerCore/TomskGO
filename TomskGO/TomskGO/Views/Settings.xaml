@@ -1,17 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:managers="clr-namespace:TomskGO.Managers"
+             xmlns:helpers="clr-namespace:TomskGO.Core.Helpers"
+             xmlns:vms="clr-namespace:TomskGO.Core.ViewModels"
              xmlns:xe="clr-namespace:XamEffects;assembly=XamEffects"
              xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
              Shell.NavBarIsVisible="False"
              Style="{x:StaticResource themeBackground}"
-             x:Class="TomskGO.Views.Settings">
+             x:Name="settings"
+             x:Class="TomskGO.Views.Settings"
+             BindingContext="{helpers:ViewModelLocator ViewModelType={x:Type vms:SettingsViewModel}}">
     <TableView Intent="Settings" RowHeight="50">
         <TableSection>
             <ViewCell>
                 <Grid Padding="15,3" xe:TouchEffect.Color="White"
-                    xe:Commands.Tap="{x:Static managers:CacheManager.SwitchThemeCommand}">
+                    xe:Commands.Tap="{Binding Source={x:Reference settings}, Path=BindingContext.SwitchThemeCommand}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0.85*"/>
                         <ColumnDefinition Width="0.15*"/>

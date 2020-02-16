@@ -45,7 +45,7 @@ namespace TomskGO.Core.Services.Utils.Settings
         public bool ContainsKey(string key) =>
             Application.Current.Properties.ContainsKey(key);
 
-        public async Task AddOrUpdateValueAsync<T>(string key, T value, bool serialize = false)
+        public Task AddOrUpdateValueAsync<T>(string key, T value, bool serialize = false)
         {
             if (serialize)
                 Application.Current.Properties[key] = JsonConvert.SerializeObject(value);
@@ -53,17 +53,18 @@ namespace TomskGO.Core.Services.Utils.Settings
 
             try
             {
-                await Application.Current.SavePropertiesAsync();
+                return Application.Current.SavePropertiesAsync();
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Unable to save: " + key, " Message: " + ex.Message);
+                return Task.CompletedTask;
             }
         }
 
-        public async Task AddOrUpdateValuesAsync<T>(Dictionary<string, T> keyValues, bool serialize = false)
+        public Task AddOrUpdateValuesAsync<T>(Dictionary<string, T> keyValues, bool serialize = false)
         {
-            if (keyValues == null) return;
+            if (keyValues == null) return Task.CompletedTask;
 
             foreach (var item in keyValues)
             {
@@ -77,13 +78,14 @@ namespace TomskGO.Core.Services.Utils.Settings
 
             try
             {
-                await Application.Current.SavePropertiesAsync();
+                return Application.Current.SavePropertiesAsync();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(
                     "Unable to save or update values within this dict" + keyValues,
                     " Message: " + ex.Message);
+                return Task.CompletedTask;
             }
         }
 
@@ -115,16 +117,17 @@ namespace TomskGO.Core.Services.Utils.Settings
             return list;
         }
 
-        public async Task DetermineAndSetDefaultsAsync()
+        public Task DetermineAndSetDefaultsAsync()
         {
             if (!GetValueOrDefault<bool>("DefaultsSet"))
-                await SetDefaultsAsync();
+                return SetDefaultsAsync();
+            return Task.CompletedTask;
         }
 
-        private async Task SetDefaultsAsync()
+        private Task SetDefaultsAsync()
         {
             Application.Current.Properties.Clear();
-            await AddOrUpdateValuesAsync(new Dictionary<string, string>
+            return AddOrUpdateValuesAsync(new Dictionary<string, string>
             {
                 { nameof(ProjectName), _projectName },
                 { nameof(SupportNumber), _supportNumber },
@@ -133,11 +136,11 @@ namespace TomskGO.Core.Services.Utils.Settings
                 { nameof(DefaultAppUpdateUrl), _defaultAppUpdateUrl },
                 { nameof(AppCenterAndroidKey), _appCenterAndroidKey },
                 { nameof(AppCenteriOSKey), _appCenteriOSKey },
-            }).ContinueWith(async t => await AddOrUpdateValueAsync("DefaultsSet", true),
+            }).ContinueWith(t => AddOrUpdateValueAsync("DefaultsSet", true),
                 TaskContinuationOptions.OnlyOnRanToCompletion);
         }
 
-        public async Task RemoveValueAsync(string key)
+        public Task RemoveValueAsync(string key)
         {
             if (Application.Current.Properties.ContainsKey(key))
             {
@@ -145,18 +148,20 @@ namespace TomskGO.Core.Services.Utils.Settings
 
                 try
                 {
-                    await Application.Current.SavePropertiesAsync();
+                    return Application.Current.SavePropertiesAsync();
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("Unable to save: " + key, " Message: " + ex.Message);
+                    return Task.CompletedTask;
                 }
             }
+            return Task.CompletedTask;
         }
 
-        public async Task RemoveValuesAsync(string[] keys)
+        public Task RemoveValuesAsync(string[] keys)
         {
-            if (keys == null) return;
+            if (keys == null) return Task.CompletedTask;
 
             foreach (var item in keys)
             {
@@ -166,13 +171,14 @@ namespace TomskGO.Core.Services.Utils.Settings
 
             try
             {
-                await Application.Current.SavePropertiesAsync();
+                return Application.Current.SavePropertiesAsync();
             }
             catch (Exception ex)
             {
                 Console.WriteLine(
                     "Unable to save or update values within this list " + keys,
                     " Message: " + ex.Message);
+                return Task.CompletedTask;
             }
         }
         #endregion

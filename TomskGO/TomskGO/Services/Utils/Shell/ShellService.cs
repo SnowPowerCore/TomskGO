@@ -17,14 +17,14 @@ namespace TomskGO.Core.Services.Utils.Shell
             _localAuth = localAuth;
         }
 
-        public async Task<bool> ChangeShellAsync<TShell>(TShell shell) where TShell : Xamarin.Forms.Shell
+        public Task<bool> ChangeShellAsync<TShell>(TShell shell) where TShell : Xamarin.Forms.Shell
         {
             Current.FlyoutIsPresented = false;
-            await CloseModalAsync()
-                .ContinueWith(async t =>
-                    await Device.InvokeOnMainThreadAsync(() => Application.Current.MainPage = shell),
+            CloseModalAsync()
+                .ContinueWith(t =>
+                    Device.InvokeOnMainThreadAsync(() => Application.Current.MainPage = shell),
                         TaskContinuationOptions.OnlyOnRanToCompletion);
-            return true;
+            return Task.FromResult(true);
         }
 
         public void DetermineAndSetCurrent() =>
@@ -37,10 +37,11 @@ namespace TomskGO.Core.Services.Utils.Shell
         public Task OpenModalAsync(Page modal, bool animated = true) =>
             Current.Navigation.PushModalAsync(modal, animated);
 
-        public async Task CloseModalAsync(bool animated = true)
+        public Task CloseModalAsync(bool animated = true)
         {
             if (Current.Navigation.ModalStack.Count > 0)
-                await Current.Navigation.PopModalAsync(animated);
+                return Current.Navigation.PopModalAsync(animated);
+            return Task.CompletedTask;
         }
 
         public Task NavigateToPageAsync(string routeWithParams, bool animated = true)
@@ -55,16 +56,17 @@ namespace TomskGO.Core.Services.Utils.Shell
             return Current.Navigation.PushAsync(page, animated);
         }
 
-        public async Task NavigateBackAsync(bool animated = true)
+        public Task NavigateBackAsync(bool animated = true)
         {
             if (Current.Navigation.NavigationStack.Count > 1)
-                await Current.Navigation.PopAsync(animated);
+                return Current.Navigation.PopAsync(animated);
+            return Task.CompletedTask;
         }
 
-        public async Task NavigateToRootAsync(bool animated = true)
+        public Task NavigateToRootAsync(bool animated = true)
         {
             Current.FlyoutIsPresented = false;
-            await Current.Navigation.PopToRootAsync(animated);
+            return Current.Navigation.PopToRootAsync(animated);
         }
 
         public bool CheckCanExit() =>

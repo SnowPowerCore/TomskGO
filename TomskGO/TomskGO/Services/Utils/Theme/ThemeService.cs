@@ -33,7 +33,7 @@ namespace TomskGO.Core.Services.Utils.Theme
             MergedDictionaries.Add(ThemeResources[current]);
         }
 
-        public async Task SwitchThemeAsync()
+        public Task SwitchThemeAsync()
         {
             var current = CheckTheme();
 
@@ -43,13 +43,13 @@ namespace TomskGO.Core.Services.Utils.Theme
             {
                 case Theme.Dark:
                     MergedDictionaries.Add(ThemeResources[Theme.Light]);
-                    await _settings.AddOrUpdateValueAsync("currentTheme", Theme.Light, true);
-                    break;
+                    return _settings.AddOrUpdateValueAsync("currentTheme", Theme.Light, true);
                 case Theme.Light:
                     MergedDictionaries.Add(ThemeResources[Theme.Dark]);
-                    await _settings.AddOrUpdateValueAsync("currentTheme", Theme.Dark, true);
-                    break;
+                    return _settings.AddOrUpdateValueAsync("currentTheme", Theme.Dark, true);
             }
+
+            return Task.CompletedTask;
         }
 
         private Theme CheckTheme()

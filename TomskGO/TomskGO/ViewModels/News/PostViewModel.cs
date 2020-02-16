@@ -61,10 +61,10 @@ namespace TomskGO.Core.ViewModels.News
             browser.Show();
         }
 
-        private async Task OpenFilterAsync(string tagName)
+        private Task OpenFilterAsync(string tagName)
         {
             _news.SelectedTagName = tagName;
-            await _navigation.NavigateToPageAsync("//filter");
+            return _navigation.NavigateToPageAsync("//filter");
         }
 
         private Task NavigateBackAsync() =>

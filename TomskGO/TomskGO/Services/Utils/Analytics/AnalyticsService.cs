@@ -48,7 +48,7 @@ namespace TomskGO.Core.Services.Utils.Analytics
             Microsoft.AppCenter.Analytics.Analytics.TrackEvent(name, dataDict);
         }
 
-        public async Task ShowAndTrackErrorAsync(
+        public Task ShowAndTrackErrorAsync(
             Exception ex,
             string message = null,
             string title = null,
@@ -56,7 +56,7 @@ namespace TomskGO.Core.Services.Utils.Analytics
         {
             if (currentEvent != null) TrackEvent(currentEvent);
             TrackError(ex);
-            await _message.DisplayInfoAsync(message);
+            return _message.DisplayInfoAsync(message);
         }
     }
 }

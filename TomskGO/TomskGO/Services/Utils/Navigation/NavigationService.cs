@@ -24,11 +24,11 @@ namespace TomskGO.Core.Services.Utils.Navigation
             _appQuit = appQuit;
         }
 
-        public async Task<bool> SwitchMainPageAsync<TShell>(TShell shell) where TShell : Page
+        public Task<bool> SwitchMainPageAsync<TShell>(TShell shell) where TShell : Page
         {
             if (shell is Xamarin.Forms.Shell)
-                return await _shell.ChangeShellAsync(shell as Xamarin.Forms.Shell);
-            return false;
+                return _shell.ChangeShellAsync(shell as Xamarin.Forms.Shell);
+            return Task.FromResult(false);
         }
 
         public bool DetermineAndSetMainPage()

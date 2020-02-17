@@ -7,6 +7,7 @@ using System;
 using TomskGO.Core;
 using TomskGO.Core.Interfaces;
 using TomskGO.Droid.Implementations;
+using Xamarin;
 using AGlide = Android.Glide;
 
 namespace TomskGO.Droid
@@ -22,13 +23,17 @@ namespace TomskGO.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
-            Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             Xamarin.Forms.Forms.Init(this, savedInstanceState);
             AGlide.Forms.Init(this);
             XamEffects.Droid.Effects.Init();
             PanCardView.Droid.CardsViewRenderer.Preserve();
             XF.Material.Droid.Material.Init(this, savedInstanceState);
             Stormlion.PhotoBrowser.Droid.Platform.Init(this);
+            FormsGoogleMaps.Init(this, savedInstanceState, new Xamarin.Forms.GoogleMaps.Android.PlatformConfig
+            {
+                BitmapDescriptorFactory = new CachingNativeBitmapDescriptorFactory()
+            });
+            Console.WriteLine(FormsGoogleMaps.IsInitialized);
             CachedImageRenderer.Init(true);
             _ = typeof(FFImageLoading.Svg.Forms.SvgCachedImage);
             LoadApplication(Startup.Init(ConfigureServices));

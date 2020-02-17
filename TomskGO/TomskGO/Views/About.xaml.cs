@@ -1,4 +1,4 @@
-﻿namespace TomskGO.Views
+﻿namespace TomskGO.Core.Views
 {
     public partial class About
     {

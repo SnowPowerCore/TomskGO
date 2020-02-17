@@ -1,6 +1,6 @@
 ﻿using TomskGO.Core.ViewModels.News;
 
-namespace TomskGO.Views
+namespace TomskGO.Core.Views
 {
     public partial class Post
     {

@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using TomskGO.Core.Services.Utils.Settings;
 using TomskGO.Themes;
 using Xamarin.Forms;
+using XF.Material.Forms;
 
 namespace TomskGO.Core.Services.Utils.Theme
 {
@@ -30,6 +31,9 @@ namespace TomskGO.Core.Services.Utils.Theme
             var current = CheckTheme();
 
             MergedDictionaries.Clear();
+
+            Material.Init(Application.Current);
+
             MergedDictionaries.Add(ThemeResources[current]);
         }
 
@@ -38,6 +42,8 @@ namespace TomskGO.Core.Services.Utils.Theme
             var current = CheckTheme();
 
             MergedDictionaries.Clear();
+
+            Material.Init(Application.Current);
 
             switch (current)
             {

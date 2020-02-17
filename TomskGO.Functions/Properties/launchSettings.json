@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "TomskGO.Functions": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker",
+      "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
+      "httpPort": 33958,
+      "useSSL": false
+    }
+  }
+}

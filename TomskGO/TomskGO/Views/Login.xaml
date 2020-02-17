@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:helpers="clr-namespace:TomskGO.Core.Helpers"
+             xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+             x:Class="TomskGO.Core.Views.Login">
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <forms:CachedImage Grid.Row="0" Grid.Column="0" Source="icon.png"
+                   HorizontalOptions="Center" Margin="5" Aspect="AspectFit" VerticalOptions="Center" />
+            <Grid Grid.Row="1" Margin="20, 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="1" Text="{helpers:Translate youreWelcome}" FontSize="Large" FontAttributes="Bold"
+                       HorizontalOptions="Center" VerticalOptions="Center" TextColor="{DynamicResource themeTextColor}" />
+                <Label Grid.Row="2" Text="{helpers:Translate username}" FontSize="Default" HorizontalOptions="Start"
+                       VerticalOptions="Center" TextColor="{DynamicResource themeTextColor}" />
+                <material:MaterialTextField Grid.Row="3" BackgroundColor="{DynamicResource accentColorLightest}"
+                           Text="{Binding Username, Mode=OneWayToSource}" TextColor="{DynamicResource themeTextSecondaryColor}"
+                           PlaceholderColor="{DynamicResource placeholderColor}" VerticalOptions="Center" HorizontalOptions="FillAndExpand"
+                           InputType="Email" IsSpellCheckEnabled="False" AutomationId="LogInEntry"/>
+                <!--<Entry Grid.Row="3" BackgroundColor="White" IsSpellCheckEnabled="False" Text="{Binding Username, Mode=OneWayToSource}" TextColor="Black" PlaceholderColor="LightGray" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Keyboard="Telephone"/>-->
+                <Label Grid.Row="4" Text="{helpers:Translate password}" FontSize="Default" HorizontalOptions="Start"
+                       VerticalOptions="Center" TextColor="{DynamicResource themeTextColor}" />
+                <material:MaterialTextField Grid.Row="5" BackgroundColor="{DynamicResource accentColorLightest}" IsSpellCheckEnabled="False" AutomationId="PasswordEntry"
+                       Text="{Binding Password, Mode=OneWayToSource}" TextColor="{DynamicResource themeTextSecondaryColor}"
+                       PlaceholderColor="{DynamicResource placeholderColor}"
+                       VerticalOptions="Center" HorizontalOptions="FillAndExpand" InputType="Password"/>
+            </Grid>
+            <Grid VerticalOptions="Center" Grid.Row="2" RowSpacing="7" Margin="40, 0">
+                <material:MaterialButton Style="{x:StaticResource actionButton}"
+                        VerticalOptions="Center" HorizontalOptions="FillAndExpand" CornerRadius="8"
+                        Text="{helpers:Translate signInBtn}" AutomationId="SignInButton"/>
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>

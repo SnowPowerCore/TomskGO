@@ -1,10 +1,8 @@
 ﻿namespace TomskGO.Core.Views
 {
-    public partial class Settings
+    public partial class Login
     {
-        public Settings()
-        {
+        public Login() =>
             InitializeComponent();
-        }
     }
 }

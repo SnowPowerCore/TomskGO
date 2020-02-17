@@ -144,7 +144,7 @@ namespace TomskGO.Core.Services.Utils.Message
             MaterialDialog.Instance.AlertAsync(message, MaterialAlertConfiguration);
 
         public Task DisplaySnackbarAsync(string info, int duration = 1500) =>
-            MaterialDialog.Instance.SnackbarAsync(info, duration, MaterialSnackBarConfig);
+            MaterialDialog.Instance.SnackbarAsync(info, duration);
 
         public void DisplayToast(string info) =>
             _toast.ShowToast(info);

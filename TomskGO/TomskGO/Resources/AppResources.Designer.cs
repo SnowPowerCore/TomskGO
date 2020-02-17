@@ -124,6 +124,42 @@ namespace TomskGO.Core.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Language:.
+        /// </summary>
+        internal static string lang {
+            get {
+                return ResourceManager.GetString("lang", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Language has been changed. Please, restart the app..
+        /// </summary>
+        internal static string langChangeInfo {
+            get {
+                return ResourceManager.GetString("langChangeInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Map.
+        /// </summary>
+        internal static string map {
+            get {
+                return ResourceManager.GetString("map", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на or.
+        /// </summary>
+        internal static string or {
+            get {
+                return ResourceManager.GetString("or", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Placeholder.
         /// </summary>
         internal static string placeholder {
@@ -142,11 +178,38 @@ namespace TomskGO.Core.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Sign in.
+        /// </summary>
+        internal static string signInPlaceholder {
+            get {
+                return ResourceManager.GetString("signInPlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Sign up.
+        /// </summary>
+        internal static string signUpPlaceholder {
+            get {
+                return ResourceManager.GetString("signUpPlaceholder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Tags: .
         /// </summary>
         internal static string tags {
             get {
                 return ResourceManager.GetString("tags", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на WIP....
+        /// </summary>
+        internal static string wip {
+            get {
+                return ResourceManager.GetString("wip", resourceCulture);
             }
         }
     }

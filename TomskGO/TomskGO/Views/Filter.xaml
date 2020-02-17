@@ -10,7 +10,7 @@
              Style="{x:StaticResource themeBackground}"
              Shell.NavBarIsVisible="False"
              x:Name="filter"
-             x:Class="TomskGO.Views.Filter"
+             x:Class="TomskGO.Core.Views.Filter"
              x:DataType="vms:NewsFeedViewModel"
              BindingContext="{helpers:ViewModelLocator ViewModelType={x:Type vms:NewsFeedViewModel}}">
     <ContentPage.Resources>
@@ -28,7 +28,7 @@
                     Direction="Column"
                     JustifyContent="SpaceAround"
                     AlignItems="Start"
-                    AlignContent="Start" BindableLayout.ItemsSource="{Binding Tags}" HeightRequest="50">
+                    AlignContent="Start" BindableLayout.ItemsSource="{Binding Source={x:Reference filter}, Path=BindingContext.Tags, Mode=OneTime}" HeightRequest="50">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate x:DataType="models:NewsTag">
                             <ui:MaterialButton ButtonType="Elevated" Padding="24,5" CornerRadius="16" FontAttributes="Bold" FontSize="Caption"

@@ -9,7 +9,7 @@
              xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
              Style="{x:StaticResource themeBackground}"
              Shell.NavBarIsVisible="False"
-             x:Class="TomskGO.Views.NewsFeed"
+             x:Class="TomskGO.Core.Views.NewsFeed"
              x:Name="news"
              x:DataType="vms:NewsFeedViewModel"
              BindingContext="{helpers:ViewModelLocator ViewModelType={x:Type vms:NewsFeedViewModel}}">

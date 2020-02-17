@@ -2,19 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:helpers="clr-namespace:TomskGO.Core.Helpers"
-             xmlns:vms="clr-namespace:TomskGO.Core.ViewModels"
+             xmlns:vms="clr-namespace:TomskGO.Core.ViewModels.Utils"
              xmlns:xe="clr-namespace:XamEffects;assembly=XamEffects"
              xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
              Shell.NavBarIsVisible="False"
              Style="{x:StaticResource themeBackground}"
              x:Name="settings"
-             x:Class="TomskGO.Views.Settings"
-             BindingContext="{helpers:ViewModelLocator ViewModelType={x:Type vms:SettingsViewModel}}">
+             x:Class="TomskGO.Core.Views.Settings">
     <TableView Intent="Settings" RowHeight="50">
         <TableSection>
             <ViewCell>
                 <Grid Padding="15,3" xe:TouchEffect.Color="White"
-                    xe:Commands.Tap="{Binding Source={x:Reference settings}, Path=BindingContext.SwitchThemeCommand}">
+                    BindingContext="{helpers:ViewModelLocator ViewModelType={x:Type vms:SettingsViewModel}}"
+                    xe:Commands.Tap="{Binding SwitchThemeCommand}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0.85*"/>
                         <ColumnDefinition Width="0.15*"/>
@@ -28,15 +28,17 @@
         </TableSection>
         <TableSection>
             <ViewCell>
-                <Grid Padding="15,3" xe:TouchEffect.Color="White">
+                <Grid Padding="15,3" xe:TouchEffect.Color="White"
+                    BindingContext="{helpers:ViewModelLocator ViewModelType={x:Type vms:LanguageViewModel}}"
+                    xe:Commands.Tap="{Binding ChangeLanguageCommand}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0.5*"/>
                         <ColumnDefinition Width="0.5*"/>
                     </Grid.ColumnDefinitions>
                     <ui:MaterialLabel FontSize="Medium" VerticalTextAlignment="Center"
-                        Style="{x:StaticResource themeText}" Text="Язык: "/>
+                        Style="{x:StaticResource themeText}" Text="{helpers:Translate lang}"/>
                     <ui:MaterialLabel Grid.Column="1" FontSize="Medium" VerticalTextAlignment="Center"
-                        HorizontalTextAlignment="End" Text="Системный"
+                        HorizontalTextAlignment="End" Text="{Binding CurrentDisplayLanguage}"
                         Style="{x:StaticResource themeText}"/>
                 </Grid>
             </ViewCell>

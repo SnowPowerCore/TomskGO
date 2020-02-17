@@ -1,10 +1,8 @@
 ﻿namespace TomskGO.Core.Views
 {
-    public partial class Settings
+    public partial class Map
     {
-        public Settings()
-        {
+        public Map() =>
             InitializeComponent();
-        }
     }
 }

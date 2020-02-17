@@ -138,13 +138,34 @@
   <data name="info" xml:space="preserve">
     <value>О приложении</value>
   </data>
+  <data name="lang" xml:space="preserve">
+    <value>Язык:</value>
+  </data>
+  <data name="langChangeInfo" xml:space="preserve">
+    <value>Язык изменён. Пожалуйста, перезагрузите приложение.</value>
+  </data>
+  <data name="map" xml:space="preserve">
+    <value>Карта</value>
+  </data>
+  <data name="or" xml:space="preserve">
+    <value>или</value>
+  </data>
   <data name="placeholder" xml:space="preserve">
     <value>Заполнитель</value>
   </data>
   <data name="settings" xml:space="preserve">
     <value>Настройки</value>
   </data>
+  <data name="signInPlaceholder" xml:space="preserve">
+    <value>Войдите</value>
+  </data>
+  <data name="signUpPlaceholder" xml:space="preserve">
+    <value>Зарегистрируйтесь</value>
+  </data>
   <data name="tags" xml:space="preserve">
     <value>Теги: </value>
+  </data>
+  <data name="wip" xml:space="preserve">
+    <value>В разработке...</value>
   </data>
 </root>

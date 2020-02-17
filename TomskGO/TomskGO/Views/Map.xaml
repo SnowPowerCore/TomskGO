@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:helpers="clr-namespace:TomskGO.Core.Helpers"
+             xmlns:maps="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps"
+             Shell.NavBarIsVisible="False"
+             Style="{x:StaticResource themeBackground}"
+             x:Class="TomskGO.Core.Views.Map">
+    <Grid ColumnSpacing="0" RowSpacing="0">
+        <maps:Map MapType="Street" InitialCameraUpdate="56.49, 84.97, 12, 0, 0"/>
+        <Frame BackgroundColor="Gray" CornerRadius="10" Margin="13,10,13,0"
+               VerticalOptions="Start" Padding="0" Opacity="0.8">
+            <SearchBar Placeholder="{helpers:Translate wip}" TextColor="LightGray" PlaceholderColor="LightGray"/>
+        </Frame>
+    </Grid>
+</ContentPage>

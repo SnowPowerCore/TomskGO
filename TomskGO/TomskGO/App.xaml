@@ -16,6 +16,10 @@
             <Setter Property="PressedBackgroundColor" Value="{x:DynamicResource pressedChipColor}"/>
             <Setter Property="TextColor" Value="{x:DynamicResource chipTextColor}"/>
         </Style>
+        <Style x:Key="buttonBackground" TargetType="ui:MaterialButton">
+            <Setter Property="BackgroundColor" Value="{x:DynamicResource themeBackgroundColor}"/>
+            <Setter Property="TextColor" Value="{x:DynamicResource themeTextColor}"/>
+        </Style>
         <Style x:Key="themeText" TargetType="ui:MaterialLabel">
             <Setter Property="TextColor" Value="{x:DynamicResource themeTextColor}"/>
         </Style>
@@ -48,6 +52,9 @@
         </Style>
         <Style x:Key="settingsResource" TargetType="ShellContent">
             <Setter Property="Icon" Value="{x:DynamicResource settingsIcon}"/>
+        </Style>
+        <Style x:Key="mapResource" TargetType="ShellContent">
+            <Setter Property="Icon" Value="{x:DynamicResource mapIcon}"/>
         </Style>
     </Application.Resources>
 </Application>

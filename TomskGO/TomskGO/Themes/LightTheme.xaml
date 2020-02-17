@@ -59,4 +59,12 @@
             </OnPlatform>
         </FontImageExtension.FontFamily>
     </FontImage>
+    <FontImage x:Key="mapIcon" Glyph="&#xE707;" Color="Black">
+        <FontImageExtension.FontFamily>
+            <OnPlatform x:TypeArguments="x:String">
+                <On Platform="iOS" Value="SegoeMDL2" />
+                <On Platform="Android" Value="SegoeMDL2.ttf#Segoe MDL2 Assets" />
+            </OnPlatform>
+        </FontImageExtension.FontFamily>
+    </FontImage>
 </ResourceDictionary>

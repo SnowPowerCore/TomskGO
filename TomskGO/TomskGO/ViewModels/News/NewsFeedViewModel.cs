@@ -99,8 +99,9 @@ namespace TomskGO.Core.ViewModels.News
                     Posts = new ObservableRangeCollection<NewsModel>(t.Result);
                     FilteredPosts = Posts;
                     Tags = new ObservableRangeCollection<NewsTag>(Posts
-                        .SelectMany(t => t.Tags)
-                        .Distinct());
+                        .SelectMany(t => t.Tags.Select(x => x.Name))
+                        .Distinct()
+                        .Select(x => new NewsTag { Name = x }));
                     SelectedTags = new ObservableRangeCollection<NewsTag>();
                 }, TaskContinuationOptions.OnlyOnRanToCompletion);
 
@@ -112,7 +113,7 @@ namespace TomskGO.Core.ViewModels.News
                 .Where(x => x.Tags.Any(tag => tag.Name == tagName)));
             var searchedTag = Tags.FirstOrDefault(tag => tag.Name == tagName);
             searchedTag.Selected = true;
-            SelectedTags = new ObservableRangeCollection<NewsTag> { searchedTag };
+            SelectedTags.Add(searchedTag);
         }
 
         private void ChangeTagSelection(NewsTag t)

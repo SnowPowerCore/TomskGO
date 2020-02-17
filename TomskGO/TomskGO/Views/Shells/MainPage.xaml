@@ -1,10 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Shell xmlns="http://xamarin.com/schemas/2014/forms"
-       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:helpers="clr-namespace:TomskGO.Core.Helpers"
-       xmlns:pages="clr-namespace:TomskGO.Views"
-       x:Class="TomskGO.Core.Views.Shells.MainPage"
-    Style="{x:StaticResource shell}">
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:helpers="clr-namespace:TomskGO.Core.Helpers"
+    xmlns:pages="clr-namespace:TomskGO.Core.Views"
+    xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+    xmlns:image="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:utilsvms="clr-namespace:TomskGO.Core.ViewModels.Utils"
+    x:Class="TomskGO.Core.Views.Shells.MainPage"
+    Style="{x:StaticResource shell}"
+    BindingContext="{helpers:ViewModelLocator ViewModelType={x:Type utilsvms:MainShellViewModel}}">
     <Shell.ItemTemplate>
         <DataTemplate>
             <Grid BackgroundColor="Transparent" Padding="0,8" Margin="0">
@@ -15,11 +19,13 @@
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="*"/>
                     <RowDefinition Height="1"/>
                 </Grid.RowDefinitions>
-                <Image Grid.Column="1" Source="{Binding Icon}" HeightRequest="20"/>
-                <Label Grid.Column="2" Style="{x:StaticResource themeText}" Text="{Binding Title}"/>
-                <BoxView Grid.Row="1" Grid.Column="2" Margin="0" 
+                <Image Grid.Column="1" Grid.Row="1" Source="{Binding Icon}" HeightRequest="20"/>
+                <Label Grid.Column="2" Grid.Row="1" Style="{x:StaticResource themeText}" Text="{Binding Title}"/>
+                <BoxView Grid.Row="3" Grid.Column="2" Margin="0" 
                     BackgroundColor="{x:DynamicResource flyoutSeparatorColor}"/>
             </Grid>
         </DataTemplate>
@@ -44,8 +50,34 @@
         </DataTemplate>
     </Shell.MenuItemTemplate>
 
+    <Shell.FlyoutHeader>
+        <Grid Style="{x:StaticResource cardBackground}">
+            <Grid>
+                <image:CachedImage Grid.Row="0" Grid.RowSpan="3" Aspect="AspectFill"
+                                   Source="{helpers:ImageResource TomskGO.Core.Assets.Flyout.HeaderBG.png}"/>
+            </Grid>
+            <Grid RowSpacing="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <material:MaterialButton Grid.Row="0" HorizontalOptions="Center" Padding="20,5"
+                                         Text="{helpers:Translate signInPlaceholder}" ButtonType="Text"
+                                         Style="{x:StaticResource buttonBackground}"/>
+                <material:MaterialLabel Grid.Row="1" HorizontalTextAlignment="Center" 
+                                        Text="{helpers:Translate or}" TypeScale="Body1"
+                                        Style="{x:StaticResource themeText}"/>
+                <material:MaterialButton Grid.Row="2" HorizontalOptions="Center" Padding="20,5"
+                                         Text="{helpers:Translate signUpPlaceholder}" ButtonType="Text"
+                                         Style="{x:StaticResource buttonBackground}"/>
+            </Grid>
+        </Grid>
+    </Shell.FlyoutHeader>
+    
     <ShellContent Title="{helpers:Translate allNews}" Style="{x:StaticResource newsResource}" Route="news" ContentTemplate="{x:DataTemplate pages:NewsFeed}"/>
     <ShellContent Title="{helpers:Translate filter}" Style="{x:StaticResource filterResource}" Route="filter" ContentTemplate="{x:DataTemplate pages:Filter}"/>
+    <ShellContent Title="{helpers:Translate map}" Style="{x:StaticResource mapResource}" Route="map" ContentTemplate="{x:DataTemplate pages:Map}"/>
     <ShellContent Title="{helpers:Translate info}" Style="{x:StaticResource infoResource}" Route="about" ContentTemplate="{x:DataTemplate pages:About}"/>
     <ShellContent Title="{helpers:Translate settings}" Style="{x:StaticResource settingsResource}" Route="settings" ContentTemplate="{x:DataTemplate pages:Settings}"/>
 </Shell>

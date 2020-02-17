@@ -2,7 +2,9 @@
 using TomskGO.Core.Services.Utils.Language;
 using TomskGO.Core.Services.Utils.Navigation;
 using TomskGO.Core.Services.Utils.Theme;
-using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
+using Xamarin.Forms.PlatformConfiguration.AndroidSpecific;
+using Application = Xamarin.Forms.Application;
 
 namespace TomskGO
 {
@@ -22,7 +24,9 @@ namespace TomskGO
         public App()
         {
             InitializeComponent();
-            XF.Material.Forms.Material.Init(this);
+            Current
+                .On<Android>()
+                .UseWindowSoftInputModeAdjust(WindowSoftInputModeAdjust.Resize);
 
             InitApp();
         }

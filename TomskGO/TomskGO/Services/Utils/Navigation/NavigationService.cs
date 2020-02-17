@@ -62,14 +62,22 @@ namespace TomskGO.Core.Services.Utils.Navigation
         {
             var shellCheck = _shell.CheckCanExit();
             if (shellCheck)
-                if (_isQuitting)
+            {
+                Device.InvokeOnMainThreadAsync(() =>
+                {
                     using (_message.DisplaySnackbarAsync(AppResources.confirmExit, 1500))
                     {
                         _isQuitting = true;
                         Task.Delay(3000)
                             .ContinueWith(t => _isQuitting = false, TaskContinuationOptions.OnlyOnRanToCompletion);
                     }
-                else _appQuit.Quit();
+                });
+                if (_isQuitting)
+                {
+                    _isQuitting = false;
+                    _appQuit.Quit();
+                }
+            }
             else return null;
             return true;
         }

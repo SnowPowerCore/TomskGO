@@ -4,7 +4,7 @@
              xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
              Shell.NavBarIsVisible="False"
              Style="{x:StaticResource themeBackground}"
-             x:Class="TomskGO.Views.About">
+             x:Class="TomskGO.Core.Views.About">
     <StackLayout Spacing="5" VerticalOptions="Center" HorizontalOptions="Center">
         <Image Source="icon.png" HeightRequest="64"/>
         <ui:MaterialLabel FontSize="Medium" Style="{x:StaticResource themeText}">
@@ -12,7 +12,7 @@
                 <FormattedString>
                     <Span Text="Tomsk GO!"/>
                     <Span Text=" "/>
-                    <Span Text="ALPHA" TextColor="SlateGray"/>
+                    <Span Text="alpha" FontSize="11" TextColor="SlateGray"/>
                 </FormattedString>
             </ui:MaterialLabel.FormattedText>
         </ui:MaterialLabel>

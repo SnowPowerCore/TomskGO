@@ -138,13 +138,34 @@
   <data name="info" xml:space="preserve">
     <value>About app</value>
   </data>
+  <data name="lang" xml:space="preserve">
+    <value>Language:</value>
+  </data>
+  <data name="langChangeInfo" xml:space="preserve">
+    <value>Language has been changed. Please, restart the app.</value>
+  </data>
+  <data name="map" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="or" xml:space="preserve">
+    <value>or</value>
+  </data>
   <data name="placeholder" xml:space="preserve">
     <value>Placeholder</value>
   </data>
   <data name="settings" xml:space="preserve">
     <value>Settings</value>
   </data>
+  <data name="signInPlaceholder" xml:space="preserve">
+    <value>(WIP) Sign in or sign up</value>
+  </data>
+  <data name="signUpPlaceholder" xml:space="preserve">
+    <value>Sign up</value>
+  </data>
   <data name="tags" xml:space="preserve">
     <value>Tags: </value>
+  </data>
+  <data name="wip" xml:space="preserve">
+    <value>WIP...</value>
   </data>
 </root>

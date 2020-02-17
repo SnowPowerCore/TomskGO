@@ -12,9 +12,9 @@ namespace TomskGO.Core.Services.Utils.Settings
         private readonly string _projectName = "Tomsk GO!";
         private readonly string _supportNumber = "-";
         private readonly string _supportEmail = "-";
-        private readonly string _defaultApiUrl = "http://10.0.2.2:7071";
+        private readonly string _defaultApiUrl = "https://tomskcouncildev.azurewebsites.net/";
         private readonly string _defaultAppUpdateUrl = "";
-        private readonly string _appCenterAndroidKey = "android=;";
+        private readonly string _appCenterAndroidKey = "android=d7b69100-981d-405e-acb4-6955cf296569;";
         private readonly string _appCenteriOSKey = "ios=;";
         #endregion
 

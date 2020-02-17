@@ -1,13 +1,13 @@
 ﻿using TomskGO.Core.ViewModels.News;
 
-namespace TomskGO.Views
+namespace TomskGO.Core.Views
 {
     public partial class Filter
     {
         public NewsFeedViewModel NewsFeedViewModel =>
             (NewsFeedViewModel)BindingContext;
 
-        public Filter() => 
+        public Filter() =>
             InitializeComponent();
 
         protected override void OnAppearing()

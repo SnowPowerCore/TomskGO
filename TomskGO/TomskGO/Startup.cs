@@ -12,7 +12,8 @@ using TomskGO.Core.Services.Utils.Settings;
 using TomskGO.Core.Services.Utils.Shell;
 using TomskGO.Core.Services.Utils.Theme;
 using TomskGO.Core.ViewModels.News;
-using TomskGO.Views;
+using TomskGO.Core.ViewModels.Utils;
+using TomskGO.Core.Views;
 using Xamarin.Forms;
 
 namespace TomskGO.Core
@@ -55,6 +56,9 @@ namespace TomskGO.Core
             #region ViewModels
             services.AddSingleton<NewsFeedViewModel>();
             services.AddSingleton<PostViewModel>();
+            services.AddSingleton<SettingsViewModel>();
+            services.AddSingleton<LanguageViewModel>();
+            services.AddSingleton<MainShellViewModel>();
             #endregion
 
             #region Application
@@ -85,6 +89,7 @@ namespace TomskGO.Core
         public static IHostBuilder RegisterRoutes(this IHostBuilder host)
         {
             Routing.RegisterRoute("post", typeof(Post));
+            Routing.RegisterRoute("nestedFilter", typeof(Filter));
 
             return host;
         }

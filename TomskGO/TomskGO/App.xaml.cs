@@ -1,4 +1,5 @@
 ﻿using System;
+using TomskGO.Core.Services.Utils.Analytics;
 using TomskGO.Core.Services.Utils.Language;
 using TomskGO.Core.Services.Utils.Navigation;
 using TomskGO.Core.Services.Utils.Theme;
@@ -14,6 +15,7 @@ namespace TomskGO
         private IThemeService _theme;
         private ILanguageService _language;
         private INavigationService _navigation;
+        private IAnalyticsService _analytics;
         #endregion
 
         #region Properties
@@ -38,6 +40,7 @@ namespace TomskGO
             _theme = (IThemeService)Services.GetService(typeof(IThemeService));
             _language = (ILanguageService)Services.GetService(typeof(ILanguageService));
             _navigation = (INavigationService)Services.GetService(typeof(INavigationService));
+            _analytics = (IAnalyticsService)Services.GetService(typeof(IAnalyticsService));
         }
 
         protected override void OnStart()
@@ -45,6 +48,7 @@ namespace TomskGO
             _theme.DetermineAndLoadTheme();
             _language.DetermineAndSetLanguage();
             _navigation.DetermineAndSetMainPage();
+            _analytics.TrackEvent("App started.");
         }
         #endregion
     }

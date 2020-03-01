@@ -8,6 +8,7 @@
              xmlns:models="clr-namespace:TomskGO.Models.API;assembly=TomskGO.Models"
              xmlns:xe="clr-namespace:XamEffects;assembly=XamEffects"
              xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+             xmlns:img="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Name="post"
              Shell.NavBarIsVisible="False"
              Style="{x:StaticResource themeBackground}"
@@ -24,6 +25,18 @@
                     <TapGestureRecognizer Command="{Binding NavigateBackCommand}"/>
                 </Image.GestureRecognizers>
             </Image>
+            <StackLayout Margin="25,0" Orientation="Horizontal" HeightRequest="48"
+                         BindableLayout.ItemsSource="{Binding SelectedItem.Members}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="models:NewsMember">
+                        <Frame CornerRadius="24" Padding="0">
+                            <img:CachedImage Source="{Binding PictureUrl}"
+                                xe:Commands.Tap="{Binding Source={x:Reference post}, Path=BindingContext.OpenUrlCommand}"
+                                xe:Commands.TapParameter="{Binding ProfileUrl}"/>
+                        </Frame>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </StackLayout>
             <ui:MaterialLabel Margin="25,0" FontSize="16" 
                               Text="{Binding SelectedItem.FullText, Converter={x:StaticResource detagify}}" Style="{x:StaticResource themeText}"/>
             <ui:MaterialLabel Margin="25,0" IsVisible="{Binding SelectedItem.Attachments.PhotosVisible}" 

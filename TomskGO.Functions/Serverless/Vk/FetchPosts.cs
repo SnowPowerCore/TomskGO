@@ -11,10 +11,10 @@ namespace TomskGO.Functions.Serverless.Vk
 {
     public static class FetchPosts
     {
-        private static string VkBaseAddress => Environment.GetEnvironmentVariable("VkBaseAddress");
+        private static string VkApiBaseAddress => Environment.GetEnvironmentVariable("VkApiBaseAddress");
 
-        //[FunctionName("VkFetchPosts")]
-        public static async Task Run([TimerTrigger("0 */5 * * * *")]TimerInfo myTimer,
+        [FunctionName("VkFetchPosts")]
+        public static async Task Run([TimerTrigger("* */20 * * * *")]TimerInfo myTimer,
                                      [CosmosDB(
                                      databaseName: "News",
                                      collectionName: "NewsFeed",
@@ -26,10 +26,10 @@ namespace TomskGO.Functions.Serverless.Vk
                 UseProxy = false
             })
             {
-                BaseAddress = new Uri(VkBaseAddress)
+                BaseAddress = new Uri(VkApiBaseAddress)
             };
-            var vk = RestService.For<IVk>(client);
-            await vk.GetPostsAsync(new Models.VK.VKRequestModel
+            var vk = RestService.For<IVK>(client);
+            await vk.GetPostsAsync(new Models.VK.VKNewsFeedRequestModel
             {
                 owner_id = -66471096
             })
@@ -43,12 +43,14 @@ namespace TomskGO.Functions.Serverless.Vk
                         var newsItem = item.ConvertDataToUniversal();
                         await newsContext.AddAsync(new
                         {
+                            newsItem.OriginalId,
                             newsItem.Date,
                             newsItem.ShortDescription,
                             newsItem.FullText,
                             newsItem.SourceLabel,
                             newsItem.PreviewSource,
                             newsItem.Tags,
+                            newsItem.Members,
                             newsItem.Attachments
                         })
                         .ContinueWith(t =>

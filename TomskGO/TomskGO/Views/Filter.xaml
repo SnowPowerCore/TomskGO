@@ -43,32 +43,35 @@
         </CollectionView.Header>
         <CollectionView.ItemTemplate>
             <DataTemplate x:DataType="models:NewsModel">
-                <StackLayout Padding="25,15">
-                    <ui:MaterialCard CornerRadius="10" Elevation="8" Padding="0" IsClippedToBounds="True" BackgroundColor="White">
-                        <Grid xe:TouchEffect.Color="White"
-                        xe:Commands.Tap="{Binding Source={x:Reference filter}, Path=BindingContext.NavigatePostCommand}"
-                        xe:Commands.TapParameter="{Binding .}"
-                        RowSpacing="10" Style="{x:StaticResource cardBackground}">
+                <ContentView Padding="25,15">
+                    <ui:MaterialCard CornerRadius="10" Elevation="8" Padding="0" IsClippedToBounds="True">
+                        <Grid RowSpacing="0" Style="{x:StaticResource cardBackground}">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="15"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
-                            <Image HeightRequest="170" Aspect="AspectFill" Source="{Binding PreviewSource}"/>
-                            <BoxView Grid.Row="1" Grid.RowSpan="3" Style="{x:StaticResource themeBoxView}"/>
-                            <ui:MaterialLabel Grid.Row="1" Margin="10,0" Text="{Binding Date, StringFormat=\{0:f\}}" LetterSpacing="2"
-                                            Style="{x:StaticResource themeTextSecondary}" FontSize="Small"/>
-                            <ui:MaterialLabel Grid.Row="2" Margin="10,0" Text="{Binding ShortDescription, Converter={x:StaticResource detagify}}"
-                                            LineBreakMode="WordWrap" FontSize="Small" Style="{x:StaticResource themeText}"/>
-                            <ui:MaterialButton Grid.Row="3" VerticalOptions="End" HorizontalOptions="End" Margin="0,0,10,10" BackgroundColor="White" 
-                                Text="Подробнее"
-                                ButtonType="Text" xe:TouchEffect.Color="White"
+                            <Image Grid.RowSpan="2" IsVisible="{Binding Attachments.PhotosVisible}"
+                                   HeightRequest="170" Aspect="AspectFill" Source="{Binding PreviewSource}"/>
+                            <Frame Grid.Row="1" Grid.RowSpan="2" CornerRadius="15" Padding="0" BorderColor="Transparent">
+                                <BoxView Style="{x:StaticResource themeBoxView}"/>
+                            </Frame>
+                            <ui:MaterialLabel Grid.Row="2" Margin="15,0" Text="{Binding Date, StringFormat=\{0:f\}}" LetterSpacing="2"
+                                    Style="{x:StaticResource themeTextSecondary}" FontSize="Small"/>
+                            <ui:MaterialLabel Grid.Row="3" Margin="15,0" Text="{Binding ShortDescription, Converter={x:StaticResource detagify}}"
+                                    LineBreakMode="WordWrap" FontSize="Small" Style="{x:StaticResource themeText}"/>
+                            <ContentView Grid.RowSpan="5" xe:TouchEffect.Color="White"
+                            xe:Commands.Tap="{Binding Source={x:Reference filter}, Path=BindingContext.NavigatePostCommand}"
+                            xe:Commands.TapParameter="{Binding .}"/>
+                            <ui:MaterialButton Grid.Row="4" VerticalOptions="End" HorizontalOptions="End"
+                                Text="Подробнее" ButtonType="Text" xe:TouchEffect.Color="White"
                                 xe:Commands.Tap="{Binding Source={x:Reference filter}, Path=BindingContext.NavigatePostCommand}"
                                 xe:Commands.TapParameter="{Binding .}" TextColor="#029E00"/>
                         </Grid>
                     </ui:MaterialCard>
-                </StackLayout>
+                </ContentView>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>

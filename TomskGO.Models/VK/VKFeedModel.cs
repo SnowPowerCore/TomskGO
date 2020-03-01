@@ -77,6 +77,8 @@ namespace TomskGO.Models.VK
             public string Title { get; set; }
             [JsonProperty("description")]
             public string Description { get; set; }
+            [JsonProperty("caption")]
+            public string Caption { get; set; }
         }
 
         public class Video
@@ -145,7 +147,7 @@ namespace TomskGO.Models.VK
         all
     }
 
-    public class VKRequestModel
+    public class VKNewsFeedRequestModel
     {
         public int owner_id { get; set; }
         public PostType filter { get; set; } = PostType.all;

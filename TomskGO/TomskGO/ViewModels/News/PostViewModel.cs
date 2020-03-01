@@ -1,5 +1,6 @@
 ﻿using AsyncAwaitBestPractices.MVVM;
 using Stormlion.PhotoBrowser;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,6 +8,7 @@ using System.Windows.Input;
 using TomskGO.Core.Services.Tomsk.News;
 using TomskGO.Core.Services.Utils.Navigation;
 using TomskGO.Models.API;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace TomskGO.Core.ViewModels.News
@@ -44,6 +46,9 @@ namespace TomskGO.Core.ViewModels.News
         public IAsyncCommand<string> OpenFilterCommand =>
             new AsyncCommand<string>(OpenFilterAsync);
 
+        public IAsyncCommand<string> OpenUrlCommand =>
+            new AsyncCommand<string>(OpenUrlAsync);
+
         public ICommand OpenPhotoCommand =>
             new Command<NewsAttachment.Photo>(OpenPhoto);
 
@@ -60,6 +65,9 @@ namespace TomskGO.Core.ViewModels.News
             };
             browser.Show();
         }
+
+        private Task OpenUrlAsync(string url) =>
+            Launcher.OpenAsync(url);
 
         private Task OpenFilterAsync(string tagName)
         {

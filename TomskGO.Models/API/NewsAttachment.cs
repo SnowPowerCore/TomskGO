@@ -15,7 +15,10 @@ namespace TomskGO.Models.API
         public class Link
         {
             public string Title { get; set; }
+
             public string Url { get; set; }
+
+            public string FaviconUrl { get; set; }
         }
 
         public class Photo

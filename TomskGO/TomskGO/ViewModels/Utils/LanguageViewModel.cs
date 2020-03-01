@@ -71,8 +71,9 @@ namespace TomskGO.Core.ViewModels.Utils
                     if (result >= 0 && result < LanguagesList.Count)
                     {
                         _language.SetLanguage(Languages[result]);
-                        _message.DisplayInfoAsync(AppResources.langChangeInfo);
+                        return _message.DisplayInfoAsync(AppResources.langChangeInfo);
                     }
+                    return Task.CompletedTask;
                 }, TaskContinuationOptions.OnlyOnRanToCompletion);
         }
         #endregion

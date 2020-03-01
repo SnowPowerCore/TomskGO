@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using TomskGO.Functions.API.Public.Local;
+using TomskGO.Functions.API.Public.VK;
 using TomskGO.Models.API;
 using TomskGO.Models.VK;
 using static TomskGO.Models.VK.VKFeedModel;
@@ -70,7 +71,7 @@ namespace TomskGO.Functions.Serverless.Vk.Callback
 
             var newsItem = post.ConvertDataToUniversal();
 
-            if (newsItem is null)
+            if (newsItem is default(NewsModel))
             {
                 _log.LogError("Couldn't convert vk post to universal.");
                 return NotFoundResult;
@@ -97,12 +98,18 @@ namespace TomskGO.Functions.Serverless.Vk.Callback
         }
     }
 
-    public static class NewsExtensions
+    public static class VKNewsExtensions
     {
+        private static string VkApiBaseAddress => Environment.GetEnvironmentVariable("VkApiBaseAddress");
+
+        private static string VkBaseAddress => Environment.GetEnvironmentVariable("VkBaseAddress");
+
         private static string[] ServiceHashTags => new[]
         {
             "#tomskgoAPP"
         };
+
+        private static string VKFields => "photo_max";
 
         public static List<NewsTag> CreateTags(this Post post)
         {
@@ -118,6 +125,109 @@ namespace TomskGO.Functions.Serverless.Vk.Callback
             return localList;
         }
 
+        /// <summary>
+        /// Retrieves news item members from the source.
+        /// </summary>
+        /// <param name="post"></param>
+        /// <returns></returns>
+        public static List<NewsMember> ExtractLocalMembers(this Post post)
+        {
+            var links = new List<NewsMember>();
+            var regex = new Regex(@"\[.*?\|.*?\]");
+            var items = regex.Matches(post.Text);
+            var vk = RestService.For<IVK>(VkApiBaseAddress);
+            foreach (Match m in items)
+            {
+                var section = m.Value.Split('|');
+                var id = section.FirstOrDefault().Replace("[", "");
+                var name = section.LastOrDefault().Replace("]", "");
+
+                var longId = long.Parse(Regex.Match(id, @"\d+").Value);
+                var userType = Regex.Match(id, @"[^0-9]+").Value;
+
+                var member = new TaskCompletionSource<NewsMember>();
+
+                switch (userType)
+                {
+                    case "id":
+                        vk.GetUsersInformationAsync(new VKUsersInformationRequestModel
+                        {
+                            user_ids = longId.ToString(),
+                            fields = VKFields
+                        })
+                            .ContinueWith(t =>
+                            {
+                                var result = t.Result;
+
+                                member.SetResult(new NewsMember
+                                {
+                                    Name = name,
+                                    ProfileUrl = VkBaseAddress + id,
+                                    PictureUrl = result.response?.FirstOrDefault(x => x.Id == longId).AvatarUrl
+                                });
+                            }, TaskContinuationOptions.OnlyOnRanToCompletion);
+                        break;
+                    case "club":
+                        vk.GetGroupsInformationAsync(new VKGroupsInformationRequestModel
+                        {
+                            group_ids = longId.ToString(),
+                            fields = VKFields
+                        })
+                            .ContinueWith(t =>
+                            {
+                                var result = t.Result;
+
+                                member.SetResult(new NewsMember
+                                {
+                                    Name = name,
+                                    ProfileUrl = VkBaseAddress + id,
+                                    PictureUrl = result.response?.FirstOrDefault(x => x.Id == longId).AvatarUrl
+                                });
+                            }, TaskContinuationOptions.OnlyOnRanToCompletion);
+                        break;
+                    default:
+                        break;
+                }
+
+                links.Add(member.Task.Result);
+            }
+            return links;
+        }
+
+        /// <summary>
+        /// Replaces local vk links (e.g. profile) with their names.
+        /// </summary>
+        /// <param name="source">Text which contains definitions with [*|*] pattern.</param>
+        /// <returns>Filtered string, which will only contain local url name (second item inside definition).</returns>
+        public static string ReplaceLocalLinks(this string source)
+        {
+            var filteredStr = source;
+            var regex = new Regex(@"\[.*?\|.*?\]");
+            var items = regex.Matches(source);
+            foreach (Match m in items)
+            {
+                var section = m.Value.Split('|');
+                var name = section.LastOrDefault().Replace("]", "");
+                filteredStr = filteredStr.Replace(m.Value, name);
+            }
+            return filteredStr;
+        }
+
+        /// <summary>
+        /// Replaces global links with "⬇️⬇️⬇️" sequence.
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static string ReplaceGlobalLinks(this string source)
+        {
+            var filteredStr = source;
+            var regex = new Regex(@"\b(?:https?://|www\.)\S+\b");
+            var items = regex.Matches(source);
+            foreach (Match m in items)
+                filteredStr = filteredStr.Replace(m.Value, "⬇️⬇️⬇️");
+            return filteredStr;
+        }
+
         public static bool IsRight(this Post item) =>
             ServiceHashTags.All(x => item.Text.Contains(x));
 
@@ -126,35 +236,62 @@ namespace TomskGO.Functions.Serverless.Vk.Callback
 
         public static NewsModel ConvertDataToUniversal(this Post item)
         {
-            return new NewsModel
+            var filteredNewsText = item.Text
+                .ReplaceLocalLinks()
+                .ReplaceGlobalLinks();
+
+            if (string.IsNullOrEmpty(filteredNewsText)) return default;
+
+            var newsItem = new NewsModel
             {
-                ShortDescription = item.Text.Length >= 165 ? item.Text.Substring(0, 130) + "..." : item.Text,
+                OriginalId = item.ID,
+                ShortDescription = filteredNewsText.Length >= 165
+                    ? filteredNewsText.Substring(0, 130) + "..."
+                    : filteredNewsText,
                 SourceLabel = "vk",
-                FullText = item.Text,
-                Date = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc).AddSeconds(item.Date).ToLocalTime(),
-                PreviewSource = item.Attachments?.FirstOrDefault(x => x.Photo != null)?.Photo.Sizes.FirstOrDefault(x => x.Type == "p").Url,
+                FullText = filteredNewsText,
+                Date = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc)
+                    .AddSeconds(item.Date)
+                    .ToLocalTime(),
+                PreviewSource = item.Attachments?
+                    .FirstOrDefault(x => x.Photo != null)?.Photo.Sizes
+                        .FirstOrDefault(x => x.Type == "r").Url,
                 Tags = item.CreateTags(),
+                Members = item.ExtractLocalMembers(),
                 Attachments = new NewsAttachment
                 {
-                    Audios = item.Attachments?.Where(x => x.Audio != null)?.Select(x => new NewsAttachment.Audio()
-                    {
-                        Artists = x.Audio.MainArtists.Select(a => a.Name).ToList()
-                    }).ToList(),
-                    Links = item.Attachments?.Where(x => x.Link != null)?.Select(x => new NewsAttachment.Link()
-                    {
-                        Title = x.Link.Title,
-                        Url = x.Link.Url
-                    }).ToList(),
-                    Photos = item.Attachments?.Where(x => x.Photo != null)?.Select(x => new NewsAttachment.Photo()
-                    {
-                        ImageSource = x.Photo.Sizes.FirstOrDefault(s => s.Type == "q").Url
-                    }).ToList(),
+                    Audios = item.Attachments?
+                        .Where(x => x.Audio != null)?
+                        .Select(x => new NewsAttachment.Audio()
+                        {
+                            Artists = x.Audio.MainArtists.Select(a => a.Name).ToList()
+                        })
+                        .ToList(),
+                    Links = item.Attachments?
+                        .Where(x => x.Link != null)?
+                        .Select(x => new NewsAttachment.Link()
+                        {
+                            Title = x.Link.Title,
+                            Url = x.Link.Url,
+                            FaviconUrl = x.Link.Caption + "/favicon.ico"
+                        })
+                        .ToList(),
+                    Photos = item.Attachments?
+                        .Where(x => x.Photo != null)?
+                        .Select(x => new NewsAttachment.Photo()
+                        {
+                            ImageSource = x.Photo.Sizes.LastOrDefault().Url
+                        })
+                        .ToList(),
                     AudiosVisible = item.Attachments?.Where(x => x.Audio != null).Count() > 0,
                     PhotosVisible = item.Attachments?.Where(x => x.Photo != null).Count() > 0,
                     LinksVisible = item.Attachments?.Where(x => x.Link != null).Count() > 0
                 },
-                AttachmentsVisible = item.Attachments?.Any(x => x.Photo != null || x.Link != null || x.Audio != null)
+                AttachmentsVisible = item.Attachments?
+                    .Any(x => x.Photo != null || x.Link != null || x.Audio != null)
             };
+
+            return newsItem;
         }
     }
 }

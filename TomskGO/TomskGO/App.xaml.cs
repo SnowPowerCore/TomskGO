@@ -45,6 +45,8 @@ namespace TomskGO
 
         protected override void OnStart()
         {
+            base.OnStart();
+
             _theme.DetermineAndLoadTheme();
             _language.DetermineAndSetLanguage();
             _navigation.DetermineAndSetMainPage();

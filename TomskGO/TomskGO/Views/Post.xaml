@@ -25,18 +25,21 @@
                     <TapGestureRecognizer Command="{Binding NavigateBackCommand}"/>
                 </Image.GestureRecognizers>
             </Image>
-            <StackLayout Margin="25,0" Orientation="Horizontal" HeightRequest="48"
+            <ScrollView Margin="25,0" Orientation="Horizontal" HorizontalScrollBarVisibility="Never"
+                IsVisible="{Binding SelectedItem.MembersVisible}">
+                <StackLayout Orientation="Horizontal" HeightRequest="48"
                          BindableLayout.ItemsSource="{Binding SelectedItem.Members}">
-                <BindableLayout.ItemTemplate>
-                    <DataTemplate x:DataType="models:NewsMember">
-                        <Frame CornerRadius="24" Padding="0">
-                            <img:CachedImage Source="{Binding PictureUrl}"
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="models:NewsMember">
+                            <Frame CornerRadius="24" Padding="0">
+                                <img:CachedImage Source="{Binding PictureUrl}"
                                 xe:Commands.Tap="{Binding Source={x:Reference post}, Path=BindingContext.OpenUrlCommand}"
                                 xe:Commands.TapParameter="{Binding ProfileUrl}"/>
-                        </Frame>
-                    </DataTemplate>
-                </BindableLayout.ItemTemplate>
-            </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </StackLayout>
+            </ScrollView>
             <ui:MaterialLabel Margin="25,0" FontSize="16" 
                               Text="{Binding SelectedItem.FullText, Converter={x:StaticResource detagify}}" Style="{x:StaticResource themeText}"/>
             <ui:MaterialLabel Margin="25,0" IsVisible="{Binding SelectedItem.Attachments.PhotosVisible}" 

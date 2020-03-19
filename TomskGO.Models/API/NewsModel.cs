@@ -24,5 +24,7 @@ namespace TomskGO.Models.API
         public NewsAttachment Attachments { get; set; }
         
         public bool? AttachmentsVisible { get; set; }
+
+        public bool? MembersVisible { get; set; }
     }
 }

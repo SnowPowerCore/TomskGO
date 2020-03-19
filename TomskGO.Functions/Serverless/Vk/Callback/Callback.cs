@@ -242,6 +242,8 @@ namespace TomskGO.Functions.Serverless.Vk.Callback
 
             if (string.IsNullOrEmpty(filteredNewsText)) return default;
 
+            var members = item.ExtractLocalMembers();
+
             var newsItem = new NewsModel
             {
                 OriginalId = item.ID,
@@ -257,7 +259,7 @@ namespace TomskGO.Functions.Serverless.Vk.Callback
                     .FirstOrDefault(x => x.Photo != null)?.Photo.Sizes
                         .FirstOrDefault(x => x.Type == "r").Url,
                 Tags = item.CreateTags(),
-                Members = item.ExtractLocalMembers(),
+                Members = members,
                 Attachments = new NewsAttachment
                 {
                     Audios = item.Attachments?
@@ -288,7 +290,8 @@ namespace TomskGO.Functions.Serverless.Vk.Callback
                     LinksVisible = item.Attachments?.Where(x => x.Link != null).Count() > 0
                 },
                 AttachmentsVisible = item.Attachments?
-                    .Any(x => x.Photo != null || x.Link != null || x.Audio != null)
+                    .Any(x => x.Photo != null || x.Link != null || x.Audio != null),
+                MembersVisible = members.Count > 0
             };
 
             return newsItem;

@@ -51,7 +51,9 @@ namespace TomskGO.Functions.Serverless.Vk
                             newsItem.PreviewSource,
                             newsItem.Tags,
                             newsItem.Members,
-                            newsItem.Attachments
+                            newsItem.MembersVisible,
+                            newsItem.Attachments,
+                            newsItem.AttachmentsVisible
                         })
                         .ContinueWith(t =>
                         {

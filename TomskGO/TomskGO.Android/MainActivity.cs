@@ -3,7 +3,6 @@ using Android.Content.PM;
 using Android.OS;
 using FFImageLoading.Forms.Platform;
 using Microsoft.Extensions.DependencyInjection;
-using System;
 using TomskGO.Core;
 using TomskGO.Core.Interfaces;
 using TomskGO.Droid.Implementations;
@@ -33,7 +32,6 @@ namespace TomskGO.Droid
             {
                 BitmapDescriptorFactory = new CachingNativeBitmapDescriptorFactory()
             });
-            Console.WriteLine(FormsGoogleMaps.IsInitialized);
             CachedImageRenderer.Init(true);
             _ = typeof(FFImageLoading.Svg.Forms.SvgCachedImage);
             LoadApplication(Startup.Init(ConfigureServices));

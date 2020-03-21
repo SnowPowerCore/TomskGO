@@ -41,10 +41,54 @@
                 </StackLayout>
             </ScrollView>
             <ui:MaterialLabel Margin="25,0" FontSize="16" 
-                              Text="{Binding SelectedItem.FullText, Converter={x:StaticResource detagify}}" Style="{x:StaticResource themeText}"/>
+                Text="{Binding SelectedItem.FullText, Converter={x:StaticResource detagify}}" Style="{x:StaticResource themeText}"/>
+            <ui:MaterialLabel Margin="25,0" Text="{helpers:Translate links}" FontAttributes="Bold"
+                FontSize="18" Style="{x:StaticResource themeTextCaption}"
+                IsVisible="{Binding SelectedItem.Attachments.LinksVisible}"/>
+            <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never"
+                IsVisible="{Binding SelectedItem.Attachments.LinksVisible}" HeightRequest="160">
+                <FlexLayout BindableLayout.ItemsSource="{Binding SelectedItem.Attachments.Links}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="{x:Null}">
+                            <ui:MaterialCard Margin="15,20" CornerRadius="10" Elevation="10"
+                                             IsClippedToBounds="True" Padding="0" WidthRequest="120">
+                                <Grid xe:TouchEffect.Color="White">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <img:CachedImage Source="{Binding FaviconUrl}" Margin="5" Grid.Column="2"/>
+                                    <ui:MaterialLabel Text="{Binding Title}" LineBreakMode="TailTruncation"
+                                        Grid.Row="2" Grid.ColumnSpan="3" Margin="5"/>
+                                </Grid>
+                            </ui:MaterialCard>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </FlexLayout>
+            </ScrollView>
+            <!--<carousel:CarouselView IsVisible="{Binding SelectedItem.Attachments.LinksVisible}"
+                                   ItemsSource="{Binding SelectedItem.Attachments.Links}" IsClippedToBounds="True"
+                                   IsCyclical="False" HeightRequest="230" VerticalSwipeThresholdDistance="2700">
+                <carousel:CarouselView.ItemTemplate>
+                    <DataTemplate x:DataType="{x:Null}">
+                        <ui:MaterialCard Margin="15,20" CornerRadius="10" Elevation="10" IsClippedToBounds="True" Padding="0">
+                            <Grid xe:TouchEffect.Color="White">
+                                <img:CachedImage Source="{Binding FaviconUrl}" HeightRequest="32" HorizontalOptions="EndAndExpand"/>
+                                <ui:MaterialLabel Text="{Binding Title}" VerticalOptions="EndAndExpand"/>
+                            </Grid>
+                        </ui:MaterialCard>
+                    </DataTemplate>
+                </carousel:CarouselView.ItemTemplate>
+            </carousel:CarouselView>-->
             <ui:MaterialLabel Margin="25,0" IsVisible="{Binding SelectedItem.Attachments.PhotosVisible}" 
                               Text="{helpers:Translate browsePhotos}" FontAttributes="Bold" FontSize="18" Style="{x:StaticResource themeTextCaption}"/>
-            <carousel:CarouselView Grid.Row="3" IsVisible="{Binding SelectedItem.Attachments.PhotosVisible}"
+            <carousel:CarouselView IsVisible="{Binding SelectedItem.Attachments.PhotosVisible}"
                                    ItemsSource="{Binding SelectedItem.Attachments.Photos}" IsClippedToBounds="True"
                                    IsCyclical="False" HeightRequest="230" VerticalSwipeThresholdDistance="2700">
                 <carousel:CarouselView.ItemTemplate>

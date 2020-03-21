@@ -100,16 +100,19 @@ namespace TomskGO.Functions.Serverless.Vk.Callback
 
     public static class VKNewsExtensions
     {
-        private static string VkApiBaseAddress => Environment.GetEnvironmentVariable("VkApiBaseAddress");
+        private static string VkApiBaseAddress =>
+            Environment.GetEnvironmentVariable("VkApiBaseAddress");
 
-        private static string VkBaseAddress => Environment.GetEnvironmentVariable("VkBaseAddress");
+        private static string VkBaseAddress =>
+            Environment.GetEnvironmentVariable("VkBaseAddress");
 
         private static string[] ServiceHashTags => new[]
         {
             "#tomskgoAPP"
         };
 
-        private static string VKFields => "photo_max";
+        private static string VKFields =>
+            "photo_max";
 
         public static List<NewsTag> CreateTags(this Post post)
         {
@@ -264,23 +267,31 @@ namespace TomskGO.Functions.Serverless.Vk.Callback
                 {
                     Audios = item.Attachments?
                         .Where(x => x.Audio != null)?
-                        .Select(x => new NewsAttachment.Audio()
+                        .Select(x => new NewsAttachment.Audio
                         {
                             Artists = x.Audio.MainArtists.Select(a => a.Name).ToList()
                         })
                         .ToList(),
                     Links = item.Attachments?
                         .Where(x => x.Link != null)?
-                        .Select(x => new NewsAttachment.Link()
+                        .Select(x =>
                         {
-                            Title = x.Link.Title,
-                            Url = x.Link.Url,
-                            FaviconUrl = x.Link.Caption + "/favicon.ico"
+                            var uri = new Uri(x.Link.Url);
+                            return new NewsAttachment.Link
+                            {
+                                Title = string.IsNullOrEmpty(x.Link.Title)
+                                    ? uri.Host
+                                    : x.Link.Title,
+                                Url = x.Link.Url,
+                                FaviconUrl = string.IsNullOrEmpty(x.Link.Caption)
+                                    ? string.Concat(uri.Scheme, "://", uri.Host, "/favicon.ico")
+                                    : string.Concat(uri.Scheme, "://", x.Link.Caption, "/favicon.ico")
+                            };
                         })
                         .ToList(),
                     Photos = item.Attachments?
                         .Where(x => x.Photo != null)?
-                        .Select(x => new NewsAttachment.Photo()
+                        .Select(x => new NewsAttachment.Photo
                         {
                             ImageSource = x.Photo.Sizes.LastOrDefault().Url
                         })

@@ -144,6 +144,9 @@
   <data name="langChangeInfo" xml:space="preserve">
     <value>Language has been changed. Please, restart the app.</value>
   </data>
+  <data name="links" xml:space="preserve">
+    <value>Links:</value>
+  </data>
   <data name="map" xml:space="preserve">
     <value>Map</value>
   </data>

@@ -142,6 +142,15 @@ namespace TomskGO.Core.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Links:.
+        /// </summary>
+        internal static string links {
+            get {
+                return ResourceManager.GetString("links", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Map.
         /// </summary>
         internal static string map {

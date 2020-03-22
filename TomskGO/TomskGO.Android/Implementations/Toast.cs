@@ -1,16 +1,15 @@
-﻿using AWidget = Android.Widget;
-using AApp = Android.App;
+﻿using Android.Widget;
 using TomskGO.Core.Interfaces;
 using Xamarin.Forms;
+using Application = Android.App.Application;
+using AToast = Android.Widget.Toast;
 
 namespace TomskGO.Android.Implementations
 {
     public class Toast : IToast
     {
-        public void ShowToast(string message)
-        {
+        public void ShowToast(string message) =>
             Device.InvokeOnMainThreadAsync(() =>
-                AWidget.Toast.MakeText(AApp.Application.Context, message, AWidget.ToastLength.Short).Show());
-        }
+                AToast.MakeText(Application.Context, message, ToastLength.Short).Show());
     }
 }

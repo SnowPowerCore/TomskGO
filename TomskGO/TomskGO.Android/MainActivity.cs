@@ -28,10 +28,10 @@ namespace TomskGO.Droid
             PanCardView.Droid.CardsViewRenderer.Preserve();
             XF.Material.Droid.Material.Init(this, savedInstanceState);
             Stormlion.PhotoBrowser.Droid.Platform.Init(this);
-            FormsGoogleMaps.Init(this, savedInstanceState, new Xamarin.Forms.GoogleMaps.Android.PlatformConfig
-            {
-                BitmapDescriptorFactory = new CachingNativeBitmapDescriptorFactory()
-            });
+            //FormsGoogleMaps.Init(this, savedInstanceState, new Xamarin.Forms.GoogleMaps.Android.PlatformConfig
+            //{
+            //    BitmapDescriptorFactory = new CachingNativeBitmapDescriptorFactory()
+            //});
             CachedImageRenderer.Init(true);
             _ = typeof(FFImageLoading.Svg.Forms.SvgCachedImage);
             LoadApplication(Startup.Init(ConfigureServices));

@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Threading;
 using TomskGO.Core.Interfaces;
 
-namespace TomskGO.Droid.Implementations
+namespace TomskGO.Android.Implementations
 {
     public class LocalizeService : ILocalizeService
     {

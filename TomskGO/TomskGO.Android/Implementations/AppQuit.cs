@@ -1,7 +1,7 @@
 ﻿using Android.App;
 using TomskGO.Core.Interfaces;
 
-namespace TomskGO.Droid.Implementations
+namespace TomskGO.Android.Implementations
 {
     internal class AppQuit : IAppQuit
     {

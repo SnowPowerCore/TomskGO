@@ -3,13 +3,12 @@ using Android.Content.PM;
 using Android.OS;
 using FFImageLoading.Forms.Platform;
 using Microsoft.Extensions.DependencyInjection;
+using TomskGO.Android.Implementations;
 using TomskGO.Core;
 using TomskGO.Core.Interfaces;
-using TomskGO.Droid.Implementations;
-using Xamarin;
 using AGlide = Android.Glide;
 
-namespace TomskGO.Droid
+namespace TomskGO.Android
 {
     [Activity(Label = "Tomsk GO!", Icon = "@drawable/icon", Theme = "@style/MainTheme",
         MainLauncher = true, ScreenOrientation = ScreenOrientation.Portrait,
@@ -28,10 +27,7 @@ namespace TomskGO.Droid
             PanCardView.Droid.CardsViewRenderer.Preserve();
             XF.Material.Droid.Material.Init(this, savedInstanceState);
             Stormlion.PhotoBrowser.Droid.Platform.Init(this);
-            //FormsGoogleMaps.Init(this, savedInstanceState, new Xamarin.Forms.GoogleMaps.Android.PlatformConfig
-            //{
-            //    BitmapDescriptorFactory = new CachingNativeBitmapDescriptorFactory()
-            //});
+            Xamarin.FormsMaps.Init(this, savedInstanceState);
             CachedImageRenderer.Init(true);
             _ = typeof(FFImageLoading.Svg.Forms.SvgCachedImage);
             LoadApplication(Startup.Init(ConfigureServices));

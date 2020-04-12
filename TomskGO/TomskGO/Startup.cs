@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
+using System.IO;
 using TomskGO.Core.Services.Tomsk.News;
 using TomskGO.Core.Services.Tomsk.RestClient;
 using TomskGO.Core.Services.Utils.Analytics;
@@ -22,14 +23,20 @@ namespace TomskGO.Core
     {
         public static App Init(Action<IServiceCollection> nativeConfigureServices)
         {
-            var host = Host
-                .CreateDefaultBuilder()
+            var host = new HostBuilder()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseDefaultServiceProvider((context, options) =>
+                {
+                    var isDevelopment = context.HostingEnvironment.IsDevelopment();
+                    options.ValidateScopes = isDevelopment;
+                    options.ValidateOnBuild = isDevelopment;
+                })
                 .ConfigureServices(x =>
                 {
                     nativeConfigureServices(x);
                     ConfigureServices(x);
+                    RegisterRoutes();
                 })
-                .RegisterRoutes()
                 .Build();
 
             App.Services = host.Services;
@@ -82,16 +89,11 @@ namespace TomskGO.Core
         //        }
         //    }
         //}
-    }
 
-    static class StartupExtensions
-    {
-        public static IHostBuilder RegisterRoutes(this IHostBuilder host)
+        private static void RegisterRoutes()
         {
             Routing.RegisterRoute("post", typeof(Post));
             Routing.RegisterRoute("nestedFilter", typeof(Filter));
-
-            return host;
         }
     }
 }

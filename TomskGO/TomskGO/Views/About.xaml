@@ -12,7 +12,7 @@
                 <FormattedString>
                     <Span Text="Tomsk GO!"/>
                     <Span Text=" "/>
-                    <Span Text="alpha" FontSize="11" TextColor="SlateGray"/>
+                    <Span Text="beta" FontSize="11" TextColor="SlateGray"/>
                 </FormattedString>
             </ui:MaterialLabel.FormattedText>
         </ui:MaterialLabel>

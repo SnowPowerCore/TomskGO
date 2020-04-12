@@ -52,7 +52,9 @@
                         <DataTemplate x:DataType="{x:Null}">
                             <ui:MaterialCard Margin="15,20" CornerRadius="10" Elevation="10"
                                              IsClippedToBounds="True" Padding="0" WidthRequest="120">
-                                <Grid xe:TouchEffect.Color="White">
+                                <Grid xe:TouchEffect.Color="White"
+                                      xe:Commands.Tap="{Binding Source={x:Reference post}, Path=BindingContext.OpenUrlCommand}"
+                                      xe:Commands.TapParameter="{Binding Url}">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
                                         <RowDefinition Height="*"/>

@@ -160,7 +160,7 @@
     <value>Settings</value>
   </data>
   <data name="signInPlaceholder" xml:space="preserve">
-    <value>(WIP) Sign in or sign up</value>
+    <value>Sign in</value>
   </data>
   <data name="signUpPlaceholder" xml:space="preserve">
     <value>Sign up</value>

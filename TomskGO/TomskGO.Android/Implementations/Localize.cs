@@ -17,12 +17,11 @@ namespace TomskGO.Android.Implementations
 
         public CultureInfo GetCurrentCultureInfo()
         {
-            var netLanguage = "en";
             var androidLocale = Java.Util.Locale.Default;
-            netLanguage = AndroidToDotnetLanguage(androidLocale.ToString().Replace("_", "-"));
+            string netLanguage = AndroidToDotnetLanguage(androidLocale.ToString().Replace("_", "-"));
 
             // this gets called a lot - try/catch can be expensive so consider caching or something
-            CultureInfo ci = null;
+            CultureInfo ci;
             try
             {
                 ci = new CultureInfo(netLanguage);
@@ -74,6 +73,7 @@ namespace TomskGO.Android.Implementations
             Console.WriteLine(".NET Language/Locale:" + netLanguage);
             return netLanguage;
         }
+
         string ToDotnetFallbackLanguage(PlatformCulture platCulture)
         {
             Console.WriteLine(".NET Fallback Language:" + platCulture.LanguageCode);

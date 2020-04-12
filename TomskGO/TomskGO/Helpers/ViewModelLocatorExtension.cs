@@ -8,6 +8,8 @@ namespace TomskGO.Core.Helpers
         public Type ViewModelType { get; set; }
 
         public object ProvideValue(IServiceProvider serviceProvider) =>
-            null != ViewModelType ? App.Services.GetService(ViewModelType) : default;
+            null != ViewModelType
+                ? App.Services.GetService(ViewModelType)
+                : throw new Exception($"Couldn't locate viewmodel of type { ViewModelType }.");
     }
 }

@@ -1,6 +1,8 @@
-﻿using Android.App;
+﻿using Android;
+using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using Android.Runtime;
 using FFImageLoading.Forms.Platform;
 using Microsoft.Extensions.DependencyInjection;
 using TomskGO.Android.Implementations;
@@ -15,10 +17,24 @@ namespace TomskGO.Android
         ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
+        private const int RequestLocationId = 0;
+
+        private readonly string[] LocationPermissions =
+        {
+            Manifest.Permission.AccessCoarseLocation,
+            Manifest.Permission.AccessFineLocation
+        };
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
+
+            if ((int)Build.VERSION.SdkInt >= 23)
+            {
+                if (CheckSelfPermission(Manifest.Permission.AccessFineLocation) != Permission.Granted)
+                    RequestPermissions(LocationPermissions, RequestLocationId);
+            }
 
             base.OnCreate(savedInstanceState);
             Xamarin.Forms.Forms.Init(this, savedInstanceState);
@@ -38,6 +54,17 @@ namespace TomskGO.Android
             services.AddSingleton(typeof(ILocalizeService), typeof(LocalizeService));
             services.AddSingleton(typeof(IAppQuit), typeof(AppQuit));
             services.AddSingleton(typeof(IToast), typeof(Toast));
+        }
+
+        public override void OnBackPressed() =>
+            XF.Material.Droid.Material.HandleBackButton(base.OnBackPressed);
+
+        public override void OnRequestPermissionsResult(int requestCode,
+            string[] permissions, [GeneratedEnum] Permission[] grantResults)
+        {
+            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using TomskGO.Functions.API.Public.VK;
 using TomskGO.Functions.Serverless.Vk.Callback;
+using TomskGO.Models.API;
 
 namespace TomskGO.Functions.Serverless.Vk
 {
@@ -41,6 +42,7 @@ namespace TomskGO.Functions.Serverless.Vk
                     foreach (var item in filteredItems)
                     {
                         var newsItem = item.ConvertDataToUniversal();
+                        if (newsItem is default(NewsModel)) continue;
                         await newsContext.AddAsync(new
                         {
                             newsItem.OriginalId,
@@ -52,8 +54,7 @@ namespace TomskGO.Functions.Serverless.Vk
                             newsItem.Tags,
                             newsItem.Members,
                             newsItem.MembersVisible,
-                            newsItem.Attachments,
-                            newsItem.AttachmentsVisible
+                            newsItem.Attachments
                         })
                         .ContinueWith(t =>
                         {

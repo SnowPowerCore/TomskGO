@@ -13,6 +13,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using TomskGO.Functions.API.Public.Local;
 using TomskGO.Functions.API.Public.VK;
+using TomskGO.Functions.Utils;
 using TomskGO.Models.API;
 using TomskGO.Models.VK;
 using static TomskGO.Models.VK.VKFeedModel;
@@ -53,28 +54,31 @@ namespace TomskGO.Functions.Serverless.Vk.Callback
             {
                 //Can be extended in future releases;
                 "confirmation" => ConfirmResult,
-                "wall_post_new" => await CreateNewsItemAsync(data.RequestObject as Post),
+                "wall_post_new" => await CreateNewsItemAsync(
+                    JsonConvert.DeserializeObject<VkCallbackModel<Post>>(requestBody)),
                 _ => NotFoundResult
             };
 
             return result;
         }
 
-        private static async Task<IActionResult> CreateNewsItemAsync(Post post)
+        private static async Task<IActionResult> CreateNewsItemAsync(VkCallbackModel<Post> source)
         {
+            var post = source.Object;
+
             _log.LogInformation("Creating local news item.");
-            if (post is null && !post.IsRight())
+            if (post is null || !post.IsRight())
             {
-                _log.LogError("Item was null or didn't have required hashtags.");
-                return NotFoundResult;
+                _log.LogWarning("Item was null or didn't have required hashtags.");
+                return OkResult;
             }
 
             var newsItem = post.ConvertDataToUniversal();
 
             if (newsItem is default(NewsModel))
             {
-                _log.LogError("Couldn't convert vk post to universal.");
-                return NotFoundResult;
+                _log.LogWarning("Couldn't convert vk post to universal.");
+                return OkResult;
             }
             else _log.LogInformation("Successfully converted vk post to universal.");
 
@@ -198,6 +202,29 @@ namespace TomskGO.Functions.Serverless.Vk.Callback
         }
 
         /// <summary>
+        /// Extracts links from post text.
+        /// </summary>
+        /// <param name="post"></param>
+        /// <returns></returns>
+        public static List<NewsAttachment.Link> ExtractPostLinks(this Post post)
+        {
+            var links = new List<NewsAttachment.Link>();
+            var regex = new Regex(@"\b(?:https?://|www\.)\S+\b");
+            var items = regex.Matches(post.Text);
+            foreach (Match m in items)
+            {
+                var uri = new Uri(m.Value);
+                links.Add(new NewsAttachment.Link
+                {
+                    Title = uri.Host.GetNameFromHost(),
+                    FaviconUrl = string.Concat(uri.Scheme, "://", uri.Host, "/favicon.ico"),
+                    Url = string.Concat(uri.Scheme, "://", uri.Host, uri.AbsolutePath)
+                });
+            }
+            return links;
+        }
+
+        /// <summary>
         /// Replaces local vk links (e.g. profile) with their names.
         /// </summary>
         /// <param name="source">Text which contains definitions with [*|*] pattern.</param>
@@ -231,6 +258,25 @@ namespace TomskGO.Functions.Serverless.Vk.Callback
             return filteredStr;
         }
 
+        /// <summary>
+        /// Replaces tags in post
+        /// </summary>
+        /// <param name="source"></param>
+        /// <returns></returns>
+        public static string ReplacePostTags(this string source)
+        {
+            var regex = new Regex(@"#\w+");
+            var tags = regex.Matches(source);
+            foreach (Match m in tags)
+            {
+                source = source.Replace(m.Value + " ", "");
+                source = source.Replace(m.Value, "");
+            }
+            var newLineRegex = new Regex(Regex.Escape("\n"));
+            var modifiedStr = newLineRegex.Replace(source, "", 2);
+            return modifiedStr;
+        }
+
         public static bool IsRight(this Post item) =>
             ServiceHashTags.All(x => item.Text.Contains(x));
 
@@ -241,11 +287,13 @@ namespace TomskGO.Functions.Serverless.Vk.Callback
         {
             var filteredNewsText = item.Text
                 .ReplaceLocalLinks()
-                .ReplaceGlobalLinks();
+                .ReplaceGlobalLinks()
+                .ReplacePostTags();
 
             if (string.IsNullOrEmpty(filteredNewsText)) return default;
 
             var members = item.ExtractLocalMembers();
+            var links = item.ExtractPostLinks();
 
             var newsItem = new NewsModel
             {
@@ -263,6 +311,7 @@ namespace TomskGO.Functions.Serverless.Vk.Callback
                         .FirstOrDefault(x => x.Type == "r").Url,
                 Tags = item.CreateTags(),
                 Members = members,
+                MembersVisible = members.Count > 0,
                 Attachments = new NewsAttachment
                 {
                     Audios = item.Attachments?
@@ -280,14 +329,16 @@ namespace TomskGO.Functions.Serverless.Vk.Callback
                             return new NewsAttachment.Link
                             {
                                 Title = string.IsNullOrEmpty(x.Link.Title)
-                                    ? uri.Host
+                                    ? uri.Host.GetNameFromHost()
                                     : x.Link.Title,
-                                Url = x.Link.Url,
+                                Url = string.Concat(uri.Scheme, "://", uri.Host, uri.AbsolutePath),
                                 FaviconUrl = string.IsNullOrEmpty(x.Link.Caption)
                                     ? string.Concat(uri.Scheme, "://", uri.Host, "/favicon.ico")
                                     : string.Concat(uri.Scheme, "://", x.Link.Caption, "/favicon.ico")
                             };
                         })
+                        .Concat(links)
+                        .DistinctBy(x => x.Url)
                         .ToList(),
                     Photos = item.Attachments?
                         .Where(x => x.Photo != null)?
@@ -299,10 +350,8 @@ namespace TomskGO.Functions.Serverless.Vk.Callback
                     AudiosVisible = item.Attachments?.Where(x => x.Audio != null).Count() > 0,
                     PhotosVisible = item.Attachments?.Where(x => x.Photo != null).Count() > 0,
                     LinksVisible = item.Attachments?.Where(x => x.Link != null).Count() > 0
-                },
-                AttachmentsVisible = item.Attachments?
-                    .Any(x => x.Photo != null || x.Link != null || x.Audio != null),
-                MembersVisible = members.Count > 0
+                        || links.Count > 0
+                }
             };
 
             return newsItem;

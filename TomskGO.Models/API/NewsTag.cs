@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using Newtonsoft.Json;
+using System.ComponentModel;
 
 namespace TomskGO.Models.API
 {
@@ -7,6 +8,7 @@ namespace TomskGO.Models.API
         private bool _selected = false;
         public string Name { get; set; }
 
+        [JsonIgnore]
         public bool Selected
         {
             get => _selected;

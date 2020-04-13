@@ -17,6 +17,18 @@ namespace TomskGO.Models.VK
         public long GroupID { get; set; }
 
         [JsonProperty("object")]
-        public object RequestObject { get; set; }
+        public object Object { get; set; }
+    }
+
+    public class VkCallbackModel<TObject>
+    {
+        [JsonProperty("type")]
+        public string Type { get; set; }
+
+        [JsonProperty("group_id")]
+        public long GroupID { get; set; }
+
+        [JsonProperty("object")]
+        public TObject Object { get; set; }
     }
 }

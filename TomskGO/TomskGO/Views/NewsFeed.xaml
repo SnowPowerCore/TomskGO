@@ -14,7 +14,6 @@
              x:DataType="vms:NewsFeedViewModel"
              BindingContext="{helpers:ViewModelLocator ViewModelType={x:Type vms:NewsFeedViewModel}}">
     <ContentPage.Resources>
-        <converters:DetagifyConverter x:Key="detagify"/>
         <converters:InverseBoolConverter x:Key="inverseBool"/>
     </ContentPage.Resources>
     <CollectionView ItemsSource="{Binding Posts}" SelectionMode="None" ItemSizingStrategy="MeasureAllItems">
@@ -46,7 +45,7 @@
                             </Frame>
                             <ui:MaterialLabel Grid.Row="2" Margin="15,0" Text="{Binding Date, StringFormat=\{0:f\}}" LetterSpacing="2"
                                     Style="{x:StaticResource themeTextSecondary}" FontSize="Small"/>
-                            <ui:MaterialLabel Grid.Row="3" Margin="15,0" Text="{Binding ShortDescription, Converter={x:StaticResource detagify}}"
+                            <ui:MaterialLabel Grid.Row="3" Margin="15,0" Text="{Binding ShortDescription}"
                                     LineBreakMode="WordWrap" FontSize="Small" Style="{x:StaticResource themeText}"/>
                             <ContentView Grid.RowSpan="5" xe:TouchEffect.Color="White"
                             xe:Commands.Tap="{Binding Source={x:Reference news}, Path=BindingContext.NavigatePostCommand}"

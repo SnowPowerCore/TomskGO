@@ -7,7 +7,7 @@ namespace TomskGO.Core.Services.Utils.Navigation
     {
         Task SwitchMainPageAsync<TPage>(TPage page);
 
-        void DetermineAndSetMainPage();
+        void DetermineAndSetMainPage(string mainRouteName);
 
         bool CheckCurrentPageType<TType>();
 

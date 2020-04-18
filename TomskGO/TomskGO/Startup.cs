@@ -16,6 +16,7 @@ using TomskGO.Core.Services.Utils.Theme;
 using TomskGO.Core.ViewModels.News;
 using TomskGO.Core.ViewModels.Utils;
 using TomskGO.Core.Views;
+using TomskGO.Core.Views.Shells;
 using Xamarin.Forms;
 
 namespace TomskGO.Core
@@ -103,6 +104,8 @@ namespace TomskGO.Core
         {
             Routing.RegisterRoute("post", typeof(Post));
             Routing.RegisterRoute("nestedFilter", typeof(Filter));
+
+            Routing.RegisterRoute("mainPage", typeof(MainPage));
         }
     }
 }

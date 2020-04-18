@@ -16,8 +16,8 @@ namespace TomskGO.Core.Services.Utils.Navigation
                         TaskContinuationOptions.OnlyOnRanToCompletion);
         }
 
-        public void DetermineAndSetMainPage() =>
-            Application.Current.MainPage = new Shell();
+        public void DetermineAndSetMainPage(string mainRouteName) =>
+            Application.Current.MainPage = (Shell)Routing.GetOrCreateContent(mainRouteName);
 
         public bool CheckCurrentPageType<TType>() =>
             Shell.Current.Navigation.NavigationStack.Count > 1 &&

@@ -49,7 +49,7 @@ namespace TomskGO
 
             _theme.DetermineAndLoadTheme();
             _language.DetermineAndSetLanguage();
-            _navigation.DetermineAndSetMainPage();
+            _navigation.DetermineAndSetMainPage("mainPage");
             _analytics.TrackEvent("App started.");
         }
         #endregion

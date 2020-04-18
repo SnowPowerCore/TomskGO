@@ -28,82 +28,66 @@
             <ScrollView Margin="25,0" Orientation="Horizontal" HorizontalScrollBarVisibility="Never"
                 IsVisible="{Binding SelectedItem.MembersVisible}">
                 <StackLayout Orientation="Horizontal" HeightRequest="48"
-                         BindableLayout.ItemsSource="{Binding SelectedItem.Members}">
+                    BindableLayout.ItemsSource="{Binding SelectedItem.Members}">
                     <BindableLayout.ItemTemplate>
                         <DataTemplate x:DataType="models:NewsMember">
                             <Frame CornerRadius="24" Padding="0">
-                                <img:CachedImage Source="{Binding PictureUrl}"
-                                xe:Commands.Tap="{Binding Source={x:Reference post}, Path=BindingContext.OpenUrlCommand}"
-                                xe:Commands.TapParameter="{Binding ProfileUrl}"/>
+                                <img:CachedImage Source="{Binding PictureUrl, Mode=OneTime}"
+                                xe:Commands.Tap="{Binding Source={x:Reference post}, Path=BindingContext.OpenUrlCommand, Mode=OneTime}"
+                                xe:Commands.TapParameter="{Binding ProfileUrl, Mode=OneTime}"/>
                             </Frame>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </StackLayout>
             </ScrollView>
-            <ui:MaterialLabel Margin="25,0" FontSize="16" 
-                Text="{Binding SelectedItem.FullText, Converter={x:StaticResource detagify}}" Style="{x:StaticResource themeText}"/>
+            <ui:MaterialLabel Margin="25,0" FontSize="16" Style="{x:StaticResource themeText}"
+                Text="{Binding SelectedItem.FullText, Converter={x:StaticResource detagify}}"/>
             <ui:MaterialLabel Margin="25,0" Text="{helpers:Translate links}" FontAttributes="Bold"
                 FontSize="18" Style="{x:StaticResource themeTextCaption}"
                 IsVisible="{Binding SelectedItem.Attachments.LinksVisible}"/>
             <ScrollView Orientation="Horizontal" HorizontalScrollBarVisibility="Never"
-                IsVisible="{Binding SelectedItem.Attachments.LinksVisible}" HeightRequest="160">
+                IsVisible="{Binding SelectedItem.Attachments.LinksVisible}">
                 <FlexLayout BindableLayout.ItemsSource="{Binding SelectedItem.Attachments.Links}">
                     <BindableLayout.ItemTemplate>
-                        <DataTemplate x:DataType="{x:Null}">
-                            <ui:MaterialCard Margin="15,20" CornerRadius="10" Elevation="10"
-                                             IsClippedToBounds="True" Padding="0" WidthRequest="120">
+                        <DataTemplate x:DataType="models:Link">
+                            <ui:MaterialCard Margin="15,20,0,20" CornerRadius="10" Elevation="10" Opacity="0.85"
+                                IsClippedToBounds="True" Padding="0" WidthRequest="80" HeightRequest="80">
                                 <Grid xe:TouchEffect.Color="White"
-                                      xe:Commands.Tap="{Binding Source={x:Reference post}, Path=BindingContext.OpenUrlCommand}"
-                                      xe:Commands.TapParameter="{Binding Url}">
+                                      xe:Commands.Tap="{Binding Source={x:Reference post}, Path=BindingContext.OpenUrlCommand, Mode=OneTime}"
+                                      xe:Commands.TapParameter="{Binding Url, Mode=OneTime}"
+                                      Padding="12,0" RowSpacing="10">
                                     <Grid.RowDefinitions>
                                         <RowDefinition Height="*"/>
                                         <RowDefinition Height="*"/>
-                                        <RowDefinition Height="*"/>
                                     </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-                                    <img:CachedImage Source="{Binding FaviconUrl}" Margin="5" Grid.Column="2"/>
-                                    <ui:MaterialLabel Text="{Binding Title}" LineBreakMode="TailTruncation"
-                                        Grid.Row="2" Grid.ColumnSpan="3" Margin="5"/>
+                                    <img:CachedImage Source="{Binding FaviconUrl, Mode=OneTime}" HorizontalOptions="StartAndExpand"
+                                        HeightRequest="16" WidthRequest="16" VerticalOptions="EndAndExpand"/>
+                                    <ui:MaterialLabel Text="{Binding Title, Mode=OneTime}" LineBreakMode="TailTruncation"
+                                        HorizontalOptions="StartAndExpand" Grid.Row="1"/>
                                 </Grid>
                             </ui:MaterialCard>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </FlexLayout>
             </ScrollView>
-            <!--<carousel:CarouselView IsVisible="{Binding SelectedItem.Attachments.LinksVisible}"
-                                   ItemsSource="{Binding SelectedItem.Attachments.Links}" IsClippedToBounds="True"
-                                   IsCyclical="False" HeightRequest="230" VerticalSwipeThresholdDistance="2700">
-                <carousel:CarouselView.ItemTemplate>
-                    <DataTemplate x:DataType="{x:Null}">
-                        <ui:MaterialCard Margin="15,20" CornerRadius="10" Elevation="10" IsClippedToBounds="True" Padding="0">
-                            <Grid xe:TouchEffect.Color="White">
-                                <img:CachedImage Source="{Binding FaviconUrl}" HeightRequest="32" HorizontalOptions="EndAndExpand"/>
-                                <ui:MaterialLabel Text="{Binding Title}" VerticalOptions="EndAndExpand"/>
-                            </Grid>
-                        </ui:MaterialCard>
-                    </DataTemplate>
-                </carousel:CarouselView.ItemTemplate>
-            </carousel:CarouselView>-->
             <ui:MaterialLabel Margin="25,0" IsVisible="{Binding SelectedItem.Attachments.PhotosVisible}" 
-                              Text="{helpers:Translate browsePhotos}" FontAttributes="Bold" FontSize="18" Style="{x:StaticResource themeTextCaption}"/>
+                Text="{helpers:Translate browsePhotos}" FontAttributes="Bold" FontSize="18" Style="{x:StaticResource themeTextCaption}"/>
             <carousel:CarouselView IsVisible="{Binding SelectedItem.Attachments.PhotosVisible}"
-                                   ItemsSource="{Binding SelectedItem.Attachments.Photos}" IsClippedToBounds="True"
-                                   IsCyclical="False" HeightRequest="230" VerticalSwipeThresholdDistance="2700">
+                ItemsSource="{Binding SelectedItem.Attachments.Photos}" IsClippedToBounds="True"
+                IsCyclical="False" HeightRequest="230" VerticalSwipeThresholdDistance="2700">
                 <carousel:CarouselView.ItemTemplate>
-                    <DataTemplate x:DataType="{x:Null}">
-                        <ui:MaterialCard Margin="15,20" CornerRadius="10" Elevation="10" BackgroundColor="White" IsClippedToBounds="True" Padding="0">
-                            <Image Aspect="AspectFill" Source="{Binding ImageSource}"
-                               xe:Commands.Tap="{Binding Source={x:Reference post}, Path=BindingContext.OpenPhotoCommand}"
-                               xe:Commands.TapParameter="{Binding .}"/>
+                    <DataTemplate x:DataType="models:Photo">
+                        <ui:MaterialCard Margin="15,20" CornerRadius="10" Elevation="10" BackgroundColor="White"
+                            IsClippedToBounds="True" Padding="0">
+                            <Image Aspect="AspectFill" Source="{Binding ImageSource, Mode=OneTime}"
+                               xe:Commands.Tap="{Binding Source={x:Reference post}, Path=BindingContext.OpenPhotoCommand, Mode=OneTime}"
+                               xe:Commands.TapParameter="{Binding ., Mode=OneTime}"/>
                         </ui:MaterialCard>
                     </DataTemplate>
                 </carousel:CarouselView.ItemTemplate>
             </carousel:CarouselView>
-            <ui:MaterialLabel Margin="25,0" Text="{helpers:Translate tags}" FontAttributes="Bold" FontSize="18" Style="{x:StaticResource themeTextCaption}"/>
+            <ui:MaterialLabel Margin="25,0" Text="{helpers:Translate tags}" FontAttributes="Bold"
+                FontSize="18" Style="{x:StaticResource themeTextCaption}"/>
             <ScrollView Padding="10,0,0,0" Orientation="Horizontal" HorizontalScrollBarVisibility="Never">
                 <FlexLayout Wrap="Wrap"
                     Direction="Column"
@@ -113,9 +97,9 @@
                     <BindableLayout.ItemTemplate>
                         <DataTemplate x:DataType="models:NewsTag">
                             <ui:MaterialButton ButtonType="Elevated" Padding="12,3" Elevation="2,4" BackgroundColor="Accent" TextColor="White"
-                                               CornerRadius="16" Text="{Binding Name}" FontSize="12"
-                                               Command="{Binding Source={x:Reference post}, Path=BindingContext.OpenFilterCommand}"
-                                               CommandParameter="{Binding Name}"/>
+                                CornerRadius="16" Text="{Binding Name, Mode=OneTime}" FontSize="12"
+                                Command="{Binding Source={x:Reference post}, Path=BindingContext.OpenFilterCommand, Mode=OneTime}"
+                                CommandParameter="{Binding Name, Mode=OneTime}"/>
                         </DataTemplate>
                     </BindableLayout.ItemTemplate>
                 </FlexLayout>

@@ -5,15 +5,13 @@ namespace TomskGO.Core.Services.Utils.Navigation
 {
     public interface INavigationService
     {
-        Task<bool> SwitchMainPageAsync<TShell>(TShell shell) where TShell : Page;
+        Task SwitchMainPageAsync<TPage>(TPage page);
 
-        bool DetermineAndSetMainPage();
+        void DetermineAndSetMainPage();
 
-        bool CheckCurrentPageType<T>() where T : Page;
+        bool CheckCurrentPageType<TType>();
 
         Task NavigateToPageAsync(string routeWithParams, bool animated = true);
-
-        Task NavigateToPageAsync(Page page, bool animated = true);
 
         Task NavigateBackAsync(bool animated = true);
 
@@ -22,7 +20,5 @@ namespace TomskGO.Core.Services.Utils.Navigation
         Task OpenModalAsync(Page modal, bool animated = true);
 
         Task CloseModalAsync(bool animated = true);
-
-        bool? CheckCanExit();
     }
 }

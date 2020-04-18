@@ -5,15 +5,11 @@ using TomskGO.Core.Services.Tomsk.Api.News;
 using TomskGO.Core.Services.Tomsk.RestClient;
 using TomskGO.Models.API;
 
-namespace TomskGO.Core.Services.Tomsk.News
+namespace TomskGO.Core.Services.Tomsk.News.Service
 {
     public class NewsService : INewsService
     {
         private INewsApi _news;
-
-        public NewsModel SelectedPost { get; set; }
-
-        public string SelectedTagName { get; set; }
 
         public NewsService(IRestClientProvider client)
         {

@@ -3,6 +3,8 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.IO;
 using TomskGO.Core.Services.Tomsk.News;
+using TomskGO.Core.Services.Tomsk.News.Repository;
+using TomskGO.Core.Services.Tomsk.News.Service;
 using TomskGO.Core.Services.Tomsk.RestClient;
 using TomskGO.Core.Services.Utils.Analytics;
 using TomskGO.Core.Services.Utils.Language;
@@ -10,7 +12,6 @@ using TomskGO.Core.Services.Utils.LocalAuth;
 using TomskGO.Core.Services.Utils.Message;
 using TomskGO.Core.Services.Utils.Navigation;
 using TomskGO.Core.Services.Utils.Settings;
-using TomskGO.Core.Services.Utils.Shell;
 using TomskGO.Core.Services.Utils.Theme;
 using TomskGO.Core.ViewModels.News;
 using TomskGO.Core.ViewModels.Utils;
@@ -51,13 +52,21 @@ namespace TomskGO.Core
             services.AddSingleton<ILanguageService, LanguageService>();
             services.AddSingleton<ILocalAuthService, LocalAuthService>();
             services.AddSingleton<IMessageService, MessageService>();
-            services.AddSingleton<INavigationService, NavigationService>();
             services.AddSingleton<ISettingsService, SettingsService>();
-            services.AddSingleton<IShellService, ShellService>();
             services.AddSingleton<IThemeService, ThemeService>();
 
             services.AddSingleton<INewsService, NewsService>();
             services.AddSingleton<IRestClientProvider, RestClientProvider>();
+
+            services.AddSingleton<INavigationService, ShellNavigationService>();
+            #endregion
+
+            #region Contexts
+            services.AddSingleton<NewsContext>();
+            #endregion
+
+            #region Repositories
+            services.AddSingleton<INewsRepository, SelectedNewsItemRepository>();
             #endregion
 
             #region ViewModels

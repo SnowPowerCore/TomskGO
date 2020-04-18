@@ -1,4 +1,5 @@
 ﻿using AsyncAwaitBestPractices.MVVM;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -13,23 +14,29 @@ namespace TomskGO.Core.ViewModels.News
     public class NewsFeedViewModel : BaseViewModel
     {
         #region Fields
-        private readonly INewsService _news;
+        private readonly NewsContext _news;
         private readonly INavigationService _navigation;
 
-        private ObservableRangeCollection<NewsModel> _posts;
-        private ObservableRangeCollection<NewsModel> _filteredPosts;
-        private ObservableRangeCollection<NewsTag> _tags;
-        private ObservableRangeCollection<NewsTag> _selectedTags;
+        private IAsyncCommand _refreshFeedCommand;
+        private IAsyncCommand<NewsModel> _navigatePostCommand;
+        private ICommand _filterPostsCommand;
+        private ICommand _changeTagSelectionCommand;
+
+        private List<NewsModel> _posts = new List<NewsModel>();
+        private ObservableRangeCollection<NewsModel> _filteredPosts =
+            new ObservableRangeCollection<NewsModel>();
+        private List<NewsTag> _tags = new List<NewsTag>();
+        private ObservableRangeCollection<NewsTag> _selectedTags =
+            new ObservableRangeCollection<NewsTag>();
         #endregion
 
         #region Properties
-        public ObservableRangeCollection<NewsModel> Posts
+        public List<NewsModel> Posts
         {
             get => _posts;
             set
             {
-                if (value.Count > 0)
-                    _posts = value;
+                _posts = value;
                 OnPropertyChanged();
             }
         }
@@ -39,13 +46,12 @@ namespace TomskGO.Core.ViewModels.News
             get => _filteredPosts;
             set
             {
-                if (value.Count > 0)
-                    _filteredPosts = value;
+                _filteredPosts = value;
                 OnPropertyChanged();
             }
         }
 
-        public ObservableRangeCollection<NewsTag> Tags
+        public List<NewsTag> Tags
         {
             get => _tags;
             set
@@ -67,48 +73,57 @@ namespace TomskGO.Core.ViewModels.News
         #endregion
 
         #region Commands
-        public IAsyncCommand RefreshFeedCommand =>
-            new AsyncCommand(RefreshFeedAsync);
+        public IAsyncCommand RefreshFeedCommand => _refreshFeedCommand
+            ?? (_refreshFeedCommand = new AsyncCommand(RefreshFeedAsync));
 
-        public IAsyncCommand<NewsModel> NavigatePostCommand =>
-            new AsyncCommand<NewsModel>(NavigatePostAsync);
+        public IAsyncCommand<NewsModel> NavigatePostCommand => _navigatePostCommand
+            ?? (_navigatePostCommand = new AsyncCommand<NewsModel>(NavigatePostAsync));
 
-        public ICommand FilterPostsCommand =>
-            new Command(FilterPosts);
+        public ICommand FilterPostsCommand => _filterPostsCommand
+            ?? (_filterPostsCommand = new Command(FilterPosts));
 
-        public ICommand ChangeTagSelectionCommand =>
-            new Command<NewsTag>(ChangeTagSelection);
+        public ICommand ChangeTagSelectionCommand => _changeTagSelectionCommand
+            ?? (_changeTagSelectionCommand = new Command<NewsTag>(ChangeTagSelection));
         #endregion
 
         #region Constructor
-        public NewsFeedViewModel(INewsService news,
+        public NewsFeedViewModel(NewsContext news,
                                  INavigationService navigation)
         {
             _news = news;
             _navigation = navigation;
 
-            RefreshFeedCommand?.ExecuteAsync();
+            RefreshFeedCommand?.Execute(null);
         }
         #endregion
 
         #region Methods
-        private Task RefreshFeedAsync() =>
-            _news.GetAllNewsAsync()
-                .ContinueWith(t =>
-                {
-                    Posts = new ObservableRangeCollection<NewsModel>(t.Result);
-                    FilteredPosts = Posts;
-                    Tags = new ObservableRangeCollection<NewsTag>(Posts
-                        .SelectMany(t => t.Tags.Select(x => x.Name))
-                        .Distinct()
-                        .Select(x => new NewsTag { Name = x }));
-                    SelectedTags = new ObservableRangeCollection<NewsTag>();
-                }, TaskContinuationOptions.OnlyOnRanToCompletion);
+        private async Task RefreshFeedAsync()
+        {
+            SelectedTags.Clear();
+            Tags.Clear();
+            FilteredPosts.Clear();
+            Posts.Clear();
+
+            var result = await _news.NewsService.GetAllNewsAsync().ConfigureAwait(false);
+
+            await Device.InvokeOnMainThreadAsync(() =>
+            {
+                Posts = result;
+                FilteredPosts.AddRange(Posts);
+                Tags = Posts
+                    .SelectMany(t => t.Tags.Select(x => x.Name))
+                    .Distinct()
+                    .Select(x => new NewsTag { Name = x })
+                    .ToList();
+            });
+        }
 
         private void FilterPosts()
         {
-            if (string.IsNullOrEmpty(_news.SelectedTagName)) return;
-            var tagName = _news.SelectedTagName;
+            if (string.IsNullOrEmpty(_news.NewsRepository.GetTagName())) return;
+
+            var tagName = _news.NewsRepository.GetTagName();
             FilteredPosts = new ObservableRangeCollection<NewsModel>(Posts
                 .Where(x => x.Tags.Any(tag => tag.Name == tagName)));
             var searchedTag = Tags.FirstOrDefault(tag => tag.Name == tagName);
@@ -134,7 +149,7 @@ namespace TomskGO.Core.ViewModels.News
 
             if (SelectedTags.Count == 0)
             {
-                FilteredPosts = Posts;
+                FilteredPosts = new ObservableRangeCollection<NewsModel>(Posts);
                 return;
             }
 
@@ -144,7 +159,7 @@ namespace TomskGO.Core.ViewModels.News
 
         private Task NavigatePostAsync(NewsModel item)
         {
-            _news.SelectedPost = item;
+            _news.NewsRepository.SetNewsItem(item);
             return _navigation.NavigateToPageAsync("post");
         }
         #endregion

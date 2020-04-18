@@ -9,13 +9,21 @@ using TomskGO.Core.Services.Utils.Navigation;
 using TomskGO.Models.API;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using Photo = TomskGO.Models.API.Photo;
+using PhotoView = Stormlion.PhotoBrowser.Photo;
 
 namespace TomskGO.Core.ViewModels.News
 {
     public class PostViewModel : BaseViewModel
     {
-        private INewsService _news;
+        private NewsContext _news;
         private INavigationService _navigation;
+
+        private IAsyncCommand _navigateBackCommand;
+        private IAsyncCommand<string> _openFilterCommand;
+        private IAsyncCommand<string> _openUrlCommand;
+        private ICommand _updateCurrentPostCommand;
+        private ICommand _openPhotoCommand;
 
         private NewsModel _selectedItem;
 
@@ -29,38 +37,40 @@ namespace TomskGO.Core.ViewModels.News
             }
         }
 
-        public PostViewModel(INewsService news,
+        public PostViewModel(NewsContext news,
                              INavigationService navigation)
         {
             _news = news;
             _navigation = navigation;
         }
 
-        public ICommand UpdateCurrentPostCommand =>
-            new Command(UpdateCurrentPost);
+        public IAsyncCommand NavigateBackCommand => _navigateBackCommand
+            ?? (_navigateBackCommand = new AsyncCommand(NavigateBackAsync));
 
-        public IAsyncCommand NavigateBackCommand =>
-            new AsyncCommand(NavigateBackAsync);
+        public IAsyncCommand<string> OpenFilterCommand => _openFilterCommand
+            ?? (_openFilterCommand = new AsyncCommand<string>(OpenFilterAsync));
 
-        public IAsyncCommand<string> OpenFilterCommand =>
-            new AsyncCommand<string>(OpenFilterAsync);
+        public IAsyncCommand<string> OpenUrlCommand => _openUrlCommand
+            ?? (_openUrlCommand = new AsyncCommand<string>(OpenUrlAsync));
 
-        public IAsyncCommand<string> OpenUrlCommand =>
-            new AsyncCommand<string>(OpenUrlAsync);
+        public ICommand UpdateCurrentPostCommand => _updateCurrentPostCommand
+            ?? (_updateCurrentPostCommand = new Command(UpdateCurrentPost));
 
-        public ICommand OpenPhotoCommand =>
-            new Command<NewsAttachment.Photo>(OpenPhoto);
+        public ICommand OpenPhotoCommand => _openPhotoCommand
+            ?? (_openPhotoCommand = new Command<Photo>(OpenPhoto));
 
         private void UpdateCurrentPost() =>
-            SelectedItem = _news.SelectedPost;
+            SelectedItem = _news.NewsRepository.GetNewsItem();
 
-        private void OpenPhoto(NewsAttachment.Photo photo)
+        private void OpenPhoto(Photo photo)
         {
             var browser = new PhotoBrowser
             {
-                Photos = new List<Photo>(SelectedItem.Attachments.Photos
-                    .Select(x => new Photo { URL = x.ImageSource })),
-                StartIndex = SelectedItem.Attachments.Photos.IndexOf(SelectedItem.Attachments.Photos.FirstOrDefault(x => x.ImageSource == photo.ImageSource))
+                Photos = new List<PhotoView>(SelectedItem.Attachments.Photos
+                    .Select(x => new PhotoView { URL = x.ImageSource })),
+                StartIndex = SelectedItem.Attachments.Photos.IndexOf(
+                    SelectedItem.Attachments.Photos
+                        .FirstOrDefault(x => x.ImageSource == photo.ImageSource))
             };
             browser.Show();
         }
@@ -70,7 +80,7 @@ namespace TomskGO.Core.ViewModels.News
 
         private Task OpenFilterAsync(string tagName)
         {
-            _news.SelectedTagName = tagName;
+            _news.NewsRepository.SetTagName(tagName);
             return _navigation.NavigateToPageAsync("//filter");
         }
 

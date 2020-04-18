@@ -39,21 +39,21 @@
                                 <RowDefinition Height="Auto"/>
                             </Grid.RowDefinitions>
                             <Image Grid.RowSpan="2" IsVisible="{Binding Attachments.PhotosVisible}"
-                                   HeightRequest="170" Aspect="AspectFill" Source="{Binding PreviewSource}"/>
+                                   HeightRequest="170" Aspect="AspectFill" Source="{Binding PreviewSource, Mode=OneTime}"/>
                             <Frame Grid.Row="1" Grid.RowSpan="2" CornerRadius="15" Padding="0" BorderColor="Transparent">
                                 <BoxView Style="{x:StaticResource themeBoxView}"/>
                             </Frame>
-                            <ui:MaterialLabel Grid.Row="2" Margin="15,0" Text="{Binding Date, StringFormat=\{0:f\}}" LetterSpacing="2"
+                            <ui:MaterialLabel Grid.Row="2" Margin="15,0" Text="{Binding Date, StringFormat=\{0:f\}, Mode=OneTime}" LetterSpacing="2"
                                     Style="{x:StaticResource themeTextSecondary}" FontSize="Small"/>
-                            <ui:MaterialLabel Grid.Row="3" Margin="15,0" Text="{Binding ShortDescription}"
+                            <ui:MaterialLabel Grid.Row="3" Margin="15,0" Text="{Binding ShortDescription, Mode=OneTime}"
                                     LineBreakMode="WordWrap" FontSize="Small" Style="{x:StaticResource themeText}"/>
                             <ContentView Grid.RowSpan="5" xe:TouchEffect.Color="White"
-                            xe:Commands.Tap="{Binding Source={x:Reference news}, Path=BindingContext.NavigatePostCommand}"
-                            xe:Commands.TapParameter="{Binding .}"/>
+                            xe:Commands.Tap="{Binding Source={x:Reference news}, Path=BindingContext.NavigatePostCommand, Mode=OneTime}"
+                            xe:Commands.TapParameter="{Binding ., Mode=OneTime}"/>
                             <ui:MaterialButton Grid.Row="4" VerticalOptions="End" HorizontalOptions="End"
                                 Text="Подробнее" ButtonType="Text" xe:TouchEffect.Color="White"
-                                xe:Commands.Tap="{Binding Source={x:Reference news}, Path=BindingContext.NavigatePostCommand}"
-                                xe:Commands.TapParameter="{Binding .}" TextColor="#029E00"/>
+                                xe:Commands.Tap="{Binding Source={x:Reference news}, Path=BindingContext.NavigatePostCommand, Mode=OneTime}"
+                                xe:Commands.TapParameter="{Binding ., Mode=OneTime}" TextColor="#029E00"/>
                         </Grid>
                     </ui:MaterialCard>
                 </ContentView>

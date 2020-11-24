@@ -21,7 +21,7 @@ namespace TomskGO.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             Xamarin.Forms.Forms.Init();
-            FormsGoogleMaps.Init("AIzaSyBbNKE1UD7NdAEBKO8NfGPiSBtFhAUODwc");
+            FormsGoogleMaps.Init("");
             FFImageLoading.FormsHandler.Init();
             XamEffects.iOS.Effects.Init();
             PanCardView.iOS.CardsViewRenderer.Preserve();
